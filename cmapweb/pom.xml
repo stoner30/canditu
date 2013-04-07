@@ -6,7 +6,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	
 	<groupId>com.fc.cmap</groupId>
-	<artifactId>cmap-web</artifactId>
+	<artifactId>cmapweb</artifactId>
 	<packaging>war</packaging>
 	<version>0.1</version>
 	<name>cmapweb</name>
@@ -27,6 +27,7 @@
 		<javax.servlet.version>2.5</javax.servlet.version>
 		<javax.servlet.jsp.version>2.1</javax.servlet.jsp.version>
 		<kaptcha.version>2.3.2</kaptcha.version>
+		<org.mortbay.jetty.version>8.1.10.v20130312</org.mortbay.jetty.version>
 	</properties>
 	
 	<build>
