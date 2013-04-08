@@ -13,13 +13,16 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import com.fc.cmapweb.vo.AD;
+import com.fc.cmapweb.vo.Bldg;
+import com.fc.cmapweb.vo.District;
 
 @Entity
-@Table(name = "AD_BLDG")
+@Table(name = "ad_bldg")
 public class ADBldg implements Serializable {
-
-	private static final long serialVersionUID = -6402978670591577027L;
 	
+	private static final long serialVersionUID = 7532568305690868674L;
+
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "AB_ID")
@@ -47,20 +50,6 @@ public class ADBldg implements Serializable {
     @JoinColumn(name = "AD_ID", referencedColumnName = "AD_ID")
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
     private AD ad;
-
-    public ADBldg() {
-    }
-
-    public ADBldg(Integer abId) {
-        this.abId = abId;
-    }
-
-    public ADBldg(Integer abId, Date startTime, Date endTime, int adOrder) {
-        this.abId = abId;
-        this.startTime = startTime;
-        this.endTime = endTime;
-        this.adOrder = adOrder;
-    }
 
 	public Integer getAbId() {
     	return abId;
@@ -117,5 +106,5 @@ public class ADBldg implements Serializable {
 	public void setAd(AD ad) {
     	this.ad = ad;
     }
-	
+    
 }

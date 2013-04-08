@@ -10,13 +10,14 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import com.fc.cmapweb.vo.OrderInfo;
 
 @Entity
-@Table(name = "ORDER_DETAIL")
+@Table(name = "order_detail")
 public class OrderDetail implements Serializable {
-
-	private static final long serialVersionUID = 5912168069533005680L;
 	
+	private static final long serialVersionUID = 2440862321574420200L;
+
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "OD_ID")
@@ -43,22 +44,6 @@ public class OrderDetail implements Serializable {
     @JoinColumn(name = "ORDER_NBR", referencedColumnName = "ORDER_NBR")
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
     private OrderInfo orderInfo;
-
-    public OrderDetail() {
-    }
-
-    public OrderDetail(Integer odId) {
-        this.odId = odId;
-    }
-
-    public OrderDetail(Integer odId, String dishName, String dishCfg, String dishDetail, Integer dishCont, Float dishPrice) {
-        this.odId = odId;
-        this.dishName = dishName;
-        this.dishCfg = dishCfg;
-        this.dishDetail = dishDetail;
-        this.dishCont = dishCont;
-        this.dishPrice = dishPrice;
-    }
 
 	public Integer getOdId() {
     	return odId;
@@ -123,5 +108,5 @@ public class OrderDetail implements Serializable {
 	public void setOrderInfo(OrderInfo orderInfo) {
     	this.orderInfo = orderInfo;
     }
-    
+
 }

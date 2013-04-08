@@ -19,18 +19,6 @@ public class StubOAuthType implements Serializable {
     @Column(name = "OAUTH_TYPE_NAME")
     private String oAuthTypeName;
     
-    public StubOAuthType() {
-    }
-
-    public StubOAuthType(Integer oAuthId) {
-        this.oAuthId = oAuthId;
-    }
-
-    public StubOAuthType(Integer oAuthId, String oAuthTypeName) {
-        this.oAuthId = oAuthId;
-        this.oAuthTypeName = oAuthTypeName;
-    }
-
 	public Integer getoAuthId() {
     	return oAuthId;
     }

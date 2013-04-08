@@ -19,18 +19,6 @@ public class StubUsrInfoType implements Serializable {
     @Column(name = "UIT_NAME")
     private String uitName;
 
-    public StubUsrInfoType() {
-    }
-
-    public StubUsrInfoType(Integer uitId) {
-        this.uitId = uitId;
-    }
-
-    public StubUsrInfoType(Integer uitId, String uitName) {
-        this.uitId = uitId;
-        this.uitName = uitName;
-    }
-
 	public Integer getUitId() {
     	return uitId;
     }

@@ -30,13 +30,6 @@ public class RestUsr implements Serializable {
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
     private Restaurant restaurant;
 
-    public RestUsr() {
-    }
-
-    public RestUsr(Integer ruId) {
-        this.ruId = ruId;
-    }
-
     public Integer getRuId() {
         return ruId;
     }

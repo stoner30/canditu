@@ -22,19 +22,6 @@ public class StubRestIcoType implements Serializable {
     @Column(name = "RIT_DESC")
     private String ritDesc;
 
-    public StubRestIcoType() {
-    }
-
-    public StubRestIcoType(Integer ritId) {
-        this.ritId = ritId;
-    }
-
-    public StubRestIcoType(Integer ritId, String ritName, String ritDesc) {
-        this.ritId = ritId;
-        this.ritName = ritName;
-        this.ritDesc = ritDesc;
-    }
-
 	public Integer getRitId() {
     	return ritId;
     }

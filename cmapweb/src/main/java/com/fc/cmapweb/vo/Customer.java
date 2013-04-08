@@ -13,12 +13,13 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import com.fc.cmapweb.vo.StubOAuthType;
 
 @Entity
-@Table(name = "CUSTOMER")
+@Table(name = "customer")
 public class Customer implements Serializable {
-    
-    private static final long serialVersionUID = 562803137798612683L;
+	
+	private static final long serialVersionUID = 1659116608349735448L;
 
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -52,123 +53,109 @@ public class Customer implements Serializable {
     private String lastLoginIp;
     
     @Column(name = "ENABLED")
-    private Boolean enabled;
+    private boolean enabled;
  
     @Column(name = "FIRST_ORDER")
-    private Boolean firstOrder;
+    private boolean firstOrder;
 
     @JoinColumn(name = "OAUTH_ID", referencedColumnName = "OAUTH_ID")
     @ManyToOne(fetch = FetchType.LAZY)
     private StubOAuthType stubOAuthType;
-    
-    public Customer() {
-    }
-
-    public Customer(Integer customerId) {
-        this.customerId = customerId;
-    }
-
-    public Customer(Integer customerId, Date regTime, Boolean enabled, Boolean firstOrder) {
-        this.customerId = customerId;
-        this.regTime = regTime;
-        this.enabled = enabled;
-        this.firstOrder = firstOrder;
-    }
 
 	public Integer getCustomerId() {
-    	return customerId;
-    }
+		return customerId;
+	}
 
 	public void setCustomerId(Integer customerId) {
-    	this.customerId = customerId;
-    }
+		this.customerId = customerId;
+	}
 
 	public String getEmail() {
-    	return email;
-    }
+		return email;
+	}
 
 	public void setEmail(String email) {
-    	this.email = email;
-    }
+		this.email = email;
+	}
 
 	public String getMobile() {
-    	return mobile;
-    }
+		return mobile;
+	}
 
 	public void setMobile(String mobile) {
-    	this.mobile = mobile;
-    }
+		this.mobile = mobile;
+	}
 
 	public String getNickname() {
-    	return nickname;
-    }
+		return nickname;
+	}
 
 	public void setNickname(String nickname) {
-    	this.nickname = nickname;
-    }
+		this.nickname = nickname;
+	}
 
 	public String getPasswd() {
-    	return passwd;
-    }
+		return passwd;
+	}
 
 	public void setPasswd(String passwd) {
-    	this.passwd = passwd;
-    }
+		this.passwd = passwd;
+	}
 
 	public String getOpenid() {
-    	return openid;
-    }
+		return openid;
+	}
 
 	public void setOpenid(String openid) {
-    	this.openid = openid;
-    }
+		this.openid = openid;
+	}
 
 	public Date getRegTime() {
-    	return regTime;
-    }
+		return regTime;
+	}
 
 	public void setRegTime(Date regTime) {
-    	this.regTime = regTime;
-    }
+		this.regTime = regTime;
+	}
 
 	public Date getLastLoginTime() {
-    	return lastLoginTime;
-    }
+		return lastLoginTime;
+	}
 
 	public void setLastLoginTime(Date lastLoginTime) {
-    	this.lastLoginTime = lastLoginTime;
-    }
+		this.lastLoginTime = lastLoginTime;
+	}
 
 	public String getLastLoginIp() {
-    	return lastLoginIp;
-    }
+		return lastLoginIp;
+	}
 
 	public void setLastLoginIp(String lastLoginIp) {
-    	this.lastLoginIp = lastLoginIp;
-    }
+		this.lastLoginIp = lastLoginIp;
+	}
 
-	public Boolean getEnabled() {
-    	return enabled;
-    }
+	public boolean isEnabled() {
+		return enabled;
+	}
 
-	public void setEnabled(Boolean enabled) {
-    	this.enabled = enabled;
-    }
+	public void setEnabled(boolean enabled) {
+		this.enabled = enabled;
+	}
 
-	public Boolean getFirstOrder() {
-    	return firstOrder;
-    }
+	public boolean isFirstOrder() {
+		return firstOrder;
+	}
 
-	public void setFirstOrder(Boolean firstOrder) {
-    	this.firstOrder = firstOrder;
-    }
+	public void setFirstOrder(boolean firstOrder) {
+		this.firstOrder = firstOrder;
+	}
 
 	public StubOAuthType getStubOAuthType() {
-    	return stubOAuthType;
-    }
+		return stubOAuthType;
+	}
 
 	public void setStubOAuthType(StubOAuthType stubOAuthType) {
-    	this.stubOAuthType = stubOAuthType;
-    }
-    
+		this.stubOAuthType = stubOAuthType;
+	}
+
 }

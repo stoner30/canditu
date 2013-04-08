@@ -9,7 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "REST_TAG_TYPE")
+@Table(name = "rest_tag_type")
 public class RestTagType implements Serializable {
     
     private static final long serialVersionUID = -3157027937956562875L;
@@ -21,18 +21,6 @@ public class RestTagType implements Serializable {
 
     @Column(name = "RT_NAME")
     private String rtName;
-    
-    public RestTagType() {
-    }
-
-    public RestTagType(Integer rttId) {
-        this.rttId = rttId;
-    }
-
-    public RestTagType(Integer rttId, String rtName) {
-        this.rttId = rttId;
-        this.rtName = rtName;
-    }
 
 	public Integer getRttId() {
     	return rttId;

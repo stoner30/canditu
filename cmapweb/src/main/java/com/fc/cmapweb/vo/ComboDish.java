@@ -12,114 +12,62 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "COMBO_DISH")
+@Table(name = "combo_dish")
 public class ComboDish implements Serializable {
-
-	private static final long serialVersionUID = 271842945164775581L;
 	
+	private static final long serialVersionUID = -6693083469266964181L;
+
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "CD_ID")
     private Integer cdId;
-	
-    @Column(name = "CD_PRICE")
-    private Float cdPrice;
-    
-    @Column(name = "DR_ID")
-    private Short drId;
-    
-    @Column(name = "DR_VAL1")
-    private String drVal1;
-    
-    @Column(name = "DR_VAL2")
-    private String drVal2;
-    
-    @Column(name = "DISH_NODE")
-    private String dishNode;
-    
-    @JoinColumn(name = "P_DISH_ID", referencedColumnName = "DISH_ID")
-    @ManyToOne(optional = false, fetch = FetchType.LAZY)
-    private Dish pDish;
-    
-    @JoinColumn(name = "DISH_ID", referencedColumnName = "DISH_ID")
-    @ManyToOne(optional = false, fetch = FetchType.LAZY)
-    private Dish dish;
 
-    public ComboDish() {
-    }
+    @JoinColumn(name = "p_dish_id", referencedColumnName = "dish_id")
+    @ManyToOne(optional = false, fetch = FetchType.LAZY)
+    private Dish pDishId;
+ 
+    @JoinColumn(name = "dish_id", referencedColumnName = "dish_id")
+    @ManyToOne(optional = false, fetch = FetchType.LAZY)
+    private Dish dishId;
+
+    @JoinColumn(name = "cds_id", referencedColumnName = "cds_id")
+    @ManyToOne(optional = false, fetch = FetchType.LAZY)
+    private ComboDishSubcat cdsId;
 
     public ComboDish(Integer cdId) {
         this.cdId = cdId;
     }
 
-    public ComboDish(Integer cdId, Float cdPrice, short drId) {
+    public Integer getCdId() {
+        return cdId;
+    }
+
+    public void setCdId(Integer cdId) {
         this.cdId = cdId;
-        this.cdPrice = cdPrice;
-        this.drId = drId;
     }
 
-	public Integer getCdId() {
-    	return cdId;
+    public Dish getPDishId() {
+        return pDishId;
     }
 
-	public void setCdId(Integer cdId) {
-    	this.cdId = cdId;
+    public void setPDishId(Dish pDishId) {
+        this.pDishId = pDishId;
     }
 
-	public Float getCdPrice() {
-    	return cdPrice;
+    public Dish getDishId() {
+        return dishId;
     }
 
-	public void setCdPrice(Float cdPrice) {
-    	this.cdPrice = cdPrice;
+    public void setDishId(Dish dishId) {
+        this.dishId = dishId;
     }
 
-	public Short getDrId() {
-    	return drId;
+    public ComboDishSubcat getCdsId() {
+        return cdsId;
     }
 
-	public void setDrId(Short drId) {
-    	this.drId = drId;
-    }
-
-	public String getDrVal1() {
-    	return drVal1;
-    }
-
-	public void setDrVal1(String drVal1) {
-    	this.drVal1 = drVal1;
-    }
-
-	public String getDrVal2() {
-    	return drVal2;
-    }
-
-	public void setDrVal2(String drVal2) {
-    	this.drVal2 = drVal2;
-    }
-
-	public String getDishNode() {
-    	return dishNode;
-    }
-
-	public void setDishNode(String dishNode) {
-    	this.dishNode = dishNode;
-    }
-
-	public Dish getPDish() {
-    	return pDish;
-    }
-
-	public void setPDish(Dish pDish) {
-    	this.pDish = pDish;
-    }
-
-	public Dish getDish() {
-    	return dish;
-    }
-
-	public void setDish(Dish dish) {
-    	this.dish = dish;
+    public void setCdsId(ComboDishSubcat cdsId) {
+        this.cdsId = cdsId;
     }
 
 }

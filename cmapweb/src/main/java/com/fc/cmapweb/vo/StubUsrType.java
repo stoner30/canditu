@@ -19,18 +19,6 @@ public class StubUsrType implements Serializable {
     @Column(name = "USR_TYPE_NAME")
     private String usrTypeName;
 
-    public StubUsrType() {
-    }
-
-    public StubUsrType(Integer usrTypeId) {
-        this.usrTypeId = usrTypeId;
-    }
-
-    public StubUsrType(Integer usrTypeId, String usrTypeName) {
-        this.usrTypeId = usrTypeId;
-        this.usrTypeName = usrTypeName;
-    }
-
 	public Integer getUsrTypeId() {
     	return usrTypeId;
     }

@@ -30,13 +30,6 @@ public class StubUsrTypePrivilege implements Serializable {
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
     private StubPrivilege stubPrivilege;
 
-    public StubUsrTypePrivilege() {
-    }
-
-    public StubUsrTypePrivilege(Integer utpId) {
-        this.utpId = utpId;
-    }
-
 	public Integer getUtpId() {
     	return utpId;
     }

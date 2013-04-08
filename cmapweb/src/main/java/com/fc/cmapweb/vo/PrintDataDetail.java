@@ -10,10 +10,10 @@ import javax.persistence.Lob;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "PRINT_DATA_DETAIL")
+@Table(name = "print_data_detail")
 public class PrintDataDetail implements Serializable {
 
-	private static final long serialVersionUID = -6389096812358040211L;
+	private static final long serialVersionUID = -1752797429252257541L;
 	
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -26,19 +26,6 @@ public class PrintDataDetail implements Serializable {
     @Lob
     @Column(name = "detail_content")
     private String detailContent;
-
-    public PrintDataDetail() {
-    }
-
-    public PrintDataDetail(Integer detailId) {
-        this.detailId = detailId;
-    }
-
-    public PrintDataDetail(Integer detailId, Integer printDataId, String detailContent) {
-        this.detailId = detailId;
-        this.printDataId = printDataId;
-        this.detailContent = detailContent;
-    }
 
 	public Integer getDetailId() {
     	return detailId;

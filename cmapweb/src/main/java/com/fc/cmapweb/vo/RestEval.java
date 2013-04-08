@@ -13,7 +13,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "REST_EVAL")
+@Table(name = "rest_eval")
 public class RestEval implements Serializable {
 
 	private static final long serialVersionUID = -7654259084615760800L;
@@ -37,19 +37,6 @@ public class RestEval implements Serializable {
     @JoinColumn(name = "REST_ID", referencedColumnName = "REST_ID")
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
     private Restaurant restaurant;
-
-    public RestEval() {
-    }
-
-    public RestEval(Integer reId) {
-        this.reId = reId;
-    }
-
-    public RestEval(Integer reId, Integer reCont, Integer reVal) {
-        this.reId = reId;
-        this.reCont = reCont;
-        this.reVal = reVal;
-    }
 
     public Integer getReId() {
         return reId;

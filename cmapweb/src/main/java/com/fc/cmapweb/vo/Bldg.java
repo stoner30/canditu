@@ -1,7 +1,6 @@
 package com.fc.cmapweb.vo;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -11,13 +10,14 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import com.fc.cmapweb.vo.District;
 
 @Entity
-@Table(name = "BLDG")
+@Table(name = "bldg")
 public class Bldg implements Serializable {
-
-	private static final long serialVersionUID = 4535510359757141923L;
 	
+	private static final long serialVersionUID = 1631866032632256712L;
+
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "BLDG_ID")
@@ -36,80 +36,66 @@ public class Bldg implements Serializable {
     private Float bldgLat;
     
     @Column(name = "ENABLED")
-    private Boolean enabled;
+    private boolean enabled;
     
     @JoinColumn(name = "DIST_CODE", referencedColumnName = "DIST_CODE")
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
     private District district;
-    
-    public Bldg() {
-    }
-
-    public Bldg(Integer bldgId) {
-        this.bldgId = bldgId;
-    }
-
-    public Bldg(Integer bldgId, String bldgName, String bldgAddr, BigDecimal bldgLon, BigDecimal bldgLat, boolean enabled) {
-        this.bldgId = bldgId;
-        this.bldgName = bldgName;
-        this.bldgAddr = bldgAddr;
-        this.enabled = enabled;
-    }
 
 	public Integer getBldgId() {
-    	return bldgId;
-    }
+		return bldgId;
+	}
 
 	public void setBldgId(Integer bldgId) {
-    	this.bldgId = bldgId;
-    }
+		this.bldgId = bldgId;
+	}
 
 	public String getBldgName() {
-    	return bldgName;
-    }
+		return bldgName;
+	}
 
 	public void setBldgName(String bldgName) {
-    	this.bldgName = bldgName;
-    }
+		this.bldgName = bldgName;
+	}
 
 	public String getBldgAddr() {
-    	return bldgAddr;
-    }
+		return bldgAddr;
+	}
 
 	public void setBldgAddr(String bldgAddr) {
-    	this.bldgAddr = bldgAddr;
-    }
+		this.bldgAddr = bldgAddr;
+	}
 
 	public Float getBldgLon() {
-    	return bldgLon;
-    }
+		return bldgLon;
+	}
 
 	public void setBldgLon(Float bldgLon) {
-    	this.bldgLon = bldgLon;
-    }
+		this.bldgLon = bldgLon;
+	}
 
 	public Float getBldgLat() {
-    	return bldgLat;
-    }
+		return bldgLat;
+	}
 
 	public void setBldgLat(Float bldgLat) {
-    	this.bldgLat = bldgLat;
-    }
+		this.bldgLat = bldgLat;
+	}
 
-	public Boolean getEnabled() {
-    	return enabled;
-    }
+	public boolean isEnabled() {
+		return enabled;
+	}
 
-	public void setEnabled(Boolean enabled) {
-    	this.enabled = enabled;
-    }
+	public void setEnabled(boolean enabled) {
+		this.enabled = enabled;
+	}
 
 	public District getDistrict() {
-    	return district;
-    }
+		return district;
+	}
 
 	public void setDistrict(District district) {
-    	this.district = district;
-    }
+		this.district = district;
+	}
     
 }

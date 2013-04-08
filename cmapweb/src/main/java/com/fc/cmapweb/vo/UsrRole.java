@@ -30,13 +30,6 @@ public class UsrRole implements Serializable {
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
     private Role role;
 
-    public UsrRole() {
-    }
-
-    public UsrRole(Integer urId) {
-        this.urId = urId;
-    }
-
 	public Integer getUrId() {
     	return urId;
     }

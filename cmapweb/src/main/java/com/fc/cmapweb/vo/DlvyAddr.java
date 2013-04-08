@@ -11,13 +11,16 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.fc.cmapweb.vo.Bldg;
+import com.fc.cmapweb.vo.Customer;
+
 @Entity
-@Table(name = "DLVY_ADDR")
+@Table(name = "dlvy_addr")
 public class DlvyAddr implements Serializable {
-    
-    private static final long serialVersionUID = 3493643267821851150L;
-	
-    @Id
+
+	private static final long serialVersionUID = 7167345487600472479L;
+
+	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "ADDR_ID")
     private Integer addrId;
@@ -38,20 +41,6 @@ public class DlvyAddr implements Serializable {
     @JoinColumn(name = "BLDG_ID", referencedColumnName = "BLDG_ID")
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
     private Bldg bldg;
-
-    public DlvyAddr() {
-    }
-
-    public DlvyAddr(Integer addrId) {
-        this.addrId = addrId;
-    }
-
-    public DlvyAddr(Integer addrId, String cnee, String addrDet, String mobile) {
-        this.addrId = addrId;
-        this.cnee = cnee;
-        this.addrDet = addrDet;
-        this.mobile = mobile;
-    }
 
     public Integer getAddrId() {
         return addrId;

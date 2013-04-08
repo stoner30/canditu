@@ -29,7 +29,7 @@ public class Role implements Serializable {
     private String roleDesc;
 
     @Column(name = "ENABLED")
-    private Boolean enabled;
+    private boolean enabled;
     
     @JoinColumn(name = "USR_TYPE_ID", referencedColumnName = "USR_TYPE_ID")
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
@@ -39,64 +39,52 @@ public class Role implements Serializable {
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
     private Role pRole;
 
-    public Role() {
-    }
-
-    public Role(Integer roleId) {
-        this.roleId = roleId;
-    }
-
-    public Role(Integer roleId, Boolean enabled) {
-        this.roleId = roleId;
-        this.enabled = enabled;
-    }
-
 	public Integer getRoleId() {
-    	return roleId;
-    }
+		return roleId;
+	}
 
 	public void setRoleId(Integer roleId) {
-    	this.roleId = roleId;
-    }
+		this.roleId = roleId;
+	}
 
 	public String getRoleName() {
-    	return roleName;
-    }
+		return roleName;
+	}
 
 	public void setRoleName(String roleName) {
-    	this.roleName = roleName;
-    }
+		this.roleName = roleName;
+	}
 
 	public String getRoleDesc() {
-    	return roleDesc;
-    }
+		return roleDesc;
+	}
 
 	public void setRoleDesc(String roleDesc) {
-    	this.roleDesc = roleDesc;
-    }
+		this.roleDesc = roleDesc;
+	}
 
-	public Boolean getEnabled() {
-    	return enabled;
-    }
+	public boolean isEnabled() {
+		return enabled;
+	}
 
-	public void setEnabled(Boolean enabled) {
-    	this.enabled = enabled;
-    }
+	public void setEnabled(boolean enabled) {
+		this.enabled = enabled;
+	}
 
 	public StubUsrType getStubUsrType() {
-    	return stubUsrType;
-    }
+		return stubUsrType;
+	}
 
 	public void setStubUsrType(StubUsrType stubUsrType) {
-    	this.stubUsrType = stubUsrType;
-    }
+		this.stubUsrType = stubUsrType;
+	}
 
-	public Role getPRole() {
-    	return pRole;
-    }
+	public Role getpRole() {
+		return pRole;
+	}
 
-	public void setPRole(Role pRole) {
-    	this.pRole = pRole;
-    }
-    
+	public void setpRole(Role pRole) {
+		this.pRole = pRole;
+	}
+
 }

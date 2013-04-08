@@ -12,7 +12,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "REST_INFO")
+@Table(name = "rest_info")
 public class RestInfo implements Serializable {
 
 	private static final long serialVersionUID = 4246828716661182545L;
@@ -41,18 +41,6 @@ public class RestInfo implements Serializable {
 	@JoinColumn(name = "REST_ID", referencedColumnName = "REST_ID")
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
     private Restaurant restaurant;
-
-    public RestInfo() {
-    }
-
-    public RestInfo(Integer riId) {
-        this.riId = riId;
-    }
-
-    public RestInfo(Integer riId, String riData1) {
-        this.riId = riId;
-        this.riData1 = riData1;
-    }
 
     public Integer getRiId() {
         return riId;

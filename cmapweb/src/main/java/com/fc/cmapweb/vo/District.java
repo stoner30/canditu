@@ -10,11 +10,11 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "DISTRICT")
+@Table(name = "district")
 public class District implements Serializable {
-
-	private static final long serialVersionUID = 7700305131177837022L;
 	
+	private static final long serialVersionUID = 216489240715914944L;
+
 	@Id
     @Column(name = "DIST_CODE")
     private String distCode;
@@ -23,55 +23,42 @@ public class District implements Serializable {
     private String distName;
     
     @Column(name = "ENABLED")
-    private Boolean enabled;
+    private boolean enabled;
     
     @JoinColumn(name = "P_DIST_CODE", referencedColumnName = "DIST_CODE")
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
     private District pDistrict;
 
-    public District() {
-    }
-
-    public District(String distCode) {
-        this.distCode = distCode;
-    }
-
-    public District(String distCode, String distName, boolean enabled) {
-        this.distCode = distCode;
-        this.distName = distName;
-        this.enabled = enabled;
-    }
-
 	public String getDistCode() {
-    	return distCode;
-    }
+		return distCode;
+	}
 
 	public void setDistCode(String distCode) {
-    	this.distCode = distCode;
-    }
+		this.distCode = distCode;
+	}
 
 	public String getDistName() {
-    	return distName;
-    }
+		return distName;
+	}
 
 	public void setDistName(String distName) {
-    	this.distName = distName;
-    }
+		this.distName = distName;
+	}
 
-	public Boolean getEnabled() {
-    	return enabled;
-    }
+	public boolean isEnabled() {
+		return enabled;
+	}
 
-	public void setEnabled(Boolean enabled) {
-    	this.enabled = enabled;
-    }
+	public void setEnabled(boolean enabled) {
+		this.enabled = enabled;
+	}
 
-	public District getPDistrict() {
-    	return pDistrict;
-    }
+	public District getpDistrict() {
+		return pDistrict;
+	}
 
-	public void setPDistrict(District pDistrict) {
-    	this.pDistrict = pDistrict;
-    }
-    
+	public void setpDistrict(District pDistrict) {
+		this.pDistrict = pDistrict;
+	}
+
 }

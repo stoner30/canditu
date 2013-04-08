@@ -19,18 +19,6 @@ public class StubDishRule implements Serializable {
     @Column(name = "DR_NAME")
     private String drName;
   
-    public StubDishRule() {
-    }
-
-    public StubDishRule(Integer drId) {
-        this.drId = drId;
-    }
-
-    public StubDishRule(Integer drId, String drName) {
-        this.drId = drId;
-        this.drName = drName;
-    }
-
 	public Integer getDrId() {
     	return drId;
     }

@@ -12,12 +12,12 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 @Entity
-@Table(name = "DLVY_TIME")
+@Table(name = "dlvy_time")
 public class DlvyTime implements Serializable {
 
-    private static final long serialVersionUID = 5716666259889200490L;
-	
-    @Id
+	private static final long serialVersionUID = 7947348012755944426L;
+
+	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "DT_ID")
     private Integer dtId;
@@ -29,19 +29,6 @@ public class DlvyTime implements Serializable {
     @Column(name = "END_TIME")
     @Temporal(TemporalType.TIME)
     private Date endTime;
-
-    public DlvyTime() {
-    }
-
-    public DlvyTime(Integer dtId) {
-        this.dtId = dtId;
-    }
-
-    public DlvyTime(Integer dtId, Date startTime, Date endTime) {
-        this.dtId = dtId;
-        this.startTime = startTime;
-        this.endTime = endTime;
-    }
 
     public Integer getDtId() {
         return dtId;

@@ -10,20 +10,19 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import com.fc.cmapweb.vo.RestTagType;
+import com.fc.cmapweb.vo.Restaurant;
 
 @Entity
-@Table(name = "REST_TAG")
+@Table(name = "rest_tag")
 public class RestTag implements Serializable {
-	
+
     private static final long serialVersionUID = 4875257356012031719L;
-	
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "RT_ID")
     private Integer rtId;
-    
-    @Column(name = "IS_ALL")
-    private Boolean isAll;
     
     @JoinColumn(name = "RTT_ID", referencedColumnName = "RTT_ID")
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
@@ -33,48 +32,28 @@ public class RestTag implements Serializable {
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
     private Restaurant restaurant;
 
-    public RestTag() {
-    }
+	public Integer getRtId() {
+		return rtId;
+	}
 
-    public RestTag(Integer rtId) {
-        this.rtId = rtId;
-    }
+	public void setRtId(Integer rtId) {
+		this.rtId = rtId;
+	}
 
-    public RestTag(Integer rtId, Boolean isAll) {
-        this.rtId = rtId;
-        this.isAll = isAll;
-    }
+	public RestTagType getRestTagType() {
+		return restTagType;
+	}
 
-    public Integer getRtId() {
-        return rtId;
-    }
+	public void setRestTagType(RestTagType restTagType) {
+		this.restTagType = restTagType;
+	}
 
-    public void setRtId(Integer rtId) {
-        this.rtId = rtId;
-    }
+	public Restaurant getRestaurant() {
+		return restaurant;
+	}
 
-    public boolean getIsAll() {
-        return isAll;
-    }
-
-    public void setIsAll(boolean isAll) {
-        this.isAll = isAll;
-    }
-
-    public RestTagType getRestTagType() {
-        return restTagType;
-    }
-
-    public void setRestTagType(RestTagType restTagType) {
-        this.restTagType = restTagType;
-    }
-
-    public Restaurant getRestaurant() {
-        return restaurant;
-    }
-
-    public void setRestaurant(Restaurant restaurant) {
-        this.restaurant = restaurant;
-    }
+	public void setRestaurant(Restaurant restaurant) {
+		this.restaurant = restaurant;
+	}
     
 }

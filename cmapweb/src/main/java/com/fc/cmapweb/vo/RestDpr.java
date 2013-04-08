@@ -12,46 +12,46 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "rest_cat")
-public class RestCat implements Serializable {
-
-	private static final long serialVersionUID = 6009710575122618202L;
+@Table(name = "rest_dpr")
+public class RestDpr implements Serializable {
+	
+	private static final long serialVersionUID = -3349562398981065440L;
 	
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "RC_ID")
-    private Integer rcId;
+    @Column(name = "RD_ID")
+    private Integer rdId;
 	
-    @JoinColumn(name = "RCT_ID", referencedColumnName = "RCT_ID")
+    @JoinColumn(name = "DPR_ID", referencedColumnName = "DPR_ID")
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
-    private RestCatType restCatType;
+    private StubDlvyPrRge stubDlvyPrRge;
     
     @JoinColumn(name = "REST_ID", referencedColumnName = "REST_ID")
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
     private Restaurant restaurant;
 
-	public Integer getRcId() {
-    	return rcId;
-    }
+	public Integer getRdId() {
+		return rdId;
+	}
 
-	public void setRcId(Integer rcId) {
-    	this.rcId = rcId;
-    }
+	public void setRdId(Integer rdId) {
+		this.rdId = rdId;
+	}
 
-	public RestCatType getRestCatType() {
-    	return restCatType;
-    }
+	public StubDlvyPrRge getStubDlvyPrRge() {
+		return stubDlvyPrRge;
+	}
 
-	public void setRestCatType(RestCatType restCatType) {
-    	this.restCatType = restCatType;
-    }
+	public void setStubDlvyPrRge(StubDlvyPrRge stubDlvyPrRge) {
+		this.stubDlvyPrRge = stubDlvyPrRge;
+	}
 
 	public Restaurant getRestaurant() {
-    	return restaurant;
-    }
+		return restaurant;
+	}
 
 	public void setRestaurant(Restaurant restaurant) {
-    	this.restaurant = restaurant;
-    }
-    
+		this.restaurant = restaurant;
+	}
+
 }

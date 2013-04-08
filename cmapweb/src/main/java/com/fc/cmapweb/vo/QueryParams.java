@@ -12,7 +12,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "QUERY_PARAMS")
+@Table(name = "query_params")
 public class QueryParams implements Serializable {
     
     private static final long serialVersionUID = -4727735450578662767L;
@@ -32,13 +32,6 @@ public class QueryParams implements Serializable {
     @JoinColumn(name = "MODULE_ID", referencedColumnName = "MODULE_ID")
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
     private StubModule stubModule;
-
-    public QueryParams() {
-    }
-
-    public QueryParams(Integer qpId) {
-        this.qpId = qpId;
-    }
 
     public Integer getQpId() {
         return qpId;
