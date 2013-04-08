@@ -9,7 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "REST_CAT_TYPE")
+@Table(name = "rest_cat_type")
 public class RestCatType implements Serializable {
 
 	private static final long serialVersionUID = -189821190607860925L;
@@ -24,19 +24,6 @@ public class RestCatType implements Serializable {
     
     @Column(name = "RCT_ORDER")
     private Integer rctOrder;
-
-    public RestCatType() {
-    }
-
-    public RestCatType(Integer rctId) {
-        this.rctId = rctId;
-    }
-
-    public RestCatType(Integer rctId, String rctName, Integer rctOrder) {
-        this.rctId = rctId;
-        this.rctName = rctName;
-        this.rctOrder = rctOrder;
-    }
 
 	public Integer getRctId() {
     	return rctId;

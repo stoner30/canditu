@@ -43,86 +43,70 @@ public class Usr implements Serializable {
     private Integer badPwdCount;
 
     @Column(name = "ENABLED")
-    private Boolean enabled;
-
-    public Usr() {
-    }
-
-    public Usr(Integer usrId) {
-        this.usrId = usrId;
-    }
-
-    public Usr(Integer usrId, String usrname, String passwd, Date regTime, Integer badPwdCount, Boolean enabled) {
-        this.usrId = usrId;
-        this.usrname = usrname;
-        this.passwd = passwd;
-        this.regTime = regTime;
-        this.badPwdCount = badPwdCount;
-        this.enabled = enabled;
-    }
+    private boolean enabled;
 
 	public Integer getUsrId() {
-    	return usrId;
-    }
+		return usrId;
+	}
 
 	public void setUsrId(Integer usrId) {
-    	this.usrId = usrId;
-    }
+		this.usrId = usrId;
+	}
 
 	public String getUsrname() {
-    	return usrname;
-    }
+		return usrname;
+	}
 
 	public void setUsrname(String usrname) {
-    	this.usrname = usrname;
-    }
+		this.usrname = usrname;
+	}
 
 	public String getPasswd() {
-    	return passwd;
-    }
+		return passwd;
+	}
 
 	public void setPasswd(String passwd) {
-    	this.passwd = passwd;
-    }
+		this.passwd = passwd;
+	}
 
 	public Date getRegTime() {
-    	return regTime;
-    }
+		return regTime;
+	}
 
 	public void setRegTime(Date regTime) {
-    	this.regTime = regTime;
-    }
+		this.regTime = regTime;
+	}
 
 	public Date getLastLoginTime() {
-    	return lastLoginTime;
-    }
+		return lastLoginTime;
+	}
 
 	public void setLastLoginTime(Date lastLoginTime) {
-    	this.lastLoginTime = lastLoginTime;
-    }
+		this.lastLoginTime = lastLoginTime;
+	}
 
 	public String getLastLoginIp() {
-    	return lastLoginIp;
-    }
+		return lastLoginIp;
+	}
 
 	public void setLastLoginIp(String lastLoginIp) {
-    	this.lastLoginIp = lastLoginIp;
-    }
+		this.lastLoginIp = lastLoginIp;
+	}
 
 	public Integer getBadPwdCount() {
-    	return badPwdCount;
-    }
+		return badPwdCount;
+	}
 
 	public void setBadPwdCount(Integer badPwdCount) {
-    	this.badPwdCount = badPwdCount;
-    }
+		this.badPwdCount = badPwdCount;
+	}
 
-	public Boolean getEnabled() {
-    	return enabled;
-    }
+	public boolean isEnabled() {
+		return enabled;
+	}
 
-	public void setEnabled(Boolean enabled) {
-    	this.enabled = enabled;
-    }
-    
+	public void setEnabled(boolean enabled) {
+		this.enabled = enabled;
+	}
+
 }

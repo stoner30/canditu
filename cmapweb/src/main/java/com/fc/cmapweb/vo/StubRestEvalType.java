@@ -19,18 +19,6 @@ public class StubRestEvalType implements Serializable {
     @Column(name = "RET_NAME")
     private String retName;
  
-    public StubRestEvalType() {
-    }
-
-    public StubRestEvalType(Short retId) {
-        this.retId = retId;
-    }
-
-    public StubRestEvalType(Short retId, String retName) {
-        this.retId = retId;
-        this.retName = retName;
-    }
-
 	public Short getRetId() {
     	return retId;
     }

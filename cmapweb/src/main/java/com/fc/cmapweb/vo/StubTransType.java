@@ -19,18 +19,6 @@ public class StubTransType implements Serializable {
     @Column(name = "TRANS_TYPE_NAME")
     private String transTypeName;
 
-    public StubTransType() {
-    }
-
-    public StubTransType(Integer transTypeId) {
-        this.transTypeId = transTypeId;
-    }
-
-    public StubTransType(Integer transTypeId, String transTypeName) {
-        this.transTypeId = transTypeId;
-        this.transTypeName = transTypeName;
-    }
-
 	public Integer getTransTypeId() {
     	return transTypeId;
     }

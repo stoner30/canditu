@@ -9,31 +9,19 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "AD")
+@Table(name = "ad")
 public class AD implements Serializable {
-    
-    private static final long serialVersionUID = -3755711441550361533L;
-	
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+
+	private static final long serialVersionUID = -115156844860434989L;
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "AD_ID")
     private Integer adId;
-    
+
     @Column(name = "AD_DESC")
     private String adDesc;
-
-    public AD() {
-    }
-
-    public AD(Integer adId) {
-        this.adId = adId;
-    }
-
-    public AD(Integer adId, String adDesc) {
-        this.adId = adId;
-        this.adDesc = adDesc;
-    }
-
+    
     public Integer getAdId() {
         return adId;
     }
@@ -49,5 +37,5 @@ public class AD implements Serializable {
     public void setAdDesc(String adDesc) {
         this.adDesc = adDesc;
     }
-    
+
 }

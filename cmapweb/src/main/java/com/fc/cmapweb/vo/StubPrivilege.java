@@ -27,13 +27,6 @@ public class StubPrivilege implements Serializable {
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
     private StubModule stubModule;
     
-    public StubPrivilege() {
-    }
-
-    public StubPrivilege(Integer privId) {
-        this.privId = privId;
-    }
-
 	public Integer getPrivId() {
     	return privId;
     }

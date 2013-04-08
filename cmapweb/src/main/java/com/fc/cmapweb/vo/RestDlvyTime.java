@@ -30,13 +30,6 @@ public class RestDlvyTime implements Serializable {
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
     private DlvyTime dlvyTime;
 
-    public RestDlvyTime() {
-    }
-
-    public RestDlvyTime(Integer rdtId) {
-        this.rdtId = rdtId;
-    }
-
     public Integer getRdtId() {
         return rdtId;
     }
@@ -60,5 +53,5 @@ public class RestDlvyTime implements Serializable {
     public void setDlvyTime(DlvyTime dlvyTime) {
         this.dlvyTime = dlvyTime;
     }
-    
+
 }

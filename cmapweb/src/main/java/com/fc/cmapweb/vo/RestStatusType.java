@@ -9,7 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "REST_STATUS_TYPE")
+@Table(name = "rest_status_type")
 public class RestStatusType implements Serializable {
     
     private static final long serialVersionUID = 7819021177717355765L;
@@ -24,19 +24,6 @@ public class RestStatusType implements Serializable {
 
     @Column(name = "STATUS_CODE")
     private String statusCode;
-
-    public RestStatusType() {
-    }
-
-    public RestStatusType(Integer statusId) {
-        this.statusId = statusId;
-    }
-
-    public RestStatusType(Integer statusId, String statusName, String statusCode) {
-        this.statusId = statusId;
-        this.statusName = statusName;
-        this.statusCode = statusCode;
-    }
 
 	public Integer getStatusId() {
     	return statusId;

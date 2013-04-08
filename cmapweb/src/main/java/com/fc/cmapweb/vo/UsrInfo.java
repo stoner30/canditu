@@ -33,18 +33,6 @@ public class UsrInfo implements Serializable {
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
     private StubUsrInfoType stubUsrInfoType;
 
-    public UsrInfo() {
-    }
-
-    public UsrInfo(Integer uiId) {
-        this.uiId = uiId;
-    }
-
-    public UsrInfo(Integer uiId, String uiData) {
-        this.uiId = uiId;
-        this.uiData = uiData;
-    }
-
 	public Integer getUiId() {
     	return uiId;
     }

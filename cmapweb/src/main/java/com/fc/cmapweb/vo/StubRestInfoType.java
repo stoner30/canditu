@@ -19,18 +19,6 @@ public class StubRestInfoType implements Serializable {
     @Column(name = "RIT_NAME")
     private String ritName;
 
-    public StubRestInfoType() {
-    }
-
-    public StubRestInfoType(Integer ritId) {
-        this.ritId = ritId;
-    }
-
-    public StubRestInfoType(Integer ritId, String ritName) {
-        this.ritId = ritId;
-        this.ritName = ritName;
-    }
-
 	public Integer getRitId() {
     	return ritId;
     }

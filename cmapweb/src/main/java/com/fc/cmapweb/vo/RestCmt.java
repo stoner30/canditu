@@ -15,7 +15,7 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 @Entity
-@Table(name = "REST_CMT")
+@Table(name = "rest_cmt")
 public class RestCmt implements Serializable {
 
 	private static final long serialVersionUID = -7039604173086200327L;
@@ -29,24 +29,12 @@ public class RestCmt implements Serializable {
     private String cmtCnt;
     
     @Column(name = "EVAL_TIME")
-    @Temporal(TemporalType.TIMESTAMP)
+    @Temporal(TemporalType.DATE)
     private Date evalTime;
     
     @JoinColumn(name = "REST_ID", referencedColumnName = "REST_ID")
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
     private Restaurant restaurant;
-
-    public RestCmt() {
-    }
-
-    public RestCmt(Integer rcId) {
-        this.rcId = rcId;
-    }
-
-    public RestCmt(Integer rcId, Date evalTime) {
-        this.rcId = rcId;
-        this.evalTime = evalTime;
-    }
 
 	public Integer getRcId() {
     	return rcId;

@@ -30,13 +30,6 @@ public class RolePrivilege implements Serializable {
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
     private Role role;
 
-    public RolePrivilege() {
-    }
-
-    public RolePrivilege(Integer rpId) {
-        this.rpId = rpId;
-    }
-
     public Integer getRpId() {
         return rpId;
     }

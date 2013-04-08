@@ -19,18 +19,6 @@ public class StubModule implements Serializable {
     @Column(name = "MODULE_NAME")
     private String moduleName;
 
-    public StubModule() {
-    }
-
-    public StubModule(Integer moduleId) {
-        this.moduleId = moduleId;
-    }
-
-    public StubModule(Integer moduleId, String moduleName) {
-        this.moduleId = moduleId;
-        this.moduleName = moduleName;
-    }
-
 	public Integer getModuleId() {
     	return moduleId;
     }

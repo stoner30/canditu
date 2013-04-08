@@ -1,6 +1,7 @@
 package com.fc.cmapweb.vo;
 
 import java.io.Serializable;
+import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -12,69 +13,82 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "DISH_CAT_TYPE")
+@Table(name = "dish_cat_type")
 public class DishCatType implements Serializable {
 
-    private static final long serialVersionUID = 3463693998670622267L;
-	
-    @Id
+	private static final long serialVersionUID = -6205645444777297193L;
+
+	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "DCT_ID")
+    @Column(name = "dct_id")
     private Integer dctId;
-
-    @Column(name = "DC_NAME")
+	
+    @Basic(optional = false)
+    @Column(name = "dc_name")
     private String dcName;
-
-    @Column(name = "DC_ORDER")
+    
+    @Basic(optional = false)
+    @Column(name = "is_shown")
+    private boolean isShown;
+    
+    @Basic(optional = false)
+    @Column(name = "dc_order")
     private Integer dcOrder;
     
-    @JoinColumn(name = "REST_ID", referencedColumnName = "REST_ID")
+    @Basic(optional = false)
+    @Column(name = "enabled")
+    private boolean enabled;
+    
+    @JoinColumn(name = "rest_id", referencedColumnName = "REST_ID")
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
     private Restaurant restaurant;
 
-    public DishCatType() {
-    }
-
-    public DishCatType(Integer dctId) {
-        this.dctId = dctId;
-    }
-
-    public DishCatType(Integer dctId, String dcName, Integer dcOrder) {
-        this.dctId = dctId;
-        this.dcName = dcName;
-        this.dcOrder = dcOrder;
-    }
-
 	public Integer getDctId() {
-    	return dctId;
-    }
+		return dctId;
+	}
 
 	public void setDctId(Integer dctId) {
-    	this.dctId = dctId;
-    }
+		this.dctId = dctId;
+	}
 
 	public String getDcName() {
-    	return dcName;
-    }
+		return dcName;
+	}
 
 	public void setDcName(String dcName) {
-    	this.dcName = dcName;
-    }
+		this.dcName = dcName;
+	}
+
+	public boolean isShown() {
+		return isShown;
+	}
+
+	public void setShown(boolean isShown) {
+		this.isShown = isShown;
+	}
 
 	public Integer getDcOrder() {
-    	return dcOrder;
-    }
+		return dcOrder;
+	}
 
 	public void setDcOrder(Integer dcOrder) {
-    	this.dcOrder = dcOrder;
-    }
+		this.dcOrder = dcOrder;
+	}
+
+	public boolean isEnabled() {
+		return enabled;
+	}
+
+	public void setEnabled(boolean enabled) {
+		this.enabled = enabled;
+	}
 
 	public Restaurant getRestaurant() {
-    	return restaurant;
-    }
+		return restaurant;
+	}
 
 	public void setRestaurant(Restaurant restaurant) {
-    	this.restaurant = restaurant;
-    }
-	
+		this.restaurant = restaurant;
+	}
+    
 }

@@ -19,18 +19,6 @@ public class StubOrderStatus implements Serializable {
     @Column(name = "OS_NAME")
     private String osName;
     
-    public StubOrderStatus() {
-    }
-
-    public StubOrderStatus(Integer osId) {
-        this.osId = osId;
-    }
-
-    public StubOrderStatus(Integer osId, String osName) {
-        this.osId = osId;
-        this.osName = osName;
-    }
-
 	public Integer getOsId() {
     	return osId;
     }

@@ -36,19 +36,6 @@ public class UsrPasswdHist implements Serializable {
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
     private Usr usr;
 
-    public UsrPasswdHist() {
-    }
-
-    public UsrPasswdHist(Integer histId) {
-        this.histId = histId;
-    }
-
-    public UsrPasswdHist(Integer histId, String oldPasswd, Date updateTime) {
-        this.histId = histId;
-        this.oldPasswd = oldPasswd;
-        this.updateTime = updateTime;
-    }
-
 	public Integer getHistId() {
     	return histId;
     }

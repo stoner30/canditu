@@ -11,14 +11,15 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import com.fc.cmapweb.vo.PrinterInfo;
 
 @Entity
-@Table(name = "PRINT_DATA")
+@Table(name = "print_data")
 public class PrintData implements Serializable {
 
-    private static final long serialVersionUID = -4921853003523253350L;
-	
-    @Id
+	private static final long serialVersionUID = 268777792476720370L;
+    
+	@Id
     @Column(name = "data_id")
     private String dataId;
    
@@ -38,21 +39,6 @@ public class PrintData implements Serializable {
     @JoinColumn(name = "printer_id", referencedColumnName = "printer_id")
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
     private PrinterInfo printerInfo;
-
-    public PrintData() {
-    }
-
-    public PrintData(String dataId) {
-        this.dataId = dataId;
-    }
-
-    public PrintData(String dataId, String orderNbr, Date orderTime, Integer pageNbr, Integer pkgNbr) {
-        this.dataId = dataId;
-        this.orderNbr = orderNbr;
-        this.orderTime = orderTime;
-        this.pageNbr = pageNbr;
-        this.pkgNbr = pkgNbr;
-    }
 
 	public String getDataId() {
     	return dataId;
@@ -101,5 +87,5 @@ public class PrintData implements Serializable {
 	public void setPrinterInfo(PrinterInfo printerInfo) {
     	this.printerInfo = printerInfo;
     }
-    
+
 }

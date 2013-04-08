@@ -19,18 +19,6 @@ public class StubOperation implements Serializable {
     @Column(name = "OPERATION_NAME")
     private String operationName;
 
-    public StubOperation() {
-    }
-
-    public StubOperation(Integer operationId) {
-        this.operationId = operationId;
-    }
-
-    public StubOperation(Integer operationId, String operationName) {
-        this.operationId = operationId;
-        this.operationName = operationName;
-    }
-
 	public Integer getOperationId() {
     	return operationId;
     }
