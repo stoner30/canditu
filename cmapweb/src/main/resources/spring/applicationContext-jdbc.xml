@@ -13,7 +13,6 @@
 						   http://www.springframework.org/schema/aop 
 						   http://www.springframework.org/schema/aop/spring-aop-3.1.xsd">
 	
-	<!-- begin 数据源 -->
 	<bean id="dataSource" class="com.jolbox.bonecp.BoneCPDataSource" destroy-method="close">
 		<property name="driverClass" value="${jdbc.driverClass}" />
 		<property name="jdbcUrl" value="${jdbc.url}" />
@@ -28,7 +27,6 @@
 		<property name="statementsCacheSize" value="${bonecp.statementsCacheSize}" />
 		<property name="releaseHelperThreads" value="${bonecp.releaseHelperThreads}" />
 	</bean>
-	<!-- end 数据源 -->
 	
 	<bean id="lazyDataSource" class="org.springframework.jdbc.datasource.LazyConnectionDataSourceProxy">
 		<property name="targetDataSource" ref="dataSource" />
