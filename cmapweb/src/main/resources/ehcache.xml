@@ -13,10 +13,5 @@
 		   eternal="true" 
 		   maxElementsInMemory="1000" 
 		   overflowToDisk="true" />
-		   
-	<cache name="oosCache" 
-		   eternal="true" 
-		   maxElementsInMemory="1000"
-		   overflowToDisk="true"/>
 
 </ehcache>
