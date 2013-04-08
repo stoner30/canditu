@@ -28,6 +28,7 @@
 		<javax.servlet.jsp.version>2.1</javax.servlet.jsp.version>
 		<kaptcha.version>2.3.2</kaptcha.version>
 		<org.mortbay.jetty.version>8.1.10.v20130312</org.mortbay.jetty.version>
+		<org.codehaus.janino.version>2.5.16</org.codehaus.janino.version>
 	</properties>
 	
 	<build>
@@ -51,7 +52,7 @@
 					<scanIntervalSeconds>0</scanIntervalSeconds>
 					<webAppConfig>
 						<contextPath>/cmapweb</contextPath>
-						<defaultsDescriptor>src/test/resources/webdefault.xml</defaultsDescriptor>
+						<defaultsDescriptor>src/test/java/webdefault.xml</defaultsDescriptor>
 					</webAppConfig>
 					<stopKey>stop-jetty</stopKey>
 					<stopPort>9999</stopPort>
@@ -180,10 +181,6 @@
 					<artifactId>spring-tx</artifactId>
 					<groupId>org.springframework</groupId>
 				</exclusion>
-				<exclusion>
-					<artifactId>spring-jdbc</artifactId>
-					<groupId>org.springframework</groupId>
-				</exclusion>
 			</exclusions>
 		</dependency>
 		
@@ -303,6 +300,12 @@
 			<version>${kaptcha.version}</version>
 		</dependency>
 
+		<dependency>
+			<groupId>org.codehaus.janino</groupId>
+			<artifactId>janino</artifactId>
+			<version>${org.codehaus.janino.version}</version>
+		</dependency>
+		
 	</dependencies>
 	
 	<dependencyManagement>

@@ -1,0 +1,35 @@
+/*dialog - user account part - modify*/
+#nickname-modal-content {display:none;}
+/* Overlay */
+#simplemodal-overlay {background-color:#000;}
+/* Container */
+#simplemodal-container {width:474px;padding-left:6px;padding-right:0;background:white;color:#2E2E2E;height:380px;} 
+#simplemodal-container .simplemodal-data {padding:0px;}
+#simplemodal-container .dialog-cancel {display:inline;float:right;background:#FFEA78;margin:6px 6px 0 0;font-size:30px;width:32px;height:32px;text-align:center;line-height:110%;cursor:pointer;}
+#simplemodal-container .dialog-cancel:hover {cursor:pointer;background:#2E2E2E;color:white;}
+#simplemodal-container .dialog-head {font-family:"微软雅黑";font-size:30px;color:#2E2E2E;border-bottom:1px solid;text-align:center;width:468px;margin:0;padding:7px 0; }
+
+#simplemodal-container .dialog-oldName {font-family:"微软雅黑";font-size:20px;color:#2E2E2E;margin:22px 0 0 74px;}
+#simplemodal-container .dialog-oldName span {margin-left:15px;}
+#simplemodal-container #accountForm div {margin-top: 15px;}
+#simplemodal-container #dialog-newName {font-family:"微软雅黑";font-size:20px;color:#2E2E2E;margin:30px 0 0 94px;}
+#simplemodal-container #newName {margin-left:8px;border:1px solid #2E2E2E;width:220px;height:25px;font-family:"宋体";font-size:18px;padding-left:8px;}
+#simplemodal-container .newName-hint {float:left;margin:7px 0 0 170px;font-family:"宋体";font-size:12px;color:#747474;}
+#simplemodal-container .submit {float:left;width:148px;height:39px;font-family:"微软雅黑";font-size:24px;background:#FFEA78;color:#2E2E2E;text-align:center;margin:52px 0 15px 155px;}
+#simplemodal-container .submit:hover {cursor:pointer;background:#2E2E2E;color:white;padding-bottom:4px;} 
+/*dialog - menu*/
+#password-modal-content {display:none;}
+#simplemodal-container #dialog-oldPassword-label,
+#simplemodal-container #newPassword,
+#simplemodal-container #confirmPass {margin-left:11px; border:1px solid #2E2E2E;width:220px;height:26px;font-family:"宋体";font-size:18px;padding-left:8px;}
+
+#simplemodal-container .dialog-oldPassword {font-family:"微软雅黑";font-size:20px;color:#2E2E2E;margin:22px 0 26px 74px;}
+#simplemodal-container #dialog-newPassword {font-family:"微软雅黑";font-size:20px;color:#2E2E2E;margin:22px 0 0 92px;}
+#simplemodal-container #dialog-confirmPass {font-family:"微软雅黑";font-size:20px;color:#2E2E2E;margin:22px 0 0 72px;}
+#simplemodal-container .newPassword-hint {float:left;width:260px;margin:3px 0 10px 170px;font-family:"宋体";font-size:12px;color:#747474;}
+
+#simplemodal-container #dialog-newPassword-correct {width:160px;}
+#simplemodal-container #dialog-newPassword-correct label {width:60px;height:24px;text-align:center;background:#7fbd66;color:white;font-size:14px;padding:3px 7px 4px 7px;margin:2px 0 10px 97px;}
+#simplemodal-container #pass-submit {float:left;width:148px;height:39px;font-family:"微软雅黑";font-size:24px;background:#FFEA78;color:#2E2E2E;
+text-align:center;margin:0;border:0;margin:30px 0 0 160px;padding-bottom:4px;}
+#simplemodal-container #pass-submit:hover {cursor:pointer;background:#2E2E2E;color:white;}

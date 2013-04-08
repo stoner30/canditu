@@ -1,0 +1,93 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="utf-8"/>
+	<title>餐地图！叫外卖，就上餐地图</title> 
+	
+	<!-- stylesheets -->  
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/css/base.css" type="text/css"/>
+	<link rel="stylesheet" href="css/jquery.qtip.min.css" type="text/css"/>
+	<link rel="stylesheet" href="css/place.css" type="text/css"/>
+</head>
+
+<body>
+	<!--[if lt IE 9]><script src="js/ie9.js"></script><![endif]-->
+	<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="js/jquery-migrate-1.1.1.min.js"></script>
+	<script type="text/javascript" src="js/jquery.qtip.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+
+	<div class="main-container">
+		<!--Nav-head-->
+		<div class="ym-hlist">
+		  	<div class="ym-navleft">
+		  		<ul>
+					<li><a class="active" href="#">订外卖</a></li>
+					<li class="cake-tip"><a href="#">订蛋糕</a></li>
+		 		</ul>	
+		  	</div>
+
+			<div class="ym-navcenter">
+				<a href="index.html"><img src="images/canditu_logo.jpg"></a>
+			</div>
+
+			<div class="ym-navright">
+				<ul>
+					<li><a href="login.html">登录</a></li>
+					<li><a href="register.html">注册</a></li>
+			 	</ul>
+		 	</div>	
+		</div> 
+		<!--Nav-head-->
+
+		<!--Main-->
+		<div class="ym-container">
+			<!--location and customer service bar-->
+			<div class="ym-location-cs">
+				<div class="ym-location">
+				</div>
+
+				<div class="ym-cs">
+					<div><p>在线客服</p></div>
+				</div>
+			</div>
+			<!--location and customer service bar-->
+
+			<!--Left-->
+			<div class="ym-left-city">
+				<img src="images/tianjin.png">  
+			</div>
+			<!--Left-->
+
+			<!--Right-->
+			<div class="ym-right-district">
+				<ul id="index-district">
+				    <li id="last"><a href="building.html"><span id="last-text1">上次选择</span><span id="last-text2">新天地大厦</span></a></li>
+				    <li><a href="building.html">南开区</a></li>
+				    <li><a href="#">和平区</a></li>
+				    <li><a href="#">河西区</a></li>
+				    <li><a href="#">河东区</a></li>
+				    <li><a href="#">河北区</a></li>
+				    <li><a href="#">红桥区</a></li>
+				</ul>
+			</div>
+			<!--Right-->
+		</div>
+		<!--Main-->
+
+		<div class="push"><!-- not put anything here --></div>
+	
+	</div>
+
+	<!--Nav-bottom-->
+	<div class="ym-blist">
+	  	<p id="p1">2011 - 2013 canditu.com, all rights reserved &nbsp;&nbsp; 津ICP备12002441号-1</p>
+	  	<p id="p2">
+	  		<a href="#" id="contact-us">联系我们</a><span>&nbsp;-</span>
+	  		<a href="#">微博</a>
+	  	</p>
+	</div> 
+	<!--Nav-bottom-->
+</body>
+</html> 

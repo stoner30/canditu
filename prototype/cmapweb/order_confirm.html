@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="utf-8"/>
+	<title>餐地图！叫外卖，就上餐地图</title> 
+	
+	<!-- stylesheets -->  
+	<link rel="stylesheet" href="css/base.css" type="text/css"/>
+	<link rel="stylesheet" href="css/jquery.qtip.min.css"  type="text/css"/>
+	<link rel="stylesheet" href="css/food.css" type="text/css"/>
+	<!--[if lt IE 9]><style>.time-comments-time {margin-top:-5px;_margin-top:-5px;}</style><![endif]-->
+
+</head>
+	
+<body>
+	<!--[if lt IE 9]><script src="js/ie9.js"></script><![endif]-->
+	<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="js/jquery-migrate-1.1.1.min.js"></script>
+	<script type="text/javascript" src="js/jquery.qtip.min.js"></script>
+	<script type="text/javascript" src="js/jquery-dropdown.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+	
+	<div class="main-container">
+		<!--Nav-head-->
+		<div class="ym-hlist">
+		  	<div class="ym-navleft">
+		  		<ul>
+					<li><a class="active" href="#">订外卖</a></li>
+					<li class="cake-tip"><a href="#">订蛋糕</a></li>
+		 		</ul>	
+		  	</div>
+		  	
+			<div class="ym-navcenter">
+				<a href="index.html"><img src="images/canditu_logo.jpg"></a>
+			</div>
+
+			<div class="ym-navright">
+				<ul>
+					<li><a href="login.html">登录</a></li>
+					<li><a href="register.html">注册</a></li>
+			 	</ul>
+		 	</div>	
+		</div> 
+		<!--Nav-head-->
+
+		<!--Main-->
+		<div class="ym-container">
+			<!--location and customer service bar-->
+			<div class="ym-location-cs">
+				<div class="ym-location">
+				</div>
+
+				<div class="ym-cs">
+					<div><p>在线客服</p></div>
+				</div>
+			</div>
+			<!--location and customer service bar-->
+			<form class="order-details-part" action="">
+				<div class="order-details-title"><span id="order-details-text">订单详情</span><span id="order-details-rest">赛百味(环球置地广场店)</span></div>
+				<div class="order-details">
+					<ul>
+						<li>
+							<span class="order-details-sub1">火鸡三明治</span><span class="order-details-sub1">&nbsp;1份&nbsp;&times;&nbsp;15元&nbsp;/&nbsp;份<span><span class="order-details-subprice">15元</span>
+							<p><span class="order-details-sub2">12寸，面包（香奶酪），蔬菜（黄瓜，黑橄榄，辣椒），酱料（香辣酱，番茄酱，胡椒粉），额外添加（芝士×2片），不要辣，绝不要放洋葱，放了不给钱</span></p>
+						</li>
+						<li>
+							<span class="order-details-sub1">火鸡三明治</span><span class="order-details-sub1">&nbsp;1份&nbsp;&times;&nbsp;15元&nbsp;/&nbsp;份<span><span class="order-details-subprice">15元</span>
+							<p><span class="order-details-sub2">12寸，面包（香奶酪），蔬菜（黄瓜，黑橄榄，辣椒），酱料（香辣酱，番茄酱，胡椒粉），额外添加（芝士×2片），不要辣，绝不要放洋葱，放了不给钱</span></p>
+						</li>
+
+					</ul>
+
+					<div class="order-details-coupon-value"><span>-5元</span></div>
+				
+					<div id="order-details-coupon-wrapper">
+						<div data-role="dropdown" id="order-details-coupon">
+			                <div id="order-details-coupon-title">使用我的优惠券</div>
+			                <ul class="dropdown-menu">
+			                    <li>使用减5元优惠券</li>
+			                    <li>使用减10元优惠券</li>               
+			                </ul>
+	            		</div>
+	            	</div>
+				</div>
+
+				<div class="order-details-total"><span>合计&nbsp;:&nbsp;25元</span></div>
+
+				<!--time & comments-->
+				<div class="time-comments-title"><span id="time-comments-text">时间/备注</span></div>
+				<div class="time-comments-left">
+					<!---->
+					<div class="time-comments-left-inner">	
+						<span class="time-comments-left-text">我希望在</span>
+						
+
+						<div data-role="dropdown" class="time-comments-time">			                
+			                <div id="time-comments-time-hour">11</div>
+			                <ul class="dropdown-menu-hour">
+			                    <li>10</li>
+			                    <li>11</li>		
+			                    <li>12</li>
+			                    <li>13</li>	
+			                    <li>17</li>
+			                    <li>18</li>	
+			                    <li>19</li>
+			                    <li>20</li>	    
+			                </ul>
+            			</div>
+			
+						<div data-role="dropdown" class="time-comments-time">
+							<div id="time-comments-time-minute">00</div>		                
+			                <ul class="dropdown-menu-minute">
+			                    <li>00</li>
+			                    <li>15</li>		                    
+			                </ul>
+            			</div>	
+
+						<span class="time-comments-left-text">左右收到</span>
+					</div>
+					<!---->
+
+					<div id="time-comments-hints">小提示</div>
+					
+					<ul id="time-comments-hints-li">
+						<li>1.您已加入午餐快线，午餐大约在12：00送达</li>
+						<li>2.该时刻的午餐快线只能到达该写字楼</li>
+					</ul>
+					<textarea id="time-comments-comments" onfocus="if(value=='给餐馆的备注写在这'){value=''}" onblur="if (value ==''){value='给餐馆的备注写在这'}">给餐馆的备注写在这</textarea>
+				</div>
+
+				<div id="time-comments-right-wraper">
+					<div class="time-comments-right">
+						<div id="time-comments-address1">
+							<span id="time-comments-address-text1">收餐地址</span>
+							<span id="user-address">MODO新天地大厦</span>
+							<input id="room-no" type="text" name="room-no" value="房间号" onfocus="this.value='';"/>
+						</div>
+
+						<div id="time-comments-address2">
+							<span id="time-comments-address-text2">收餐人</span>
+							<input id="time-comments-user-name" type="text" name="user-name" value="姓名" onfocus="this.value='';" />
+							<input id="time-comments-user-phone" type="text" name="user-phone" value="手机号" onfocus="this.value='';"/>
+						</div>
+					</div>
+
+					<div class="time-comments-submit">
+						<input type="submit" value="提交订单" />
+						<a href="menu.html">返回修改订单</a>
+					</div>
+				</div>
+			</form>
+		</div>
+		<!--Main-->
+
+		<div class="push"><!-- not put anything here --></div>
+	
+	</div>
+
+	<!--Nav-bottom-->
+	<div class="ym-blist">
+	  	<p id="p1">2011 - 2013 canditu.com, all rights reserved &nbsp;&nbsp; 津ICP备12002441号-1</p>
+	  	<p id="p2">
+	  		<a href="#" id="contact-us">联系我们</a><span>&nbsp;-</span>
+	  		<a href="#">微博</a>
+	  	</p>
+	</div> 
+	<!--Nav-bottom-->
+</body>
+</html> 

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="utf-8"/>
+	<title>餐地图！叫外卖，就上餐地图</title> 
+	
+	<!-- stylesheets -->  
+	<link rel="stylesheet" href="css/base.css" type="text/css"/>
+	<link rel="stylesheet" href="css/jquery.qtip.min.css" type="text/css"/>
+	<link rel="stylesheet" href="css/place.css" type="text/css"/>
+	<!--[if lt IE 9]><style>.building-return img {margin-top:6px;} </style><![endif]-->
+
+</head>
+	
+<body>
+	<!--[if IE 6]>
+ 	<script type="text/javascript" src="js/DD_belatedPNG_0.0.8a-min.js"></script>
+ 	<script type="text/javascript">DD_belatedPNG.fix('img');</script>
+ 	<![endif]-->
+
+	<!--[if lt IE 9]><script src="js/ie9.js"></script><![endif]-->
+	<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="js/jquery-migrate-1.1.1.min.js"></script>
+	<script type="text/javascript" src="js/jquery.qtip.min.js"></script>
+	<script type="text/javascript" src="js/jquery.listnav-2.1.ie6.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/building.js"></script>
+
+	<div class="main-container">
+		<!--Nav-head-->
+		<div class="ym-hlist">
+		  	<div class="ym-navleft">
+		  		<ul>
+					<li><a class="active" href="#">订外卖</a></li>
+					<li class="cake-tip"><a href="#">订蛋糕</a></li>
+		 		</ul>	
+		  	</div>
+		  	
+			<div class="ym-navcenter">
+				<a href="index.html"><img src="images/canditu_logo.jpg"></a>
+			</div>
+
+			<div class="ym-navright">
+				<ul>
+					<li><a href="login.html">登录</a></li>
+					<li><a href="register.html">注册</a></li>
+			 	</ul>
+		 	</div>	
+		</div> 
+		<!--Nav-head-->
+
+		<!--Main-->
+		<div class="ym-container">
+			<!--location and customer service bar-->
+			<div class="ym-location-cs">
+				<div class="ym-location">
+				</div>
+
+				<div class="ym-cs">
+					<div><p>在线客服</p></div>
+				</div>
+			</div>
+			<!--location and customer service bar-->
+
+			<!--Left-->
+			<div class="ym-left-city">
+				<img src="images/tianjin.png">  
+			</div>
+			<!--Left-->
+
+			<!--Right-->
+			<div class="ym-right-building">
+				
+				<!--按字母排序楼宇-->
+				<!--显示字母序的层。注：此层id必需是ul的id+"-nav"-->
+				<div class="building-return">
+				    <h3><a href="index.html"><img src="images/left_s.png"></a></h3>
+				    <h2>南开区</h2>
+				</div>
+
+				<div id="buildingList-nav">
+				</div>
+
+				<div class="building-col">
+					<!-- 兼容IE6 加clear:both;-->
+				    <ul id="buildingList" style="clear:both;">
+						<!--To IE 6, should input first letter manually;-->
+						<li><a href="restinfo.html" name="m">MODO新天地</a></li>
+				        <li><a href="restinfo.html" name="h">环球置地</a></li>
+				        <li><a href="restinfo.html" name="z">中凯国际</a> </li>
+				        <li><a href="restinfo.html" name="x">新都大厦</a></li>
+				        <li><a href="restinfo.html" name="h">华都大厦</a> </li>
+				        <li><a href="restinfo.html" name="j">今晚大厦</a> </li>
+				        <li><a href="restinfo.html" name="j">今晚传媒</a> </li>
+				        <li><a href="restinfo.html" name="s">书香园</a> </li>
+				        <li><a href="restinfo.html" name="w">万德花园</a></li>	          
+				    </ul>
+				</div>
+				<!--按字母排序楼宇-->
+
+			</div>
+			<!--Right-->
+		</div>
+		<!--Main-->
+
+		<div class="push"><!-- not put anything here --></div>	
+	</div>
+
+	<!--Nav-bottom-->
+	<div class="ym-blist">
+	  	<p id="p1">2011 - 2013 canditu.com, all rights reserved &nbsp;&nbsp; 津ICP备12002441号-1</p>
+	  	<p id="p2">
+	  		<a href="#" id="contact-us">联系我们</a><span>&nbsp;-</span>
+	  		<a href="#">微博</a>
+	  	</p>
+	</div> 
+	<!--Nav-bottom-->
+</body>
+</html> 

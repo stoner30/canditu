@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="utf-8"/>
+	<title>餐地图！叫外卖，就上餐地图</title> 
+	
+	<!-- stylesheets -->  
+	<link rel="stylesheet" href="css/base.css" type="text/css"/>
+	<link rel="stylesheet" href="css/jquery.qtip.min.css" type="text/css"/>
+	<link rel="stylesheet" href="css/food.css" type="text/css"/>
+</head>
+	
+<body>
+	<!--[if lt IE 9]><script src="js/ie9.js"></script><![endif]-->
+	<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="js/jquery-migrate-1.1.1.min.js"></script>
+	<script type="text/javascript" src="js/jquery.qtip.min.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+	<script type="text/javascript" src="js/restinfo.js"></script>
+
+	<div class="main-container">
+		<!--Nav-head-->
+		<div class="ym-hlist">
+		  	<div class="ym-navleft">
+		  		<ul>
+					<li><a class="active" href="#">订外卖</a></li>
+					<li class="cake-tip"><a href="#">订蛋糕</a></li>
+		 		</ul>	
+		  	</div>
+		  	
+			<div class="ym-navcenter">
+				<a href="index.html"><img src="images/canditu_logo.jpg"></a>
+			</div>
+
+			<div class="ym-navright">
+				<ul>
+					<li><a href="login.html">登录</a></li>
+					<li><a href="register.html">注册</a></li>
+			 	</ul>
+		 	</div>	
+		</div> 
+		<!--Nav-head-->
+
+		<!--Main-->
+		<div class="ym-container">
+			<!--location and customer service bar-->
+			<div class="ym-location-cs">
+				<div class="ym-location">
+					<p>MODO新天地</p>
+					<img id="ym-location-logo1" src="images/arrow_left.png">
+					<p id="ym-location-others">看看其他地点</p>
+					<img id="ym-location-logo2" src="images/arrow_right.png">
+				</div>
+
+				<div class="ym-cs">
+					<div><p>在线客服</p></div>
+				</div>
+			</div>
+			<!--location and customer service bar-->
+
+			<!--Left-->
+			<div class="ym-left-catalog">
+				<p class="catalog-title">分类</p>
+				<ul class="catalog">
+					<li><a href="restcatalog.html" id="catafirst">推荐-收藏-畅销-最新</a></li>
+					<li><a href="restcatalog.html">三明治-汉堡-Pizza</a></li>
+					<li><a href="#">面条-锅贴-饺子-包子</a></li>
+					<li><a href="#">麻辣烫-麻辣香锅-土豆粉</a></li>
+					<li><a href="#">盖饭-炒饭-炒面</a></li>
+					<li><a href="#">家常炒菜</a></li>
+					<li><a href="#">日式-韩式</a></li>
+					<li><a href="#">零食-饮料</a></li>
+					<li><a href="#">清真</a></li>
+					<li><a href="#">素食主义</a></li>
+					<li><a href="#">其他种类</a></li>
+				</ul>	
+			</div>
+			<!--Left-->
+
+			<!--Right-->
+			<div class="ym-right-restaurant">		
+				<!--delivery amount part-->		
+				<p class="catalog-title-right">面条-锅贴-饺子-包子</p>
+
+				<div class="delivery-special">
+					<ul>
+						<div id="special-first">特色</br>标签</div>					
+						<li><input id="" name="special" type="checkbox"/>一份起送</li>
+						<li><input id="" name="special" type="checkbox"/>环保餐盒</li>
+						<li><input id="" name="special" type="checkbox"/>优惠活动</li>
+						<li><input id="" name="special" type="checkbox"/>提供发票</li>
+					</ul>	
+				</div>
+
+				<div class="delivery-special">
+					<ul>
+						<div id="delivery-first">起送</br>金额</div>					
+						<li><input id="" name="delivery" type="radio"/>小于10元</li>
+						<li><input id="" name="delivery" type="radio"/>10 - 15元</li>
+						<li><input id="" name="delivery" type="radio"/>15 - 20元</li>
+						<li><input id="" name="delivery" type="radio"/>20元以上</li>
+						<li><input id="" name="delivery" type="radio"/>全部</li>
+					</ul>	
+				</div>
+				<!--delivery amount part-->	
+
+				<!--more restaurant catalog part-->
+				<div class="rest-cata">
+					<ul>
+						<!--有logo和picture的情况-->
+						<li class="haspic">
+							<a href="" class="fg"><img src="images/rest1.jpg"></a>
+							<a href="" class="bg"><img src="images/food1.png"></a>
+							<a href="menu.html" class="restaurant-sales"><span class="haspic-rest">徐师傅茄汁刀削面</span><span class="haspic-sales">月销&nbsp;&nbsp;80&nbsp;&nbsp;单</span></a>
+						</li>
+
+						<li class="haspic">
+							<a href="" class="fg"><img src="images/rest1.jpg"></a>
+							<a href="" class="bg"><img src="images/food1.png"></a>
+							<a href="" class="restaurant-sales"><span class="haspic-rest">永和大王</span><span class="haspic-sales">月销&nbsp;&nbsp;180&nbsp;&nbsp;单</span></a>
+						</li>
+
+						<li class="haspic">
+							<a href="" class="fg"><img src="images/rest1.jpg"></a>
+							<a href="" class="bg"><img src="images/food1.png"></a>
+							<a href="" class="restaurant-sales"><span class="haspic-rest">赛百味</span><span class="haspic-sales">月销&nbsp;&nbsp;80&nbsp;&nbsp;单</span></a>
+						</li>
+
+						<li class="haspic">
+							<a href="" class="fg"><img src="images/rest1.jpg"></a>
+							<a href="" class="bg"><img src="images/food1.png"></a>
+							<a href="" class="restaurant-sales"><span class="haspic-rest">徐师傅茄汁刀削面</span><span class="haspic-sales">月销&nbsp;&nbsp;80&nbsp;&nbsp;单</span></a>
+						</li>
+
+						<li class="haspic">
+							<a href="" class="fg"><img src="images/rest1.jpg"></a>
+							<a href="" class="bg"><img src="images/food1.png"></a>
+							<a href="" class="restaurant-sales"><span class="haspic-rest">徐师傅茄汁刀削面</span><span class="haspic-sales">月销&nbsp;&nbsp;80&nbsp;&nbsp;单</span></a>
+						</li>
+											
+					</ul>
+				</div>
+				<!--more restaurant catalog part-->				
+			</div>
+			<!--Right-->
+
+		</div>
+		<!--Main-->
+		<div class="push"><!-- not put anything here --></div>	
+	</div>
+
+	<!--Nav-bottom-->
+	<div class="ym-blist">
+	  	<p id="p1">2011 - 2013 canditu.com, all rights reserved &nbsp;&nbsp; 津ICP备12002441号-1</p>
+	  	<p id="p2">
+	  		<a href="#" id="contact-us">联系我们</a><span>&nbsp;-</span>
+	  		<a href="#">微博</a>
+	  	</p>
+	</div> 
+	<!--Nav-bottom-->
+</body>
+</html> 

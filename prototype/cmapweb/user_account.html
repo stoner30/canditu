@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="utf-8"/>
+	<title>餐地图！叫外卖，就上餐地图</title> 
+	
+	<!-- stylesheets -->  
+	<link rel="stylesheet" href="css/base.css" type="text/css"/>
+	<link rel="stylesheet" href="css/jquery.qtip.min.css" type="text/css"/>
+	<link rel="stylesheet" href="css/user.css" type="text/css"/>
+	<link rel="stylesheet" href="css/account-modal.css" type="text/css"/>
+</head>
+	
+<body>
+	<!--[if lt IE 9]><script src="js/ie9.js"></script><![endif]-->
+	<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="js/jquery-migrate-1.1.1.min.js"></script>
+	<script type="text/javascript" src="js/jquery.qtip.min.js"></script>
+	<script type='text/javascript' src='js/jquery.simplemodal.js'></script>
+	<script type="text/javascript" src="js/jquery.validate.min.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+	<script type="text/javascript" src="js/user_account.js"></script>
+
+	<div class="main-container">
+		<!--Nav-head-->
+		<div class="ym-hlist">
+		  	<div class="ym-navleft">
+		  		<ul>
+					<li><a class="active" href="#">订外卖</a></li>
+					<li class="cake-tip"><a href="#">订蛋糕</a></li>
+		 		</ul>	
+		  	</div>
+		  	
+			<div class="ym-navcenter">
+				<a href="index.html"><img src="images/canditu_logo.jpg"></a>
+			</div>
+
+			<div class="ym-navright">
+				<ul>
+					<li><a href="login.html">登录</a></li>
+					<li><a href="register.html">注册</a></li>
+			 	</ul>
+		 	</div>	
+		</div> 
+		<!--Nav-head-->
+
+		<!--Main-->
+		<div class="ym-container">
+			<!--location and customer service bar-->
+			<div class="ym-location-cs">
+				<div class="ym-location">
+					<p>MODO新天地</p>
+					<img id="ym-location-logo1" src="images/arrow_left.png">
+					<p id="ym-location-others">看看其他地点</p>
+					<img id="ym-location-logo2" src="images/arrow_right.png">
+				</div>
+
+				<div class="ym-cs">
+					<div><p>在线客服</p></div>
+				</div>
+			</div>
+			<!--location and customer service bar-->
+
+			<!--Left-->
+			<div class="ym-left-user-nav">
+				<div class="new-order-username-frame"><div>Spino</div></div>
+     	   		<ul>
+     	   			<li><a href="new_order.html">我的新订单<span>&nbsp;（2）</span></a></li>
+     	   			<li><a href="history_order.html">历史订单<span>&nbsp;（2）</span></a></li>
+     	   			<li class="active"><a href="user_account.html">管理账户信息</a></li>
+     	   			<li><a href="user_favor.html">我的收藏</a></li>
+     	   		</ul>
+			</div>
+			<!--Left-->
+
+
+			<!--Right-->
+			<div class="ym-right-yellow-hint">你还有<span id="ym-right-historyNo">2</span>条未点评的订单，查看<a href="history_order.html">历史订单</a></div>
+			<!--repeat-->
+			
+
+			<div class="ym-right-user-account">
+				<div id="user-account-title"><span>更改昵称和密码</span></div>
+				<ul>
+					<li>登录邮箱&nbsp;&nbsp;&nbsp;&nbsp;<span>denghui@canditu.com</span></li>
+					<li>&nbsp;&nbsp;&nbsp;&nbsp;昵称&nbsp;&nbsp;&nbsp;&nbsp;<span>spino</span><div class="user-account-modify" id="dialog-nickname">更改</div></li>
+					<li>&nbsp;&nbsp;&nbsp;&nbsp;密码&nbsp;&nbsp;&nbsp;&nbsp;<span>＊＊＊＊＊＊</span><div class="user-account-modify" id="dialog-password">更改</div></li>
+					<li></li> <!--to fix ie6-->
+				</ul>	
+				
+				
+			</div>
+			<!--repeat-->
+			
+			<!--Right-->
+
+		</div>
+		<!--Main-->
+
+		<!--dialog-->
+		<!-- modal content -->
+		<div id="nickname-modal-content">
+			<div class="dialog-cancel">&times;</div>
+			<p class="dialog-head">更改昵称</p>
+			<div class="dialog-oldName">当前昵称<span>spino</span></div>
+			
+			<form id="accountForm" method="get" action="">	
+				<div>
+					<label id="dialog-newName" for="newName">新昵称</label>
+				    <input id="newName" name="newName" class="required accept" />
+				</div>
+				<p class="newName-hint">4-20个字符，字母/中文/数字/下划线<p>
+				<input class="submit submit-button" type="submit" value="确定"/>
+			</form>
+		</div>
+
+
+		<!--dialog-->
+		<!-- modal content -->
+		<div id="password-modal-content">
+			<div class="dialog-cancel">&times;</div>
+			<p class="dialog-head">更改密码</p>
+			
+			<div class="dialog-oldPassword">
+				<label for="dialog-oldPassword-label">当前密码</label>
+				<input id="dialog-oldPassword-label" name="dialog-oldPassword-label" type="password" class="required accept" />
+				<div id="dialog-newPassword-correct"><label>正确</label></div>
+			</div>
+			
+
+			<form id="accountForm" method="get" action="">	
+				<div>
+					<label id="dialog-newPassword" for="newPassword">新密码</label>
+				    <input id="newPassword" name="newPassword" type="password" class="required accept" />
+				</div>
+				<p class="newPassword-hint">4-20个字符，区分大小写<p>
+				
+				<div>
+					<label id="dialog-confirmPass" for="confirmPass">确认密码</label>
+				    <input id="confirmPass" name="confirmPass" type="password" class="required accept" />
+				</div>
+				<p class="newPassword-hint">请再次输入密码，区分大小写<p>
+
+				<input id="pass-submit" type="submit" value="确定"/>
+			</form>
+		</div>
+
+
+
+		<div class="push"><!-- not put anything here --></div>
+	
+	</div>
+
+	<!--Nav-bottom-->
+	<div class="ym-blist">
+	  	<p id="p1">2011 - 2013 canditu.com, all rights reserved &nbsp;&nbsp; 津ICP备12002441号-1</p>
+	  	<p id="p2">
+	  		<a href="#" id="contact-us">联系我们</a><span>&nbsp;-</span>
+	  		<a href="#">微博</a>
+	  	</p>
+	</div> 
+	<!--Nav-bottom-->
+
+</body>
+</html> 

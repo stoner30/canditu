@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="utf-8"/>
+	<title>餐地图！叫外卖，就上餐地图</title> 
+	
+	<!-- stylesheets -->  
+	<link rel="stylesheet" href="css/base.css" type="text/css"/>
+	<link rel="stylesheet" href="css/jquery.qtip.min.css"  type="text/css"/>
+	<link rel="stylesheet" href="css/food.css" type="text/css"/>
+</head>
+	
+<body>
+	<!--[if IE 6]>
+ 	<script type="text/javascript" src="js/DD_belatedPNG_0.0.8a-min.js"><script>DD_belatedPNG.fix('img');</script></script>
+ 	<![endif]—>
+
+	<!--[if lt IE 9]><script src="js/ie9.js"></script><![endif]-->
+	<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="js/jquery-migrate-1.1.1.min.js"></script>
+	<script type="text/javascript" src="js/jquery.qtip.min.js"></script>
+	<script type='text/javascript' src='js/jquery.simplemodal.js'></script>
+	<script type="text/javascript" src="js/jquery.raty.min.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+	<script type="text/javascript" src="js/menu.js"></script>
+	
+	<div class="main-container">
+		<!--Nav-head-->
+		<div class="ym-hlist">
+		  	<div class="ym-navleft">
+		  		<ul>
+					<li><a class="active" href="#">订外卖</a></li>
+					<li class="cake-tip"><a href="#">订蛋糕</a></li>
+		 		</ul>	
+		  	</div>
+		  	
+			<div class="ym-navcenter">
+				<a href="index.html"><img src="images/canditu_logo.jpg"></a>
+			</div>
+
+			<div class="ym-navright">
+				<ul>
+					<li><a href="login.html">登录</a></li>
+					<li><a href="register.html">注册</a></li>
+			 	</ul>
+		 	</div>	
+		</div> 
+		<!--Nav-head-->
+
+		<!--Main-->
+		<div class="ym-container">
+			<!--location and customer service bar-->
+			<div class="ym-location-cs">
+				<div class="ym-location">
+					<p>MODO新天地</p>
+					<img id="ym-location-logo1" src="images/arrow_left.png">
+					<p id="ym-location-others">看看其他地点</p>
+					<img id="ym-location-logo2" src="images/arrow_right.png">
+				</div>
+
+				<div class="ym-cs">
+					<div><p>在线客服</p></div>
+				</div>
+			</div>
+			<!--location and customer service bar-->
+			
+			<!--Left-->
+			<div class="ym-left-menu">
+				<div class="rest-info">
+					<img src="images/rest1.jpg"></a></li>
+					<p id="menu-restname">川人百味轩</p>
+					<div class="menu-restinfo">
+						<ul>
+							<li>海光寺店</li>
+							<li>南开区万德庄南北街99号</li>
+							<li>送餐时间&nbsp;<span>11:30-12:30</sapn></br><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</sapn><span>17:00-20:30</sapn></li>
+							<li>起送金额&nbsp;15元<div class="not-enough">不足起送金额？</div></li>
+							<li>外送费&nbsp;&nbsp;&nbsp;<span>0</sapn>元</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="raty-star"><div class="raty-star-text">送餐准时</div><div id="star" data-score="2.6"></div></div>
+
+				<div class="menu-favor">
+					<div class="menu-favor-container">
+						<div class="menu-favor-text">收藏该餐馆</div>
+						<div class="menu-favor-img"><img src="images/plus.jpg"></div>
+					</div>
+				</div>
+
+				<div class="menu-order"><p>我的订单</p><div>总价&nbsp;52元</div></div>
+				<!--dynamic order-->
+				<!--
+				<div class="menu-order-dynamic">
+					<div class="menu-order-dynamic-left">
+						<div class="each-order-no"><img id="minus-pic" src="images/minus.png"><div class="each-order-no-digit">1</div><img id="plus-pic" src="images/plus.png"></div>
+					</div>
+					
+					<div class="menu-order-dynamic-right">
+						<div class="each-order-nameprice">	
+							<div class="each-order-name">石锅拌饭</div>
+							<div class="each-order-yuan">元</div>
+							<div class="each-order-price">26</div>
+						</div>
+
+						<div class="each-order-details">中号，鸡蛋，芝麻酱</div>
+						<div class="each-order-showopen">
+							<div class="each-order-showopen-text"><div id="show-toggle">展开详情</div></div>	
+							<img id="cross-pic" src="images/cross.png">
+						</div>				
+					</div>			
+				</div>
+				-->
+
+
+				<div><a href="order_confirm.html" class="menu-order-go">去下单</a></div>			
+			</div>
+			<!--Left-->
+
+			<!--Right-->
+			<div class="ym-right-menu">			
+				<div class="menu-tab">
+					<ul>
+						<li id="menu-tab1"><a href="#" class="menu-tab-active">菜单</a></li>
+						<li id="menu-tab2"><a href="#">餐馆信息</a></li>
+						<li id="menu-tab3"><a href="#">评价</a></li>
+					</ul>
+				</div>
+				
+
+				<!--menu part-->
+				<div id="menu-part">
+					<div class="menu-menu">
+						<p>主食</p>
+						<ul>
+							<li class="qtip-food"><a href="javascript:void(0);"><div class="menu-menu-div"><span class="menu-name">石锅拌饭</span><span class="menu-yuan">元</span><span class="menu-price">26</span></div></a></li>
+
+							<li id="dialog"  class="qtip-food"><a href="javascript:void(0);"><div class="menu-menu-div"><span class="menu-name">五花肉泡菜饭</span><span class="menu-yuan">元</span><span class="menu-price">20</span></div></a></li>
+
+							<li><a href="javascript:void(0);"><div class="menu-menu-div"><span class="menu-name">石锅牛肉拌饭</span><span class="menu-yuan">元</span><span class="menu-price">28</span></div></a></li>
+
+							<li><a href="javascript:void(0);"><div class="menu-menu-div"><span class="menu-name">石锅蛋饭</span><span class="menu-yuan">元</span><span class="menu-price">24</span></div></a></li>
+							<li><a href="javascript:void(0);"><div class="menu-menu-div"><span class="menu-name">石锅鸡肉饭</span><span class="menu-yuan">元</span><span class="menu-price">26</span></div></a></li>
+							<li><a href="javascript:void(0);"><div class="menu-menu-div"><span class="menu-name">大酱汤拌饭</span><span class="menu-yuan">元</span><span class="menu-price">25</span></div></a></li>
+							<li><a href="javascript:void(0);"><div class="menu-menu-div"><span class="menu-name">石锅牛肉饭</span><span class="menu-yuan">元</span><span class="menu-price">22</span></div></a></li>
+						</ul>
+					</div>
+
+					<div class="menu-menu">
+						<p>盖饭</p>
+						<ul>
+							<li><a href="javascript:void(0);"><div class="menu-menu-div"><span class="menu-name">鱼香肉丝盖饭</span><span class="menu-yuan">元</span><span class="menu-price">16</span></div></a></li>
+							<li><a href="javascript:void(0);"><div class="menu-menu-div"><span class="menu-name">宫保鸡丁盖饭</span><span class="menu-yuan">元</span><span class="menu-price">20</span></div></a></li>
+							<li><a href="javascript:void(0);"><div class="menu-menu-div"><span class="menu-name">土豆烧牛肉盖饭</span><span class="menu-yuan">元</span><span class="menu-price">18</span></div></a></li>
+							<li><a href="javascript:void(0);"><div class="menu-menu-div"><span class="menu-name">小鸡炖蘑菇盖饭</span><span class="menu-yuan">元</span><span class="menu-price">14</span></div></a></li>
+							<li><a href="javascript:void(0);"><div class="menu-menu-div"><span class="menu-name">咖喱鸡肉饭</span><span class="menu-yuan">元</span><span class="menu-price">21</span></div></a></li>
+							<li><a href="javascript:void(0);"><div class="menu-menu-div"><span class="menu-name">金丝鸡肉饭</span><span class="menu-yuan">元</span><span class="menu-price">15</span></div></a></li>
+						</ul>
+					</div>
+
+					<div class="menu-menu">
+						<p>汤</p>
+						<ul>
+							<li><a href="javascript:void(0);"><div class="menu-menu-div"><span class="menu-name">西红柿鸡蛋汤</span><span class="menu-yuan">元</span><span class="menu-price">26</span></div></a></li>
+							<li><a href="javascript:void(0);"><div class="menu-menu-div"><span class="menu-name">酸辣汤</span><span class="menu-yuan">元</span><span class="menu-price">20</span></div></a></li>
+							<li><a href="javascript:void(0);"><div class="menu-menu-div"><span class="menu-name">紫菜汤</span><span class="menu-yuan">元</span><span class="menu-price">28</span></div></a></li>
+						</ul>
+					</div>
+				</div>
+				<!--menu part-->
+
+				<!--restaurant info-->
+				<div id="restinfo-part">
+					<div class="menu-rest">
+						<img src="images/restinfo1.jpg">
+						<p>希尔顿经营旅馆业的座右铭是：“你今天对客人微笑了吗？”这也是他所著的《宾至如归》一书的核心内容。美国希尔顿饭店创立于1919年，在不到90年的时间里，从一家饭店扩展到100多家，遍布世界五大洲的各大城市，成为全球最大规模的饭店之一。80多年来，希尔顿饭店生意如此之好</p>
+						<img src="images/restinfo2.jpg">
+						<p>希尔顿总公司的董事长，89岁高龄的唐纳·希尔顿在50多年里，不断到他分设在各国的希尔顿饭店、旅馆视察业务。　希尔顿每天从这一洲飞到那一洲，从这一国飞到那一国。专程去看看希尔顿礼仪是否贯彻于员工的行动之中。如今，希尔顿的“旅店帝国”已伸延到全世界， 希尔顿的资产已从5000美元发展到数百亿美元。</p>
+						<img src="images/restinfo3.jpg">
+						<p>不断到他分设在各国的希尔顿饭店、旅馆视察业务。　希尔顿每天从这一洲飞到那一洲，从这一国飞到那一国。专程去看看希尔顿礼仪是否贯彻于员工的行动之中。如今，希尔顿的“旅店帝国”已伸延到全世界， 希尔顿的资产已从5000美元发展到数百亿美元。</p>
+
+						<!--for more space-->
+						<p class="spare-space"></p>	
+					</div>
+				</div>
+				<!--restaurant info-->
+
+				<!--comment part-->
+				<div id="comment-part">
+					<div class="comment-submit">
+						<div id="comment-container"><p>我要评价</p></div>		
+						<form id="comment-form" name="input" action="" method="get">
+							<textarea id="comment-form-text"></textarea>
+							<input id="comment-form-submit" type="submit" value="提交" />
+						</form>
+					</div>
+
+					<!--comment details-->
+					<div class="comment-details">
+						<p class="comment-user">XiLo</p>
+						<p class="comment-date">2013年11月32日 24：59</p>
+						<p>前几天从机场回来，半夜无事，想去买几张碟片。梅雨季节，小雨刚过，空气甜腻，我打开了车窗和天窗，慢悠悠的开车。路上不堵，我上了A8高速。多少年来，我们都已经习惯把沪杭高速说成A8，沪青平高速说成A9，外环线说成A20了，曾经有一天，他们突然都必成了沪昆高速G60，沪渝高速G50和G1501。我开了两年都没能缓过来。</p>
+					</div>
+
+					<div class="comment-details">
+						<p class="comment-user">XiLo</p>
+						<p class="comment-date">2013年11月32日 24：59</p>
+						<p>前几天从机场回来，半夜无事，想去买几张碟片。梅雨季节，小雨刚过，空气甜腻，我打开了车窗和天窗，慢悠悠的开车。路上不堵，我上了A8高速。多少年来，我们都已经习惯把沪杭高速说成A8，沪青平高速说成A9，外环线说成A20了，曾经有一天，他们突然都必成了沪昆高速G60，沪渝高速G50和G1501。我开了两年都没能缓过来。</p>
+					</div>
+
+					<div class="comment-details">
+						<p class="comment-user">XiLo</p>
+						<p class="comment-date">2013年11月32日 24：59</p>
+						<p>前几天从机场回来，半夜无事，想去买几张碟片。梅雨季节，小雨刚过，空气甜腻，我打开了车窗和天窗，慢悠悠的开车。路上不堵，我上了A8高速。多少年来，我们都已经习惯把沪杭高速说成A8，沪青平高速说成A9，外环线说成A20了，曾经有一天，他们突然都必成了沪昆高速G60，沪渝高速G50和G1501。我开了两年都没能缓过来。</p>
+					</div>
+
+				</div>
+				<!--comment part-->
+			</div>
+			<!--Right-->
+		</div>
+		<!--Main-->
+
+		<!--dialog-->
+		<!-- modal content -->
+		<div id="menu-modal-content">
+			<div class="dialog-cancel">&times;</div>
+			<p class="dialog-head">订单选项</p>
+			<p class="dialog-menuname">石锅卤肉饭</p>
+			<p class="dialog-menutag">石锅，卤肉，米饭，凉菜</p>
+
+			<label>请选择面包</label>
+			<ul class="dialog-ul">	
+				<li><input type="radio" name="bread" value=""/>白面包</li>
+				<li><input type="radio" name="bread" value="" />全麦面包</li>
+				<li><input type="radio" name="bread" value="" />香奶酪</li>
+				<li><input type="radio" name="bread" value="" />百味卷</li>
+				<li style="width:240px"><input type="radio" name="bread" value="" />沙拉</br><span class="dialog-smalltext">&nbsp;&nbsp;（+3元，蔬菜翻倍，不要面包）</span></li>
+			</ul>
+
+			<label>请选择蔬菜</label>
+			<ul class="dialog-ul">
+				<li><input type="checkbox" name="vege" />生菜</li>
+				<li><input type="checkbox" name="vege" />西红柿</li>
+				<li><input type="checkbox" name="vege" />黄瓜</li>
+				<li><input type="checkbox" name="vege" />洋葱</li>
+				<li><input type="checkbox" name="vege" />酸黄瓜</li>
+				<li><input type="checkbox" name="vege" />黑橄榄</li>
+			</ul>
+
+			<label>请选择酱料</label>
+			<ul class="dialog-ul">
+				<li><input type="checkbox" name="sause" />黄芥末酱</li>
+				<li><input type="checkbox" name="sause" />蜜汁芥末酱</li>
+				<li><input type="checkbox" name="sause" />香葱酱</li>
+				<li><input type="checkbox" name="sause" />BBQ烤肉酱</li>
+				<li><input type="checkbox" name="sause" />西南酱</li>
+				<li><input type="checkbox" name="sause" />辣椒酱</li>
+			</ul>
+
+			<label>或许你还想额外添加?</label>
+			<ul class="dialog-ul">
+				<li><input type="checkbox" name="extra" />芝士</br><span class="dialog-smalltext">&nbsp;&nbsp;（+2元）</span></li>
+				<li><input type="checkbox" name="extra" />培根</li>
+				<li><input type="checkbox" name="extra" />双份肉</li>
+			</ul>
+
+			<label>或许你还想升级为套餐?</label>
+			<ul class="dialog-ul">
+				<li><input type="radio" name="upgrade" value="" />不升级了</li>
+				<li style="width:300px"><input type="radio" name="upgrade" value="" />包含1杯中杯饮料（1600z）+2块甜饼</br><span class="dialog-smalltext">&nbsp;&nbsp;（+9元）</span></li>
+				<li style="width:300px"><input type="radio" name="upgrade" value="" />包含1杯中杯饮料（1600z）+1杯汤</br><span class="dialog-smalltext">&nbsp;&nbsp;（+9元）</span></li>
+			</ul>
+
+			<div class="dialog-box">
+				<label>备注</label>
+				<textarea class="dialog-remark"></textarea>
+			</div>
+			<div class="dialog-box">
+				<label>份数</label>
+				<input class="dialog-order-no" type="text" name="" value="1" />
+			</div>
+
+			<div class="dialog-submit">加入订单</div>
+		</div>
+
+		<div class="push"><!-- not put anything here --></div>
+	
+	</div>
+
+	<!--Nav-bottom-->
+	<div class="ym-blist">
+	  	<p id="p1">2011 - 2013 canditu.com, all rights reserved &nbsp;&nbsp; 津ICP备12002441号-1</p>
+	  	<p id="p2">
+	  		<a href="#" id="contact-us">联系我们</a><span>&nbsp;-</span>
+	  		<a href="#">微博</a>
+	  	</p>
+	</div> 
+	<!--Nav-bottom-->
+</body>
+</html> 

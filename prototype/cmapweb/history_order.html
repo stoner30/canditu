@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="utf-8"/>
+	<title>餐地图！叫外卖，就上餐地图</title> 
+	
+	<!-- stylesheets -->  
+	<link rel="stylesheet" href="css/base.css" type="text/css"/>
+	<link rel="stylesheet" href="css/jquery.qtip.min.css" type="text/css"/>
+	<link rel="stylesheet" href="css/user.css" type="text/css"/>
+</head>
+	
+<body>
+	<!--[if lt IE 9]><script src="js/ie9.js"></script><![endif]-->
+	<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="js/jquery-migrate-1.1.1.min.js"></script>
+	<script type="text/javascript" src="js/jquery.qtip.min.js"></script>
+	<script type='text/javascript' src='js/jquery.simplemodal.js'></script>
+	<script type="text/javascript" src="js/jquery.raty.min.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+	<script type="text/javascript" src="js/history.js"></script>
+
+	<div class="main-container">
+		<!--Nav-head-->
+		<div class="ym-hlist">
+		  	<div class="ym-navleft">
+		  		<ul>
+					<li><a class="active" href="#">订外卖</a></li>
+					<li class="cake-tip"><a href="#">订蛋糕</a></li>
+		 		</ul>	
+		  	</div>
+		  	
+			<div class="ym-navcenter">
+				<a href="index.html"><img src="images/canditu_logo.jpg"></a>
+			</div>
+
+			<div class="ym-navright">
+				<ul>
+					<li><a href="login.html">登录</a></li>
+					<li><a href="register.html">注册</a></li>
+			 	</ul>
+		 	</div>	
+		</div> 
+		<!--Nav-head-->
+
+		<!--Main-->
+		<div class="ym-container">
+			<!--location and customer service bar-->
+			<div class="ym-location-cs">
+				<div class="ym-location">
+					<p>MODO新天地</p>
+					<img id="ym-location-logo1" src="images/arrow_left.png">
+					<p id="ym-location-others">看看其他地点</p>
+					<img id="ym-location-logo2" src="images/arrow_right.png">
+				</div>
+
+				<div class="ym-cs">
+					<div><p>在线客服</p></div>
+				</div>
+			</div>
+			<!--location and customer service bar-->
+
+			<!--Left-->
+			<div class="ym-left-user-nav">
+				<div class="new-order-username-frame"><div>Spino</div></div>
+     	   		<ul>
+     	   			<li><a href="new_order.html">我的新订单<span>&nbsp;（2）</span></a></li>
+     	   			<li  class="active"><a href="history_order.html">历史订单<span>&nbsp;（2）</span></a></li>
+     	   			<li><a href="user_account.html">管理账户信息</a></li>
+     	   			<li><a href="user_favor.html">我的收藏</a></li>
+     	   		</ul>
+			</div>
+			<!--Left-->
+
+			<!--Right-->
+			<div class="ym-right-yellow-hint">你还有<span id="ym-right-historyNo">2</span>条未点评的订单，查看<a href="history_order.html">历史订单</a></div>
+			<!--repeat-->
+			<div class="ym-right-history-order">
+					
+				<ul id="ym-right-history-title">
+					<li class="history-order-time">下单时间&nbsp;&nbsp;&darr;</li>
+					<li class="history-order-invoice">订单号</li>
+					<li class="history-order-rest">餐馆名</li>
+					<li class="history-order-ttprice">总价（元）</li>
+					<li class="history-order-status">状态</li>
+					<li class="history-order-raty">操作&nbsp;&nbsp;&darr;</li>
+				</ul>
+
+				<ul class="ym-right-history-details">
+					<li class="history-order-time">2012-09-20&nbsp;<span>18:23</span></li>
+					<li class="history-order-invoice">1001229384875</li>
+					<li class="history-order-rest">赛百味（海光寺店）</li>
+					<li class="history-order-ttprice">30</li>
+					<li class="history-order-status">订餐取消</li>
+					<li class="history-order-raty">已评价</li>
+				</ul>
+
+				<ul class="ym-right-history-details">
+					<li class="history-order-time">2012-09-20&nbsp;<span>18:23</span></li>
+					<li class="history-order-invoice">1001229384875</li>
+					<li class="history-order-rest">赛百味（海光寺店）</li>
+					<li class="history-order-ttprice">30</li>
+					<li class="history-order-status">订餐取消</li>
+					<li class="history-order-raty" id="raty-done">服务评价</li>
+				</ul>
+
+				<ul class="ym-right-history-details">
+					<li class="history-order-time">2012-09-20&nbsp;<span>18:23</span></li>
+					<li class="history-order-invoice">1001229384875</li>
+					<li class="history-order-rest">赛百味（海光寺店）</li>
+					<li class="history-order-ttprice">30</li>
+					<li class="history-order-status">订餐取消</li>
+					<li class="history-order-raty">已评价</li>
+				</ul>
+			</div>
+			<!--repeat-->
+			
+			<!--Right-->
+
+		</div>
+		<!--Main-->
+		
+		<!--dialog-->
+		<!-- modal content -->
+		<div id="raty-modal-content">
+			<div class="dialog-cancel">&times;</div>
+			<p class="dialog-head">服务评价</p>
+			<div class="history-raty-star1"><div class="history-raty-star-text">送餐速度</div><div id="star0"></div></div>
+			<div class="history-raty-star"><div class="history-raty-star-text">金枪鱼三明治</div><div id="star1"></div></div>
+			<div class="history-raty-star"><div class="history-raty-star-text">火鸡三明治</div><div id="star2"></div></div>
+			<div class="history-raty-star"><div class="history-raty-star-text">海蟹肉三明治</div><div id="star3"></div></div>
+			<input id="history-raty-star-submit" class="ie6-hover" type="submit" value="提交" />
+		</div>
+
+		<div class="push"><!-- not put anything here --></div>	
+	</div>
+
+	<!--Nav-bottom-->
+	<div class="ym-blist">
+	  	<p id="p1">2011 - 2013 canditu.com, all rights reserved &nbsp;&nbsp; 津ICP备12002441号-1</p>
+	  	<p id="p2">
+	  		<a href="#" id="contact-us">联系我们</a><span>&nbsp;-</span>
+	  		<a href="#">微博</a>
+	  	</p>
+	</div> 
+	<!--Nav-bottom-->
+</body>
+</html> 
