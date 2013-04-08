@@ -3,9 +3,9 @@
 <configuration>
 	
 	<property name="LOG_ROOT" value="logs" />
-	<property name="LOG_FILE_NAME" value="cmap-web" />
-	<property name="ERROE_FILE_NAME" value="cmap-web-error" />
-	<property name="EXCEPTION_FILE_NAME" value="cmap-web-exception" />
+	<property name="LOG_FILE_NAME" value="cmapweb" />
+	<property name="ERROE_FILE_NAME" value="cmapweb-error" />
+	<property name="EXCEPTION_FILE_NAME" value="cmapweb-exception" />
 	
 	<property name="LOG_PATTERN" value="%d{yyyy-MM-dd HH:mm:ss} [%t] %p %c [File %F %L] - %msg%n" />
 	
