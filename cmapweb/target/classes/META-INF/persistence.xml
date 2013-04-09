@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" 
+			 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+			 xsi:schemaLocation="http://java.sun.com/xml/ns/persistence 
+			 http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd" 
+			 version="2.0">
+	
+	<persistence-unit name="jpa-unit" transaction-type="RESOURCE_LOCAL">
+		
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+		
+		<class>com.fc.cmapweb.vo.AD</class>
+		<class>com.fc.cmapweb.vo.ADBldg</class>
+		<class>com.fc.cmapweb.vo.Bldg</class>
+		<class>com.fc.cmapweb.vo.ComboDish</class>
+		<class>com.fc.cmapweb.vo.ComboDishSubcat</class>
+		<class>com.fc.cmapweb.vo.Customer</class>
+		<class>com.fc.cmapweb.vo.Dish</class>
+		<class>com.fc.cmapweb.vo.DishCatType</class>
+		<class>com.fc.cmapweb.vo.DishOptions</class>
+		<class>com.fc.cmapweb.vo.District</class>
+		<class>com.fc.cmapweb.vo.DlvyAddr</class>
+		<class>com.fc.cmapweb.vo.DlvyTime</class>
+		<class>com.fc.cmapweb.vo.MsgGatewayConfig</class>
+		<class>com.fc.cmapweb.vo.MsgGroup</class>
+		<class>com.fc.cmapweb.vo.MsgGroupUsr</class>
+		<class>com.fc.cmapweb.vo.MsgSendTime</class>
+		<class>com.fc.cmapweb.vo.MsgTemplate</class>
+		<class>com.fc.cmapweb.vo.OrderDetail</class>
+		<class>com.fc.cmapweb.vo.OrderInfo</class>
+		<class>com.fc.cmapweb.vo.PrintData</class>
+		<class>com.fc.cmapweb.vo.PrintDataDetail</class>
+		<class>com.fc.cmapweb.vo.PrinterInfo</class>
+		<class>com.fc.cmapweb.vo.QueryParams</class>
+		<class>com.fc.cmapweb.vo.Restaurant</class>
+		<class>com.fc.cmapweb.vo.RestBldg</class>
+		<class>com.fc.cmapweb.vo.RestCat</class>
+		<class>com.fc.cmapweb.vo.RestCatType</class>
+		<class>com.fc.cmapweb.vo.RestCmt</class>
+		<class>com.fc.cmapweb.vo.RestDlvyTime</class>
+		<class>com.fc.cmapweb.vo.RestDpr</class>
+		<class>com.fc.cmapweb.vo.RestEval</class>
+		<class>com.fc.cmapweb.vo.RestIco</class>
+		<class>com.fc.cmapweb.vo.RestInfo</class>
+		<class>com.fc.cmapweb.vo.RestStatusType</class>
+		<class>com.fc.cmapweb.vo.RestTag</class>
+		<class>com.fc.cmapweb.vo.RestTagType</class>
+		<class>com.fc.cmapweb.vo.RestUsr</class>
+		<class>com.fc.cmapweb.vo.Role</class>
+		<class>com.fc.cmapweb.vo.RolePrivilege</class>
+		<class>com.fc.cmapweb.vo.StubDishRule</class>
+		<class>com.fc.cmapweb.vo.StubDlvyPrRge</class>
+		<class>com.fc.cmapweb.vo.StubModule</class>
+		<class>com.fc.cmapweb.vo.StubMsgEncoding</class>
+		<class>com.fc.cmapweb.vo.StubMsgType</class>
+		<class>com.fc.cmapweb.vo.StubOAuthType</class>
+		<class>com.fc.cmapweb.vo.StubOperation</class>
+		<class>com.fc.cmapweb.vo.StubOrderStatus</class>
+		<class>com.fc.cmapweb.vo.StubPrivilege</class>
+		<class>com.fc.cmapweb.vo.StubRestEvalType</class>
+		<class>com.fc.cmapweb.vo.StubRestIcoType</class>
+		<class>com.fc.cmapweb.vo.StubRestInfoType</class>
+		<class>com.fc.cmapweb.vo.StubRestStatus</class>
+		<class>com.fc.cmapweb.vo.StubTransType</class>
+		<class>com.fc.cmapweb.vo.StubUsrInfoType</class>
+		<class>com.fc.cmapweb.vo.StubUsrType</class>
+		<class>com.fc.cmapweb.vo.StubUsrTypePrivilege</class>
+		<class>com.fc.cmapweb.vo.Usr</class>
+		<class>com.fc.cmapweb.vo.UsrInfo</class>
+		<class>com.fc.cmapweb.vo.UsrPasswdHist</class>
+		<class>com.fc.cmapweb.vo.UsrRole</class>
+		
+	</persistence-unit>
+	
+</persistence>
