@@ -26,6 +26,7 @@
 		<com.alibaba.fastjson.version>1.1.15</com.alibaba.fastjson.version>
 		<javax.servlet.version>2.5</javax.servlet.version>
 		<javax.servlet.jsp.version>2.1</javax.servlet.jsp.version>
+		<javax.servlet.jsp.jstl.version>1.2</javax.servlet.jsp.jstl.version>
 		<kaptcha.version>2.3.2</kaptcha.version>
 		<org.mortbay.jetty.version>8.1.10.v20130312</org.mortbay.jetty.version>
 		<org.codehaus.janino.version>2.5.16</org.codehaus.janino.version>
@@ -77,6 +78,15 @@
                         </goals>
 					</execution>
 				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.tomcat.maven</groupId>
+				<artifactId>tomcat7-maven-plugin</artifactId>
+				<version>2.1</version>
+				<configuration>
+				 	<port>9090</port>
+				 	<path>/</path>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
@@ -293,6 +303,12 @@
   			<version>${javax.servlet.jsp.version}</version>
   			<scope>provided</scope>
   		</dependency>
+  		
+  		<dependency>
+		    <groupId>javax.servlet</groupId>
+		    <artifactId>jstl</artifactId>
+		    <version>${javax.servlet.jsp.jstl.version}</version>
+		</dependency>
 		
 		<dependency>
 			<groupId>com.google.code</groupId>

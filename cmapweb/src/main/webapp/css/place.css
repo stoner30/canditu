@@ -1,0 +1,36 @@
+/*1 index.html - building.html*/
+.ym-left-city {width:145px;overflow:hidden;position:relative;float:left;margin-right:155px;margin-top:33px;} /*155=175-20margin*/
+.ym-right-district,
+.ym-right-building {width:660px;overflow:hidden;position:relative;float:right;margin-top:33px;} /*660=640+20margin*/
+/*1.1 index.html right part*/
+.ym-right-district li {width:145px;height:145px;overflow:hidden;position:relative;display:inline;float:left;margin-left:20px;margin-bottom:20px;}
+.ym-right-district li a {width:145px;height:145px;background:#FFEA78;overflow:hidden;position:relative;float:left;font-size:24px;padding-left:9px;}
+#last a {font-size:16px;}
+#last-text1 {float:left;width:32px;margin-top:6px;margin-left:-2px;line-height:100%;}
+#last-text2 {float:left;margin-top:60px;margin-left:-11px;width:90px;text-align:center;}
+.ym-right-district ul li a:focus,
+.ym-right-district ul li a:hover,
+.ym-right-district ul li a:active {background:#2E2E2E;color:white;text-decoration:none;}
+/*1.2 building.html right part*/
+.building-return h2 {overflow:hidden;position:relative;float:left;margin-left:9px;margin-top:5px;font-family:"微软雅黑","黑体";font-weight:normal;}
+.building-return img {overflow:hidden;position:relative;float:left;width:25px;height:25px;margin-top:11px;margin-left:8px;*margin-left:2px;} /*cc 为了兼容ie，此logo做成25*25*/
+/*1.2.building.html right part - building list*/
+#buildingList-nav {overflow:hidden;position:relative;float:right;margin-top:66px;*margin-left:-132px;}
+/*listNav pluggin*/
+.listNav {margin:0 0 10px;}
+.ln-letters {overflow:hidden;}
+.ln-letters a {width:22px;height:22px;vertical-align:middle;line-height:22px;text-align:center;margin-right:6px;margin-bottom:6px;font-size:14px;display:block;float:left;background-color:#FFEA78;color:black;border:2px solid #FFEA78;text-decoration:none;}
+.ln-letters a.ln-last {border:2px solid #FFEA78;}
+.ln-letters a:hover,
+.ln-letters a.ln-selected {background-color:#2E2E2E;color:white;border:2px solid #2E2E2E;}
+.ln-letters a.ln-disabled {background-color:white;color:#F2F2F2;border:2px solid #F2F2F2;cursor:default;}
+.ln-letters a.all {width:41px;height:41px;margin-left:9px;margin-right:6px;font-size:14px; background-color:#2E2E2E;color:white;border:2px solid #2E2E2E;}
+.ln-no-match {font-family:"宋体";font-size:14px;}
+/*.ln-letter-count { text-align:center; font-size:0.8em; line-height:1; margin-bottom:3px; color:#336699; }*/
+/*building block*/
+.building-col {width:570px;height:150px;overflow:hidden;position:relative;float:left;margin-left:60px;margin-top:30px;*margin-left:52px;_margin-left:26px;}
+.building-col ul li {overflow:hidden;position:relative;display:inline;float:left;width:132px;height:20px;margin:0 10px 10px 0;}
+.building-col ul li a {overflow:hidden;position:relative;display:inline;float:left;color:#2E2E2E;font-family:"宋体";font-size:14px;padding:0;}
+.building-col ul li a:focus,
+.building-col ul li a:hover, 
+.building-col ul li a:active {text-decoration:underline;}

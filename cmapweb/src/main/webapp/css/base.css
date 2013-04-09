@@ -1,0 +1,57 @@
+/*to fix ie 6 hover*/
+.ie6_hover {background:#2E2E2E !important;color:white !important;}
+/*to fix ie 6 hover*/
+html, body{height:100%;margin:0 auto;padding:0;min-width:960px;width:100% !important;width:960px;}
+.push {height:70px;clear:both;}
+fieldset, img {border:0 solid;}
+* {margin:0;padding:0;}
+a {text-decoration:none;font-family:"微软雅黑","黑体";font-weight:normal;color:#2E2E2E;}
+p {font-family:"微软雅黑","黑体";}
+ul li {list-style-type:none;}
+.transparent {
+    /* works for IE 5+. */
+    filter:alpha(opacity=30); 
+    /* works for IE 8. */
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
+    /* works for old school versions of the Mozilla browsers like Netscape Navigator. */
+    -moz-opacity:0.3; 
+    /* This is for old versions of Safari (1.x) with KHTML rendering engine */
+    -khtml-opacity: 0.3; 
+    /* This is the "most important" one because it's the current standard in CSS. This will work in most versions of Firefox, Safari, and Opera. */  
+    opacity: 0.3; 
+}
+.main-container {position:relative; min-height:100%;height:auto !important;height:100%;margin:0 auto -30px;/*margin-bottom的负值等于footer高度*/}
+/*nav head css*/
+.ym-hlist {width:100%;overflow:hidden;position:relative;background:#2E2E2E;height:38px;margin-bottom:20px;}
+.ym-hlist div {display:inline;}
+.ym-navleft ul li {display:inline;float:left;font-size:14px;width:81px;height:38px;}
+.ym-navleft ul li a {background:transparent;color:#F2F2F2;display:block;width:81px;height:35px;border-top:solid 3px #2E2E2E;text-align:center;vertical-align:middle;line-height:32px;}
+.ym-navleft ul li a:focus,
+.ym-navleft ul li a:hover {color:#dfdfdf;background:#8c8c8c;text-decoration:none;outline:0 none;border-top:solid 3px #8c8c8c}
+.ym-navleft ul li a:active {color:#dfdfdf;background:#8c8c8c;text-decoration:none;outline:0 none;border-top:solid 3px #8c8c8c}
+.ym-navleft ul li a.active {border-top:solid 3px #FFEA78}
+.ym-navcenter img {margin-top:5px;}
+.ym-navright ul li {display:inline;float:right;font-size:14px;width:60px;height:25px;margin:6px 0 0px 0;}
+.ym-navright ul li a {background:transparent;color:#F2F2F2;display:block;width:60px;height:25px;text-align:center;border:0;line-height:24px;vertical-align:middle;}
+
+.ym-navright ul li a:focus,
+.ym-navright ul li a:hover {color:#F2F2F2;background:#8c8c8c;-webkit-border-radius:0.2em;-moz-border-radius:0.2em;border-radius:0.2em;text-decoration:none;outline:0 none;}
+.ym-navleft {width:46%;float:left;}
+.ym-navright {width:15%;float:right;margin-right:20px;}
+.ym-navcenter {float:left;}
+/*nav bottom css*/
+.ym-blist {width:960px;overflow:hidden;position:relative;height:30px;margin-left:auto;margin-right:auto;padding-top:40px;font-family:"宋体",Helvetica;font-size:12px;clear:both;}
+.ym-blist p {display:inline;color:#2E2E2E;}
+#p1 {float:left;margin-left:5px;}
+#p2 {float:right;margin-right:5px;}
+/*Main container*/
+.ym-container {width:960px;overflow:hidden;position:relative;margin-left:auto;margin-right:auto;}
+/*location and customer service bar*/
+.ym-location-cs {width:960px;height:33px;overflow:hidden;position:relative;margin-bottom:16px;}
+.ym-location {float:left;width:500px;height:33px;}
+.ym-cs {background:url(../images/cs.png) no-repeat;float:right;width:110px;height:33px;cursor:pointer;}
+.ym-cs div {float:right;margin:0px 11px 0 0;}
+.ym-cs div p {float:right;font-family:"宋体";font-size:14px;line-height:200%;}
+.ym-location p {float:left;background:#F2F2F2;width:172px;height:33px;text-align:center;font-family:"宋体";font-size:14px;line-height:34px;vertical-align:middle;}
+#ym-location-logo1, #ym-location-logo2 {position:relative;float:left;width:33px;height:33px;cursor:pointer;}
+#ym-location-others:hover {background:#dfdfdf;cursor:pointer;}

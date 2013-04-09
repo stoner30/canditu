@@ -1,0 +1,165 @@
+/*login part*/
+.login-title {float:left;width:445px;height:54px;border-bottom:1px solid #2E2E2E;margin-right:100px;}
+#login-title-text{width:131px;height:38px;font-family:"微软雅黑","黑体";font-size:30px;color:#2E2E2E;text-indent:8px;line-height:120%;}
+.login-sidebar {float:right;width:445px;height:290px;}
+#login-sidebar1 {width:445px;height:220px;background:#F2F2F2;}
+#login-sidebar1-a {float:left;width:445px;font-family:"微软雅黑","黑体";font-size:30px;text-align:center;margin:36px 0 32px 0;}
+#login-sidebar1-b {float:left;width:445px;font-family:"微软雅黑","黑体";font-size:14px;text-align:center;color:#747474;}
+#login-sidebar2 {width:445px;height:70px;}
+#login-sidebar2 a {float:left;width:445px;height:70px;background:#FFEA78;text-align:center;line-height:270%;font-family:"微软雅黑","黑体";font-size:24px;color:#2E2E2E;cursor:pointer;}
+#login-sidebar2 a:hover {background:#2E2E2E;color:white;}
+.login-details {float:left;width:445px;margin-top:8px;}
+#login-wrong-password {width:70px;height:27px;margin-right:100px;background:#eb3535;color:white;font-family:"宋体";font-size:14px;
+text-align:center;line-height:180%;margin-bottom:8px;}
+.loginForm-div {width:400px;height:40px;margin-bottom:13px;}
+.loginForm-div label {float:left;background:#FFEA78;width:65px;height:40px;font-family:"微软雅黑","黑体";font-size:18px;color:#2E2E2E;text-align:center;line-height:220%;}
+.loginForm-div input {float:left;background:#F2F2F2;width:192px;height:40px;border:0;font-family:"宋体";font-size:18px;padding-left:8px;_line-height:40px;_vertical-align:middle;}
+#loginForm-forget a {float:left;width:60px;font-family:"宋体";font-size:12px;margin:12px 0 0 11px;cursor:pointer;}
+#check-container1 {cursor:pointer;float:left;width:79px;height:24px;margin-top:15px;margin-right:30px;background:transparent;}
+#check-container2 {cursor:pointer;float:left;width:120px;height:24px;margin-top:15px;margin-right:30px;background:transparent;}
+.black-space {float:left;width:6px;height:24px;background:transparent;}
+.black-space.hovered {background:#2E2E2E;}
+#check-container1.clicked, #check-container2.clicked {background:#2E2E2E;}
+#login-text1 {float:right;width:73px;height:24px;background:#F2F2F2;font-family:"宋体";font-size:14px;text-align:center;line-height:175%;}
+#login-text2 {float:right;width:114px;height:24px;background:#F2F2F2;font-family:"宋体";font-size:14px;text-align:center;line-height:175%;}
+.login-button {float:left;width:265px;height:70px;margin-top:30px;border:0;background:#FFEA78;font-family:"微软雅黑","黑体";font-size:24px;color:#2E2E2E;text-align:center;cursor:pointer;}
+.login-QQs {float:left;width:445px;height:63px;border-bottom:1px solid #2E2E2E;margin:38px 100px 0 0;}
+#login-QQs-text{width:300px;height:38px;font-family:"微软雅黑","黑体";font-size:30px;color:#2E2E2E;text-indent:8px;line-height:120%;}
+.login-QQs-ul {float:left;width:445px;height:70px;margin:38px 100px 0 0;}
+.login-QQs-ul ul li {float:left;list-style-type:none;width:115px;height:33px;margin-right:10px;background:#FFEA78;font-family:"微软雅黑","黑体";font-size:14px;text-align:center;line-height:230%;cursor:pointer;}
+/*register*/
+.register-title {float:left;width:645px;height:54px;border-bottom:1px solid #2E2E2E;}
+#register-title-text{background:#FFEA78;width:131px;height:38px;font-family:"微软雅黑","黑体";font-size:30px;color:#2E2E2E;text-align:center;line-height:120%;}
+.register-details {float:left;width:645px;margin:43px 70px 15px 0;}
+#signupForm div {width:640px;height:41px;}
+#signupForm div label {float:left;background:#FFEA78;width:96px;height:41px;font-family:"微软雅黑","黑体";font-size:18px;color:#2E2E2E;text-align:center;line-height:220%;}
+#signupForm div input {float:left;background:#F2F2F2;width:240px;height:41px;border:0;margin-right:10px;font-family:"宋体";font-size:18px;padding-left:8px;_line-height:41px;_vertical-align:middle;}
+.login-hint {margin:7px 0 15px 98px;font-family:"宋体";font-size:12px;color:#747474;}
+.submit-button {background:#FFEA78;width:257px;height:70px;font-family:"微软雅黑","黑体";font-size:24px;color:#2E2E2E;text-align:center;margin-top:26px;border:0;}
+.submit-button:hover {cursor:pointer;background:#2E2E2E;color:white;}
+.register-terms-title {float:left;width:960px;height:36px;} /*140*/
+.register-terms-title div {font-family:"宋体";font-size:14px;background:#F2F2F2;color:#2E2E2E;width:140px;height:36px;line-height:250%;text-align:center;}
+.register-terms-title div:hover{cursor:pointer;}
+.register-terms {display:none;float:left;width:950px;background:#F2F2F2;color:#2E2E2E;padding:10px;font-family:"宋体";font-size:12px;line-height:150%;}
+.register-sidebar {float:right;width:245px;height:180px;}
+#register-sidebar1 {width:240px;height:110px;background:#F2F2F2;padding-left:5px;line-height:360%;font-family:"微软雅黑","黑体";font-size:30px;}
+#register-sidebar2 {width:245px;height:70px;}
+#register-sidebar2 a {float:left;width:245px;height:70px;background:#FFEA78;text-align:center;line-height:200%;font-family:"微软雅黑","黑体";font-size:30px;cursor:pointer;}
+#register-sidebar2 a:hover {background:#2E2E2E;color:white;}
+/*input.error { border: 1px solid red; }*/
+#signupForm label.error {background:#eb3535 !important;color:white !important;font-family:"宋体" !important;font-size:14px !important;line-height:100% !important;width:auto !important;height:auto !important;padding:7px !important;margin:8px 5px 0 0!important;}
+#signupForm label.checked {background:green !important;}
+
+/*password forgot*/
+.password-forgot-details {float:left;width:445px;margin-top:8px;}
+.password-forgot-Form-div1 {width:400px;height:40px;margin-bottom:13px;margin-top:34px;}
+.password-forgot-Form-div1 label {float:left;background:#FFEA78;width:65px;height:40px;font-family:"微软雅黑","黑体";font-size:18px;color:#2E2E2E;text-align:center;line-height:220%;}
+.password-forgot-Form-div1 input {float:left;background:#F2F2F2;width:192px;height:40px;border:0;font-family:"宋体";font-size:18px;padding-left:8px;_line-height:40px;_vertical-align:middle;}
+.password-forgot-Form-div2 {width:360px;height:40px;margin-bottom:13px;}
+.password-forgot-Form-div2 label {float:left;background:#FFEA78;width:80px;height:40px;font-family:"微软雅黑","黑体";font-size:18px;color:#2E2E2E;text-align:center;line-height:220%;}
+.password-forgot-Form-div2 input {float:left;background:#F2F2F2;width:110px;height:40px;border:0;font-family:"宋体";font-size:18px;padding-left:8px;_line-height:40px;_vertical-align:middle;}
+.password-adjust {margin-top:-18px;}
+.password-forgot-button {float:left;width:265px;height:70px;margin-top:14px;border:0;background:#FFEA78;font-family:"微软雅黑","黑体";font-size:24px;color:#2E2E2E;text-align:center;cursor:pointer;}
+/*new order part*/
+.ym-left-user-nav {float:left;width:165px;height:240px;background:#F2F2F2;margin-top:23px;}
+.new-order-username-frame {float:left;width:165px;height:50px;border-bottom:1px solid #dfdfdf;margin-bottom:22px;}
+.new-order-username-frame div {margin:15px 0 0 20px;font-size:18px;font-weight:bold;}
+.ym-left-user-nav ul {float:left;width:165px;}
+.ym-left-user-nav ul li a {font-family:"宋体";font-size:12px;float:left;width:142px;height:28px;margin:0 0 11px 18px;padding:0px 0 0 4px;line-height:28px;vertical-align:middle;}
+.ym-left-user-nav ul li a span {color:#990000;}
+.ym-left-user-nav ul li.active a {background:#990000;color:white;}
+.ym-left-user-nav ul li.active a span {color:white;}
+.ym-left-user-nav ul li:hover a {background:#990000;color:white;}
+.ym-left-user-nav ul li:hover a span {color:white;}
+.ym-right-yellow-hint {float:right;padding:4px 7px 2px 7px;font-size:14px;background:#FFFFCC;}
+.ym-right-yellow-hint a {font-family:"宋体";color:#990000;font-weight:bold;text-decoration:underline;cursor:pointer;}
+#ym-right-historyNo {color:#990000;font-weight:bold;cursor:pointer;}
+.ym-right-new-order {float:right;width:765px;}
+.new-order-frame {width:765px;}
+.new-order-title {float:left;width:765px;height:50px;background:#F2F2F2;margin-bottom:15px;}
+.new-order-title ul li {float:left;font-family:"宋体";font-size:12px;margin:5px 0 0 8px;}
+#new-order-invoice {width:150px;}
+#new-order-time {width:240px;line-height:150%;margin-top:4px;}
+#new-order-time span {font-weight:bold;}
+#new-order-rest {width:195px;}
+.new-order-details {float:left;width:765px;}
+.new-order-details-left {float:left;width:527px;margin:0 0 0 31px;_width:516px;_margin-left:19px;}
+.new-order-details-left ul {font-size:12px;}
+.new-order-details-dish {float:left;width:356px;text-align:left;_width:300px;}
+.new-order-details-price {float:right;text-align:right;width:130px;margin-right:40px;_margin-right:18px;}
+.new-order-details-left ul li ul {float:left;border-bottom:1px solid #dfdfdf;padding:6px 0 13px 0; }
+.new-order-details-ttprice {float:right;margin:16px 42px 0 0;}
+.new-order-details-ttprice span {font-weight:bold;}
+.new-order-details-right {position:relative;float:right;;width:130px;height:160px;margin-right:27px;_margin-right:14px;font-family:"宋体";font-size:12px;line-height:210%;}
+.new-order-details-right span {font-weight:bold;}
+.user-confirmed {position:relative;float:left;font-size:14px;width:102px;height:28px;text-align:center;margin-top:50px;background:#FFEA78;line-height:30px;vertical-align:middle;cursor:pointer;}
+
+/*history order part*/
+.ym-right-history-order {float:right;width:765px;font-size:12px;}
+.ym-right-history-order ul li {float:left;}
+#ym-right-history-title {float:left;height:24px;background:#8c8c8c;color:white;padding:0px 0 0 8px;margin-bottom:10px;line-height:24px;vertical-align:middle;}
+.ym-right-history-details .history-order-time {padding-left:8px;}
+.history-order-time {width:132px;}
+.history-order-invoice {width:128px;}
+.history-order-rest {width:187px;}
+.history-order-ttprice {width:80px;text-align:center;}
+.history-order-status {width:100px;text-align:center;}
+.history-order-raty {width:130px;text-align:center;}
+.ym-right-history-details li {margin-top:20px;}
+.ym-right-history-details .history-order-time span {font-weight:bold;}
+.ym-right-history-details .history-order-invoice {color:#990000;}
+.ym-right-history-details .history-order-raty {font-size:14px;width:96px;height:24px;margin-top:14px;margin-left:10px;background:#F2F2F2;line-height:26px;vertical-align:middle;}
+#raty-done {background:#FFEA78;}
+#raty-done:hover {cursor:pointer;background:#2E2E2E;color:white;}
+/*user account part*/
+.ym-right-user-account {float:left;width:765px;margin-left:30px;font-family:"宋体";font-size:12px;}
+#user-account-title {float:left;width:765px;height:60px;background:#F2F2F2;}
+#user-account-title span {float:left;margin-top:22px;margin-left:20px;}
+.ym-right-user-account ul {float:left;width:280px;margin:20px 0 0 65px;}
+.ym-right-user-account ul li {margin-bottom:28px;}
+.user-account-modify {float:right;cursor:pointer;text-decoration:underline;_margin-top:-14px;}
+/*user-favor*/
+.user-favor-notyet {/*display:none*/float:right;width:735px;}
+.user-favor-notyet div {float:left;font-family:"宋体";font-size:30px;margin:60px 0 0 0px;line-height:130%;}
+.user-favor-notyet img {float:left;width:500px;height:200px;margin:30px 0 0 0px;  background:pink}
+.user-favor-done {float:left;width:220px;margin:24px 0 0 70px;}
+.user-favor-delete {float:left;width:100px;height:25px;background:#2E2E2E;color:white;cursor:pointer;margin-top:30px;text-align:center;font-size:14px;line-height:25px;vertical-align:middle;}
+.user-favor-cancel {float:left;width:80px;height:25px;margin-top:36px;margin-left:12px;text-decoration:underline;font-size:12px;cursor:pointer;}
+.user-favor-restaurant {float:left;;width:735px;margin:43px 0 0 60px;}
+.user-favor-restaurant ul li {float:left;margin:0 44px 24px 0;}
+.user-favor-restaurant ul li input,
+.user-favor-restaurant ul li div {float:left;}
+.user-favor-restaurant-no {margin-top:-3px;width:10px;text-align:center;}
+.haspic-user-favor {float:left;width:165px;height:92px;margin-left:5px;}
+.haspic-user-favor a {overflow:hidden;position:relative;float:left;width:165px;height:92px;text-align:center;line-height:6em;}
+.haspic-user-favor a.bg {position:absolute;z-index:1000;}
+.haspic-user-favor a.fg {position:absolute;z-index:9999;margin-top:6px;}
+.bg img {width:165px;height:92px;}
+.fg img {width:80px;height:80px;}
+#order-details-coupon{float:right;width:230px;font-family:"宋体";font-size:12px;cursor:pointer;}
+#order-details-coupon-title {width:218px;height:26px;border:6px solid #dfdfdf;line-height:26px;vertical-align:middle;padding-left:6px;background:url(../images/down.png) no-repeat 195px -1px;}
+.dropdown-menu {position:absolute;float:left;width:236px !important; background:#dfdfdf;margin:0px !important;padding-top:0px;display:none;}
+.dropdown-menu li {width:225px !important;height:24px;margin:0 !important;padding:10px 0 0 11px;}
+.dropdown-menu li:hover {background:#747474;color:white!important;cursor:pointer;}
+
+/*dialog - user account part - modify*/
+#raty-modal-content {display:none;}
+/* Overlay */
+#simplemodal-overlay {background-color:#000;}
+/* Container */
+#simplemodal-container {width:333px;padding-left:6px;padding-right:0;background:white;color:#2E2E2E;height:320px;} 
+#simplemodal-container .simplemodal-data {padding:0px;}
+#simplemodal-container .dialog-cancel {display:inline;float:right;background:#FFEA78;margin:6px 6px 0 0;font-size:30px;width:32px;height:32px;text-align:center;line-height:110%;cursor:pointer;}
+#simplemodal-container .dialog-cancel:hover {cursor:pointer;background:#2E2E2E;color:white;}
+#simplemodal-container .dialog-head {font-family:"微软雅黑";font-size:30px;color:#2E2E2E;border-bottom:1px solid;text-align:center;width:327px;margin:0;padding:9px 0;*margin-top:-40px;_margin-top:-40px;}
+#simplemodal-container .history-raty-star {float:left;width:305px;height:24px;background:white;margin-bottom:11px;}
+#simplemodal-container .history-raty-star1 {float:left;width:305px;height:24px;background:white;margin-top:20px;margin-bottom:32px;margin-left:0px;}
+#simplemodal-container .history-raty-star-text {float:left;font-family:"宋体";font-size:12px;color:#747474;margin-left:30px;width:120px;text-align:right;}
+#simplemodal-container #star0,
+#simplemodal-container #star1,
+#simplemodal-container #star2,
+#simplemodal-container #star3 {float:left;margin-left:24px;margin-top:-2px;}
+#simplemodal-container #history-raty-star-submit {float:left;font-family:"微软雅黑";color:#2E2E2E;width:144px;height:39px;font-size:24px;background:#FFEA78;border:0;margin:13px 0 15px 80px;padding-bottom:5px;cursor:pointer;}
+#simplemodal-container #history-raty-star-submit:hover {background:#2E2E2E;color:white;}
+/*label error for account form*/
+#accountForm label.error {background:#eb3535 !important;color:white !important;font-family:"宋体" !important;font-size:14px !important;line-height:100% !important;width:auto !important;height:auto !important;float:left;padding:7px !important;margin:8px 25px 0 170px !important;}
