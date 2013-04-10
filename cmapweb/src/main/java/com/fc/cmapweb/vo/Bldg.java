@@ -10,6 +10,9 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.Transient;
+
+import com.fc.cmapweb.utils.PinYinUtil;
 import com.fc.cmapweb.vo.District;
 
 @Entity
@@ -41,6 +44,9 @@ public class Bldg implements Serializable {
     @JoinColumn(name = "DIST_CODE", referencedColumnName = "DIST_CODE")
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
     private District district;
+
+    @Transient
+    private String pinYin;
 
 	public Integer getBldgId() {
 		return bldgId;
@@ -97,5 +103,13 @@ public class Bldg implements Serializable {
 	public void setDistrict(District district) {
 		this.district = district;
 	}
-    
+
+	public String getPinYin() {
+		return pinYin;
+	}
+
+	public void setPinYin(String pinYin) {
+		this.pinYin = pinYin;
+	}
+
 }

@@ -10,7 +10,7 @@
   	</div>
 
 	<div class="ym-navcenter">
-		<a href="index.html"><img src="images/canditu_logo.jpg"></a>
+		<a href="index.html"><img src="${pageContext.request.contextPath}/images/canditu_logo.jpg"></a>
 	</div>
 
 	<div class="ym-navright">

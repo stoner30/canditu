@@ -321,7 +321,12 @@
 			<artifactId>janino</artifactId>
 			<version>${org.codehaus.janino.version}</version>
 		</dependency>
-		
+
+		<dependency>
+			<groupId>pinyin.sourceforge.net</groupId>
+			<artifactId>pinyin4j</artifactId>
+			<version>2.5.0</version>
+		</dependency>
 	</dependencies>
 	
 	<dependencyManagement>
