@@ -24,11 +24,11 @@ public class ActivityBldg implements Serializable {
     
     @JoinColumn(name = "ACTIVITY_ID", referencedColumnName = "ACTIVITY_ID")
     @ManyToOne(optional = false)
-    private Activity activityId;
+    private Activity activity;
     
     @JoinColumn(name = "BLDG_ID", referencedColumnName = "BLDG_ID")
     @ManyToOne(optional = false)
-    private Bldg bldgId;
+    private Bldg bldg;
 
     public Integer getAbId() {
         return abId;
@@ -38,20 +38,20 @@ public class ActivityBldg implements Serializable {
         this.abId = abId;
     }
 
-    public Activity getActivityId() {
-        return activityId;
-    }
+	public Activity getActivity() {
+		return activity;
+	}
 
-    public void setActivityId(Activity activityId) {
-        this.activityId = activityId;
-    }
+	public void setActivity(Activity activity) {
+		this.activity = activity;
+	}
 
-    public Bldg getBldgId() {
-        return bldgId;
-    }
+	public Bldg getBldg() {
+		return bldg;
+	}
 
-    public void setBldgId(Bldg bldgId) {
-        this.bldgId = bldgId;
-    }
+	public void setBldg(Bldg bldg) {
+		this.bldg = bldg;
+	}
 
 }

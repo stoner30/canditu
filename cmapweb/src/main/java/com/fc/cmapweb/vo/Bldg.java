@@ -1,7 +1,6 @@
 package com.fc.cmapweb.vo;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -30,17 +29,17 @@ public class Bldg implements Serializable {
     private String bldgAddr;
     
     @Column(name = "BLDG_LON")
-    private BigDecimal bldgLon;
+    private Double bldgLon;
     
     @Column(name = "BLDG_LAT")
-    private BigDecimal bldgLat;
+    private Double bldgLat;
     
     @Column(name = "ENABLED")
     private boolean enabled;
     
     @JoinColumn(name = "DIST_CODE", referencedColumnName = "DIST_CODE")
     @ManyToOne(optional = false)
-    private District distCode;
+    private District district;
 
     @Transient
     private String pinYin;
@@ -69,19 +68,19 @@ public class Bldg implements Serializable {
 		this.bldgAddr = bldgAddr;
 	}
 
-	public BigDecimal getBldgLon() {
+	public Double getBldgLon() {
 		return bldgLon;
 	}
 
-	public void setBldgLon(BigDecimal bldgLon) {
+	public void setBldgLon(Double bldgLon) {
 		this.bldgLon = bldgLon;
 	}
 
-	public BigDecimal getBldgLat() {
+	public Double getBldgLat() {
 		return bldgLat;
 	}
 
-	public void setBldgLat(BigDecimal bldgLat) {
+	public void setBldgLat(Double bldgLat) {
 		this.bldgLat = bldgLat;
 	}
 
@@ -93,12 +92,12 @@ public class Bldg implements Serializable {
 		this.enabled = enabled;
 	}
 
-	public District getDistCode() {
-		return distCode;
+	public District getDistrict() {
+		return district;
 	}
 
-	public void setDistCode(District distCode) {
-		this.distCode = distCode;
+	public void setDistrict(District district) {
+		this.district = district;
 	}
 
 	public String getPinYin() {

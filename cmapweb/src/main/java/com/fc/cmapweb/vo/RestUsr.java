@@ -23,11 +23,11 @@ public class RestUsr implements Serializable {
     
     @JoinColumn(name = "USR_ID", referencedColumnName = "USR_ID")
     @ManyToOne(optional = false)
-    private Usr usrId;
+    private Usr usr;
     
     @JoinColumn(name = "REST_ID", referencedColumnName = "REST_ID")
     @ManyToOne(optional = false)
-    private Restaurant restId;
+    private Restaurant restaurant;
 
 	public Integer getRuId() {
 		return ruId;
@@ -37,20 +37,20 @@ public class RestUsr implements Serializable {
 		this.ruId = ruId;
 	}
 
-	public Usr getUsrId() {
-		return usrId;
+	public Usr getUsr() {
+		return usr;
 	}
 
-	public void setUsrId(Usr usrId) {
-		this.usrId = usrId;
+	public void setUsr(Usr usr) {
+		this.usr = usr;
 	}
 
-	public Restaurant getRestId() {
-		return restId;
+	public Restaurant getRestaurant() {
+		return restaurant;
 	}
 
-	public void setRestId(Restaurant restId) {
-		this.restId = restId;
+	public void setRestaurant(Restaurant restaurant) {
+		this.restaurant = restaurant;
 	}
 
 }

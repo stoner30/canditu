@@ -23,11 +23,11 @@ public class MsgGroupUsr implements Serializable {
     
     @JoinColumn(name = "USR_ID", referencedColumnName = "USR_ID")
     @ManyToOne(optional = false)
-    private Usr usrId;
+    private Usr usr;
     
     @JoinColumn(name = "MG_ID", referencedColumnName = "MG_ID")
     @ManyToOne(optional = false)
-    private MsgGroup mgId;
+    private MsgGroup msgGroup;
 
 	public Integer getMguId() {
 		return mguId;
@@ -37,20 +37,20 @@ public class MsgGroupUsr implements Serializable {
 		this.mguId = mguId;
 	}
 
-	public Usr getUsrId() {
-		return usrId;
+	public Usr getUsr() {
+		return usr;
 	}
 
-	public void setUsrId(Usr usrId) {
-		this.usrId = usrId;
+	public void setUsr(Usr usr) {
+		this.usr = usr;
 	}
 
-	public MsgGroup getMgId() {
-		return mgId;
+	public MsgGroup getMsgGroup() {
+		return msgGroup;
 	}
 
-	public void setMgId(MsgGroup mgId) {
-		this.mgId = mgId;
+	public void setMsgGroup(MsgGroup msgGroup) {
+		this.msgGroup = msgGroup;
 	}
 
 }

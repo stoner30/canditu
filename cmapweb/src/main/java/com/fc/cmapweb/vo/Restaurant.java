@@ -84,11 +84,11 @@ public class Restaurant implements Serializable {
     
     @JoinColumn(name = "RS_ID", referencedColumnName = "RS_ID")
     @ManyToOne(optional = false)
-    private StubRestStatus rsId;
+    private StubRestStatus stubRestStatus;
     
     @JoinColumn(name = "TRANS_TYPE_ID", referencedColumnName = "TRANS_TYPE_ID")
     @ManyToOne
-    private StubTransType transTypeId;
+    private StubTransType stubTransType;
 
 	public Integer getRestId() {
 		return restId;
@@ -242,20 +242,20 @@ public class Restaurant implements Serializable {
 		this.grade = grade;
 	}
 
-	public StubRestStatus getRsId() {
-		return rsId;
+	public StubRestStatus getStubRestStatus() {
+		return stubRestStatus;
 	}
 
-	public void setRsId(StubRestStatus rsId) {
-		this.rsId = rsId;
+	public void setStubRestStatus(StubRestStatus stubRestStatus) {
+		this.stubRestStatus = stubRestStatus;
 	}
 
-	public StubTransType getTransTypeId() {
-		return transTypeId;
+	public StubTransType getStubTransType() {
+		return stubTransType;
 	}
 
-	public void setTransTypeId(StubTransType transTypeId) {
-		this.transTypeId = transTypeId;
+	public void setStubTransType(StubTransType stubTransType) {
+		this.stubTransType = stubTransType;
 	}
-    
+
 }

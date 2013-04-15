@@ -26,7 +26,7 @@ public class District implements Serializable {
     
     @JoinColumn(name = "P_DIST_CODE", referencedColumnName = "DIST_CODE")
     @ManyToOne(optional = false)
-    private District pDistCode;
+    private District pDistrict;
 
 	public String getDistCode() {
 		return distCode;
@@ -52,12 +52,12 @@ public class District implements Serializable {
 		this.enabled = enabled;
 	}
 
-	public District getpDistCode() {
-		return pDistCode;
+	public District getpDistrict() {
+		return pDistrict;
 	}
 
-	public void setpDistCode(District pDistCode) {
-		this.pDistCode = pDistCode;
+	public void setpDistrict(District pDistrict) {
+		this.pDistrict = pDistrict;
 	}
-    
+
 }

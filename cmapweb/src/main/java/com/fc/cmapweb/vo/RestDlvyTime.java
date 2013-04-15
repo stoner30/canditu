@@ -23,11 +23,11 @@ public class RestDlvyTime implements Serializable {
     
     @JoinColumn(name = "REST_ID", referencedColumnName = "REST_ID")
     @ManyToOne(optional = false)
-    private Restaurant restId;
+    private Restaurant restaurant;
     
     @JoinColumn(name = "DT_ID", referencedColumnName = "DT_ID")
     @ManyToOne(optional = false)
-    private DlvyTime dtId;
+    private DlvyTime dlvyTime;
 
 	public Integer getRdtId() {
 		return rdtId;
@@ -37,20 +37,20 @@ public class RestDlvyTime implements Serializable {
 		this.rdtId = rdtId;
 	}
 
-	public Restaurant getRestId() {
-		return restId;
+	public Restaurant getRestaurant() {
+		return restaurant;
 	}
 
-	public void setRestId(Restaurant restId) {
-		this.restId = restId;
+	public void setRestaurant(Restaurant restaurant) {
+		this.restaurant = restaurant;
 	}
 
-	public DlvyTime getDtId() {
-		return dtId;
+	public DlvyTime getDlvyTime() {
+		return dlvyTime;
 	}
 
-	public void setDtId(DlvyTime dtId) {
-		this.dtId = dtId;
+	public void setDlvyTime(DlvyTime dlvyTime) {
+		this.dlvyTime = dlvyTime;
 	}
 
 }

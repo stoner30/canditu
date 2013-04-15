@@ -29,7 +29,7 @@ public class DishType implements Serializable {
     
     @JoinColumn(name = "REST_ID", referencedColumnName = "REST_ID")
     @ManyToOne(optional = false)
-    private Restaurant restId;
+    private Restaurant restaurant;
 
 	public Integer getDishTypeId() {
 		return dishTypeId;
@@ -55,12 +55,12 @@ public class DishType implements Serializable {
 		this.order = order;
 	}
 
-	public Restaurant getRestId() {
-		return restId;
+	public Restaurant getRestaurant() {
+		return restaurant;
 	}
 
-	public void setRestId(Restaurant restId) {
-		this.restId = restId;
+	public void setRestaurant(Restaurant restaurant) {
+		this.restaurant = restaurant;
 	}
 
 }

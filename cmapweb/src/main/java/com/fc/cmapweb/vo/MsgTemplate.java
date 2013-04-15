@@ -31,7 +31,7 @@ public class MsgTemplate implements Serializable {
     
     @JoinColumn(name = "SMT_ID", referencedColumnName = "SMT_ID")
     @ManyToOne(optional = false)
-    private StubMsgType smtId;
+    private StubMsgType stubMsgType;
 
 	public Integer getMtId() {
 		return mtId;
@@ -57,12 +57,12 @@ public class MsgTemplate implements Serializable {
 		this.enabled = enabled;
 	}
 
-	public StubMsgType getSmtId() {
-		return smtId;
+	public StubMsgType getStubMsgType() {
+		return stubMsgType;
 	}
 
-	public void setSmtId(StubMsgType smtId) {
-		this.smtId = smtId;
+	public void setStubMsgType(StubMsgType stubMsgType) {
+		this.stubMsgType = stubMsgType;
 	}
 
 }

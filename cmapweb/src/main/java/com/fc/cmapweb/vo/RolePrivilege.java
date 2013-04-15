@@ -23,11 +23,11 @@ public class RolePrivilege implements Serializable {
 	
     @JoinColumn(name = "PRIV_ID", referencedColumnName = "PRIV_ID")
     @ManyToOne(optional = false)
-    private StubPrivilege privId;
+    private StubPrivilege stubPrivilege;
     
     @JoinColumn(name = "ROLE_ID", referencedColumnName = "ROLE_ID")
     @ManyToOne(optional = false)
-    private Role roleId;
+    private Role role;
 
 	public Integer getRpId() {
 		return rpId;
@@ -37,20 +37,20 @@ public class RolePrivilege implements Serializable {
 		this.rpId = rpId;
 	}
 
-	public StubPrivilege getPrivId() {
-		return privId;
+	public StubPrivilege getStubPrivilege() {
+		return stubPrivilege;
 	}
 
-	public void setPrivId(StubPrivilege privId) {
-		this.privId = privId;
+	public void setStubPrivilege(StubPrivilege stubPrivilege) {
+		this.stubPrivilege = stubPrivilege;
 	}
 
-	public Role getRoleId() {
-		return roleId;
+	public Role getRole() {
+		return role;
 	}
 
-	public void setRoleId(Role roleId) {
-		this.roleId = roleId;
+	public void setRole(Role role) {
+		this.role = role;
 	}
 
 }

@@ -23,11 +23,11 @@ public class RestDpr implements Serializable {
 	
     @JoinColumn(name = "DPR_ID", referencedColumnName = "DPR_ID")
     @ManyToOne(optional = false)
-    private StubDlvyPrRge dprId;
+    private StubDlvyPrRge stubDlvyPrRge;
     
     @JoinColumn(name = "REST_ID", referencedColumnName = "REST_ID")
     @ManyToOne(optional = false)
-    private Restaurant restId;
+    private Restaurant restaurant;
 
 	public Integer getRdId() {
 		return rdId;
@@ -37,20 +37,20 @@ public class RestDpr implements Serializable {
 		this.rdId = rdId;
 	}
 
-	public StubDlvyPrRge getDprId() {
-		return dprId;
+	public StubDlvyPrRge getStubDlvyPrRge() {
+		return stubDlvyPrRge;
 	}
 
-	public void setDprId(StubDlvyPrRge dprId) {
-		this.dprId = dprId;
+	public void setStubDlvyPrRge(StubDlvyPrRge stubDlvyPrRge) {
+		this.stubDlvyPrRge = stubDlvyPrRge;
 	}
 
-	public Restaurant getRestId() {
-		return restId;
+	public Restaurant getRestaurant() {
+		return restaurant;
 	}
 
-	public void setRestId(Restaurant restId) {
-		this.restId = restId;
+	public void setRestaurant(Restaurant restaurant) {
+		this.restaurant = restaurant;
 	}
 
 }

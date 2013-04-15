@@ -23,11 +23,11 @@ public class StubUsrTypePrivilege implements Serializable {
 	
     @JoinColumn(name = "USR_TYPE_ID", referencedColumnName = "USR_TYPE_ID")
     @ManyToOne(optional = false)
-    private StubUsrType usrTypeId;
+    private StubUsrType stubUsrType;
     
     @JoinColumn(name = "PRIV_ID", referencedColumnName = "PRIV_ID")
     @ManyToOne(optional = false)
-    private StubPrivilege privId;
+    private StubPrivilege stubPrivilege;
 
 	public Integer getUtpId() {
 		return utpId;
@@ -37,20 +37,20 @@ public class StubUsrTypePrivilege implements Serializable {
 		this.utpId = utpId;
 	}
 
-	public StubUsrType getUsrTypeId() {
-		return usrTypeId;
+	public StubUsrType getStubUsrType() {
+		return stubUsrType;
 	}
 
-	public void setUsrTypeId(StubUsrType usrTypeId) {
-		this.usrTypeId = usrTypeId;
+	public void setStubUsrType(StubUsrType stubUsrType) {
+		this.stubUsrType = stubUsrType;
 	}
 
-	public StubPrivilege getPrivId() {
-		return privId;
+	public StubPrivilege getStubPrivilege() {
+		return stubPrivilege;
 	}
 
-	public void setPrivId(StubPrivilege privId) {
-		this.privId = privId;
+	public void setStubPrivilege(StubPrivilege stubPrivilege) {
+		this.stubPrivilege = stubPrivilege;
 	}
 
 }

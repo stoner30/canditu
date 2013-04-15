@@ -23,11 +23,11 @@ public class NoticeBldg implements Serializable {
     
     @JoinColumn(name = "BLDG_ID", referencedColumnName = "BLDG_ID")
     @ManyToOne(optional = false)
-    private Bldg bldgId;
+    private Bldg bldg;
     
     @JoinColumn(name = "NOTICE_ID", referencedColumnName = "NOTICE_ID")
     @ManyToOne(optional = false)
-    private Notice noticeId;
+    private Notice notice;
 
 	public Integer getNbId() {
 		return nbId;
@@ -37,20 +37,20 @@ public class NoticeBldg implements Serializable {
 		this.nbId = nbId;
 	}
 
-	public Bldg getBldgId() {
-		return bldgId;
+	public Bldg getBldg() {
+		return bldg;
 	}
 
-	public void setBldgId(Bldg bldgId) {
-		this.bldgId = bldgId;
+	public void setBldg(Bldg bldg) {
+		this.bldg = bldg;
 	}
 
-	public Notice getNoticeId() {
-		return noticeId;
+	public Notice getNotice() {
+		return notice;
 	}
 
-	public void setNoticeId(Notice noticeId) {
-		this.noticeId = noticeId;
+	public void setNotice(Notice notice) {
+		this.notice = notice;
 	}
 
 }

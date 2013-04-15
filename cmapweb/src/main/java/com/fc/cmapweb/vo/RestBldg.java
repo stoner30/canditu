@@ -23,11 +23,11 @@ public class RestBldg implements Serializable {
     
     @JoinColumn(name = "REST_ID", referencedColumnName = "REST_ID")
     @ManyToOne(optional = false)
-    private Restaurant restId;
+    private Restaurant restaurant;
     
     @JoinColumn(name = "BLDG_ID", referencedColumnName = "BLDG_ID")
     @ManyToOne(optional = false)
-    private Bldg bldgId;
+    private Bldg bldg;
 
 	public Integer getRcId() {
 		return rcId;
@@ -37,20 +37,20 @@ public class RestBldg implements Serializable {
 		this.rcId = rcId;
 	}
 
-	public Restaurant getRestId() {
-		return restId;
+	public Restaurant getRestaurant() {
+		return restaurant;
 	}
 
-	public void setRestId(Restaurant restId) {
-		this.restId = restId;
+	public void setRestaurant(Restaurant restaurant) {
+		this.restaurant = restaurant;
 	}
 
-	public Bldg getBldgId() {
-		return bldgId;
+	public Bldg getBldg() {
+		return bldg;
 	}
 
-	public void setBldgId(Bldg bldgId) {
-		this.bldgId = bldgId;
+	public void setBldg(Bldg bldg) {
+		this.bldg = bldg;
 	}
 
 }

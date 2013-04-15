@@ -33,7 +33,7 @@ public class UsrPasswdHist implements Serializable {
     
     @JoinColumn(name = "USR_ID", referencedColumnName = "USR_ID")
     @ManyToOne(optional = false)
-    private Usr usrId;
+    private Usr usr;
 
 	public Integer getHistId() {
 		return histId;
@@ -59,12 +59,12 @@ public class UsrPasswdHist implements Serializable {
 		this.updateTime = updateTime;
 	}
 
-	public Usr getUsrId() {
-		return usrId;
+	public Usr getUsr() {
+		return usr;
 	}
 
-	public void setUsrId(Usr usrId) {
-		this.usrId = usrId;
+	public void setUsr(Usr usr) {
+		this.usr = usr;
 	}
 
 }

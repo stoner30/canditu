@@ -26,11 +26,11 @@ public class QueryParams implements Serializable {
     
     @JoinColumn(name = "USR_ID", referencedColumnName = "USR_ID")
     @ManyToOne(optional = false)
-    private Usr usrId;
+    private Usr usr;
     
     @JoinColumn(name = "MODULE_ID", referencedColumnName = "MODULE_ID")
     @ManyToOne(optional = false)
-    private StubModule moduleId;
+    private StubModule stubModule;
 
 	public Integer getQpId() {
 		return qpId;
@@ -48,20 +48,20 @@ public class QueryParams implements Serializable {
 		this.params = params;
 	}
 
-	public Usr getUsrId() {
-		return usrId;
+	public Usr getUsr() {
+		return usr;
 	}
 
-	public void setUsrId(Usr usrId) {
-		this.usrId = usrId;
+	public void setUsr(Usr usr) {
+		this.usr = usr;
 	}
 
-	public StubModule getModuleId() {
-		return moduleId;
+	public StubModule getStubModule() {
+		return stubModule;
 	}
 
-	public void setModuleId(StubModule moduleId) {
-		this.moduleId = moduleId;
+	public void setStubModule(StubModule stubModule) {
+		this.stubModule = stubModule;
 	}
 
 }

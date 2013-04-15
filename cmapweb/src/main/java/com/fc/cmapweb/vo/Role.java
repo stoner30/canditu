@@ -32,11 +32,11 @@ public class Role implements Serializable {
     
     @JoinColumn(name = "USR_TYPE_ID", referencedColumnName = "USR_TYPE_ID")
     @ManyToOne(optional = false)
-    private StubUsrType usrTypeId;
+    private StubUsrType stubUsrType;
     
     @JoinColumn(name = "P_ROLE_ID", referencedColumnName = "ROLE_ID")
     @ManyToOne(optional = false)
-    private Role pRoleId;
+    private Role role;
 
 	public Integer getRoleId() {
 		return roleId;
@@ -70,20 +70,20 @@ public class Role implements Serializable {
 		this.enabled = enabled;
 	}
 
-	public StubUsrType getUsrTypeId() {
-		return usrTypeId;
+	public StubUsrType getStubUsrType() {
+		return stubUsrType;
 	}
 
-	public void setUsrTypeId(StubUsrType usrTypeId) {
-		this.usrTypeId = usrTypeId;
+	public void setStubUsrType(StubUsrType stubUsrType) {
+		this.stubUsrType = stubUsrType;
 	}
 
-	public Role getpRoleId() {
-		return pRoleId;
+	public Role getRole() {
+		return role;
 	}
 
-	public void setpRoleId(Role pRoleId) {
-		this.pRoleId = pRoleId;
+	public void setRole(Role role) {
+		this.role = role;
 	}
-    
+
 }

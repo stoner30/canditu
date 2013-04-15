@@ -16,29 +16,29 @@ import javax.persistence.TemporalType;
 @Entity
 @Table(name = "msg_send_time")
 public class MsgSendTime implements Serializable {
-    
+
 	private static final long serialVersionUID = -9053786652846565705L;
 
 	@Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "MST_ID")
-    private Integer mstId;
-    
-    @Column(name = "MST_START_TIME")
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date mstStartTime;
-    
-    @Column(name = "MST_END_TIME")
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date mstEndTime;
-    
-    @JoinColumn(name = "MT_ID", referencedColumnName = "MT_ID")
-    @ManyToOne(optional = false)
-    private MsgTemplate mtId;
-    
-    @JoinColumn(name = "MG_ID", referencedColumnName = "MG_ID")
-    @ManyToOne(optional = false)
-    private MsgGroup mgId;
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "MST_ID")
+	private Integer mstId;
+
+	@Column(name = "MST_START_TIME")
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date mstStartTime;
+
+	@Column(name = "MST_END_TIME")
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date mstEndTime;
+
+	@JoinColumn(name = "MT_ID", referencedColumnName = "MT_ID")
+	@ManyToOne(optional = false)
+	private MsgTemplate msgTemplate;
+
+	@JoinColumn(name = "MG_ID", referencedColumnName = "MG_ID")
+	@ManyToOne(optional = false)
+	private MsgGroup msgGroup;
 
 	public Integer getMstId() {
 		return mstId;
@@ -64,20 +64,20 @@ public class MsgSendTime implements Serializable {
 		this.mstEndTime = mstEndTime;
 	}
 
-	public MsgTemplate getMtId() {
-		return mtId;
+	public MsgTemplate getMsgTemplate() {
+		return msgTemplate;
 	}
 
-	public void setMtId(MsgTemplate mtId) {
-		this.mtId = mtId;
+	public void setMsgTemplate(MsgTemplate msgTemplate) {
+		this.msgTemplate = msgTemplate;
 	}
 
-	public MsgGroup getMgId() {
-		return mgId;
+	public MsgGroup getMsgGroup() {
+		return msgGroup;
 	}
 
-	public void setMgId(MsgGroup mgId) {
-		this.mgId = mgId;
+	public void setMsgGroup(MsgGroup msgGroup) {
+		this.msgGroup = msgGroup;
 	}
 
 }

@@ -58,7 +58,7 @@ public class Customer implements Serializable {
     
     @JoinColumn(name = "OAUTH_ID", referencedColumnName = "OAUTH_ID")
     @ManyToOne
-    private StubOauthType oauthId;
+    private StubOauthType stubOauthType;
 
 	public Integer getCustomerId() {
 		return customerId;
@@ -148,12 +148,12 @@ public class Customer implements Serializable {
 		this.firstOrder = firstOrder;
 	}
 
-	public StubOauthType getOauthId() {
-		return oauthId;
+	public StubOauthType getStubOauthType() {
+		return stubOauthType;
 	}
 
-	public void setOauthId(StubOauthType oauthId) {
-		this.oauthId = oauthId;
+	public void setStubOauthType(StubOauthType stubOauthType) {
+		this.stubOauthType = stubOauthType;
 	}
 
 }

@@ -23,11 +23,11 @@ public class RestTag implements Serializable {
 	
     @JoinColumn(name = "RTT_ID", referencedColumnName = "RTT_ID")
     @ManyToOne(optional = false)
-    private RestTagType rttId;
+    private RestTagType restTagType;
     
     @JoinColumn(name = "REST_ID", referencedColumnName = "REST_ID")
     @ManyToOne(optional = false)
-    private Restaurant restId;
+    private Restaurant restaurant;
 
 	public Integer getRtId() {
 		return rtId;
@@ -37,20 +37,20 @@ public class RestTag implements Serializable {
 		this.rtId = rtId;
 	}
 
-	public RestTagType getRttId() {
-		return rttId;
+	public RestTagType getRestTagType() {
+		return restTagType;
 	}
 
-	public void setRttId(RestTagType rttId) {
-		this.rttId = rttId;
+	public void setRestTagType(RestTagType restTagType) {
+		this.restTagType = restTagType;
 	}
 
-	public Restaurant getRestId() {
-		return restId;
+	public Restaurant getRestaurant() {
+		return restaurant;
 	}
 
-	public void setRestId(Restaurant restId) {
-		this.restId = restId;
+	public void setRestaurant(Restaurant restaurant) {
+		this.restaurant = restaurant;
 	}
 
 }

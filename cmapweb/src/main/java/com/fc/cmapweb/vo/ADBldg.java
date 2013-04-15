@@ -22,46 +22,46 @@ public class AdBldg implements Serializable {
     private Integer abId;
 
     @Column(name = "AD_ORDER")
-    private int adOrder;
+    private Integer adOrder;
     
     @JoinColumn(name = "BLDG_ID", referencedColumnName = "BLDG_ID")
     @ManyToOne(optional = false)
-    private Bldg bldgId;
+    private Bldg bldg;
     
     @JoinColumn(name = "AD_ID", referencedColumnName = "AD_ID")
     @ManyToOne(optional = false)
-    private Ad adId;
+    private Ad ad;
 
-    public Integer getAbId() {
-        return abId;
-    }
+	public Integer getAbId() {
+		return abId;
+	}
 
-    public void setAbId(Integer abId) {
-        this.abId = abId;
-    }
+	public void setAbId(Integer abId) {
+		this.abId = abId;
+	}
 
-    public int getAdOrder() {
-        return adOrder;
-    }
+	public Integer getAdOrder() {
+		return adOrder;
+	}
 
-    public void setAdOrder(int adOrder) {
-        this.adOrder = adOrder;
-    }
+	public void setAdOrder(Integer adOrder) {
+		this.adOrder = adOrder;
+	}
 
-    public Bldg getBldgId() {
-        return bldgId;
-    }
+	public Bldg getBldg() {
+		return bldg;
+	}
 
-    public void setBldgId(Bldg bldgId) {
-        this.bldgId = bldgId;
-    }
+	public void setBldg(Bldg bldg) {
+		this.bldg = bldg;
+	}
 
-    public Ad getAdId() {
-        return adId;
-    }
+	public Ad getAd() {
+		return ad;
+	}
 
-    public void setAdId(Ad adId) {
-        this.adId = adId;
-    }
+	public void setAd(Ad ad) {
+		this.ad = ad;
+	}
 
 }

@@ -32,11 +32,11 @@ public class DlvyAddr implements Serializable {
     
     @JoinColumn(name = "CUSTOMER_ID", referencedColumnName = "CUSTOMER_ID")
     @ManyToOne(optional = false)
-    private Customer customerId;
+    private Customer customer;
     
     @JoinColumn(name = "BLDG_ID", referencedColumnName = "BLDG_ID")
     @ManyToOne(optional = false)
-    private Bldg bldgId;
+    private Bldg bldg;
 
 	public Integer getAddrId() {
 		return addrId;
@@ -70,20 +70,20 @@ public class DlvyAddr implements Serializable {
 		this.mobile = mobile;
 	}
 
-	public Customer getCustomerId() {
-		return customerId;
+	public Customer getCustomer() {
+		return customer;
 	}
 
-	public void setCustomerId(Customer customerId) {
-		this.customerId = customerId;
+	public void setCustomer(Customer customer) {
+		this.customer = customer;
 	}
 
-	public Bldg getBldgId() {
-		return bldgId;
+	public Bldg getBldg() {
+		return bldg;
 	}
 
-	public void setBldgId(Bldg bldgId) {
-		this.bldgId = bldgId;
+	public void setBldg(Bldg bldg) {
+		this.bldg = bldg;
 	}
 
 }

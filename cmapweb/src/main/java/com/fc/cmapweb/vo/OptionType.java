@@ -32,7 +32,7 @@ public class OptionType implements Serializable {
     
     @JoinColumn(name = "DISH_ID", referencedColumnName = "DISH_ID")
     @ManyToOne(optional = false)
-    private Dish dishId;
+    private Dish dish;
 
 	public Integer getOptionTypeId() {
 		return optionTypeId;
@@ -66,12 +66,12 @@ public class OptionType implements Serializable {
 		this.validType = validType;
 	}
 
-	public Dish getDishId() {
-		return dishId;
+	public Dish getDish() {
+		return dish;
 	}
 
-	public void setDishId(Dish dishId) {
-		this.dishId = dishId;
+	public void setDish(Dish dish) {
+		this.dish = dish;
 	}
 
 }

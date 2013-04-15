@@ -26,7 +26,7 @@ public class Option implements Serializable {
     
     @JoinColumn(name = "OPTION_TYPE_ID", referencedColumnName = "OPTION_TYPE_ID")
     @ManyToOne(optional = false)
-    private OptionType optionTypeId;
+    private OptionType optionType;
 
 	public Integer getOptionId() {
 		return optionId;
@@ -44,12 +44,12 @@ public class Option implements Serializable {
 		this.optionValue = optionValue;
 	}
 
-	public OptionType getOptionTypeId() {
-		return optionTypeId;
+	public OptionType getOptionType() {
+		return optionType;
 	}
 
-	public void setOptionTypeId(OptionType optionTypeId) {
-		this.optionTypeId = optionTypeId;
+	public void setOptionType(OptionType optionType) {
+		this.optionType = optionType;
 	}
 
 }

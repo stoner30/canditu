@@ -23,11 +23,11 @@ public class UsrRole implements Serializable {
     
     @JoinColumn(name = "USR_ID", referencedColumnName = "USR_ID")
     @ManyToOne(optional = false)
-    private Usr usrId;
+    private Usr usr;
     
     @JoinColumn(name = "ROLE_ID", referencedColumnName = "ROLE_ID")
     @ManyToOne(optional = false)
-    private Role roleId;
+    private Role role;
 
 	public Integer getUrId() {
 		return urId;
@@ -37,20 +37,20 @@ public class UsrRole implements Serializable {
 		this.urId = urId;
 	}
 
-	public Usr getUsrId() {
-		return usrId;
+	public Usr getUsr() {
+		return usr;
 	}
 
-	public void setUsrId(Usr usrId) {
-		this.usrId = usrId;
+	public void setUsr(Usr usr) {
+		this.usr = usr;
 	}
 
-	public Role getRoleId() {
-		return roleId;
+	public Role getRole() {
+		return role;
 	}
 
-	public void setRoleId(Role roleId) {
-		this.roleId = roleId;
+	public void setRole(Role role) {
+		this.role = role;
 	}
 
 }

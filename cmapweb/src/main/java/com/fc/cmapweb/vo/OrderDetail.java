@@ -52,7 +52,7 @@ public class OrderDetail implements Serializable {
     
     @JoinColumn(name = "ORDER_NBR", referencedColumnName = "ORDER_NBR")
     @ManyToOne(optional = false)
-    private OrderInfo orderNbr;
+    private OrderInfo orderInfo;
 
 	public Integer getOdId() {
 		return odId;
@@ -134,12 +134,12 @@ public class OrderDetail implements Serializable {
 		this.isDel = isDel;
 	}
 
-	public OrderInfo getOrderNbr() {
-		return orderNbr;
+	public OrderInfo getOrderInfo() {
+		return orderInfo;
 	}
 
-	public void setOrderNbr(OrderInfo orderNbr) {
-		this.orderNbr = orderNbr;
+	public void setOrderInfo(OrderInfo orderInfo) {
+		this.orderInfo = orderInfo;
 	}
 
 }

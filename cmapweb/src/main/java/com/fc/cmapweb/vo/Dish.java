@@ -1,7 +1,6 @@
 package com.fc.cmapweb.vo;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -26,13 +25,13 @@ public class Dish implements Serializable {
     private String dishName;
     
     @Column(name = "DISH_PRICE")
-    private BigDecimal dishPrice;
+    private Double dishPrice;
     
     @Column(name = "IS_PROMOTION")
     private boolean isPromotion;
     
     @Column(name = "DISH_PROMOTION_PRICE")
-    private BigDecimal dishPromotionPrice;
+    private Double dishPromotionPrice;
     
     @Column(name = "DISH_DESC")
     private String dishDesc;
@@ -42,11 +41,11 @@ public class Dish implements Serializable {
     
     @JoinColumn(name = "REST_ID", referencedColumnName = "REST_ID")
     @ManyToOne(optional = false)
-    private Restaurant restId;
+    private Restaurant restaurant;
     
     @JoinColumn(name = "DISH_TYPE_ID", referencedColumnName = "DISH_TYPE_ID")
     @ManyToOne(optional = false)
-    private DishType dishTypeId;
+    private DishType dishType;
 
 	public Integer getDishId() {
 		return dishId;
@@ -64,11 +63,11 @@ public class Dish implements Serializable {
 		this.dishName = dishName;
 	}
 
-	public BigDecimal getDishPrice() {
+	public Double getDishPrice() {
 		return dishPrice;
 	}
 
-	public void setDishPrice(BigDecimal dishPrice) {
+	public void setDishPrice(Double dishPrice) {
 		this.dishPrice = dishPrice;
 	}
 
@@ -80,11 +79,11 @@ public class Dish implements Serializable {
 		this.isPromotion = isPromotion;
 	}
 
-	public BigDecimal getDishPromotionPrice() {
+	public Double getDishPromotionPrice() {
 		return dishPromotionPrice;
 	}
 
-	public void setDishPromotionPrice(BigDecimal dishPromotionPrice) {
+	public void setDishPromotionPrice(Double dishPromotionPrice) {
 		this.dishPromotionPrice = dishPromotionPrice;
 	}
 
@@ -104,20 +103,20 @@ public class Dish implements Serializable {
 		this.enabled = enabled;
 	}
 
-	public Restaurant getRestId() {
-		return restId;
+	public Restaurant getRestaurant() {
+		return restaurant;
 	}
 
-	public void setRestId(Restaurant restId) {
-		this.restId = restId;
+	public void setRestaurant(Restaurant restaurant) {
+		this.restaurant = restaurant;
 	}
 
-	public DishType getDishTypeId() {
-		return dishTypeId;
+	public DishType getDishType() {
+		return dishType;
 	}
 
-	public void setDishTypeId(DishType dishTypeId) {
-		this.dishTypeId = dishTypeId;
+	public void setDishType(DishType dishType) {
+		this.dishType = dishType;
 	}
-    
+
 }

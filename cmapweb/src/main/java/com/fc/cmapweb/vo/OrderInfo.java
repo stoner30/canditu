@@ -61,7 +61,7 @@ public class OrderInfo implements Serializable {
     
     @JoinColumn(name = "OS_ID", referencedColumnName = "OS_ID")
     @ManyToOne(optional = false)
-    private StubOrderStatus osId;
+    private StubOrderStatus stubOrderStatus;
 
 	public String getOrderNbr() {
 		return orderNbr;
@@ -167,12 +167,12 @@ public class OrderInfo implements Serializable {
 		this.activityId = activityId;
 	}
 
-	public StubOrderStatus getOsId() {
-		return osId;
+	public StubOrderStatus getStubOrderStatus() {
+		return stubOrderStatus;
 	}
 
-	public void setOsId(StubOrderStatus osId) {
-		this.osId = osId;
+	public void setStubOrderStatus(StubOrderStatus stubOrderStatus) {
+		this.stubOrderStatus = stubOrderStatus;
 	}
 
 }
