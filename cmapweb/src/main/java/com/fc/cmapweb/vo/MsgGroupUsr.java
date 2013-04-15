@@ -3,7 +3,6 @@ package com.fc.cmapweb.vo;
 import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -14,21 +13,21 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "msg_group_usr")
 public class MsgGroupUsr implements Serializable {
-	
-	private static final long serialVersionUID = 2594342408310064148L;
-	
+    
+	private static final long serialVersionUID = -4682952042392888849L;
+
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "MGU_ID")
     private Integer mguId;
-	
+    
     @JoinColumn(name = "USR_ID", referencedColumnName = "USR_ID")
-    @ManyToOne(optional = false, fetch = FetchType.LAZY)
-    private Usr usr;
+    @ManyToOne(optional = false)
+    private Usr usrId;
     
     @JoinColumn(name = "MG_ID", referencedColumnName = "MG_ID")
-    @ManyToOne(optional = false, fetch = FetchType.LAZY)
-    private MsgGroup msgGroup;
+    @ManyToOne(optional = false)
+    private MsgGroup mgId;
 
 	public Integer getMguId() {
 		return mguId;
@@ -38,20 +37,20 @@ public class MsgGroupUsr implements Serializable {
 		this.mguId = mguId;
 	}
 
-	public Usr getUsr() {
-		return usr;
+	public Usr getUsrId() {
+		return usrId;
 	}
 
-	public void setUsr(Usr usr) {
-		this.usr = usr;
+	public void setUsrId(Usr usrId) {
+		this.usrId = usrId;
 	}
 
-	public MsgGroup getMsgGroup() {
-		return msgGroup;
+	public MsgGroup getMgId() {
+		return mgId;
 	}
 
-	public void setMsgGroup(MsgGroup msgGroup) {
-		this.msgGroup = msgGroup;
+	public void setMgId(MsgGroup mgId) {
+		this.mgId = mgId;
 	}
 
 }

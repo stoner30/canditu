@@ -11,14 +11,14 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "msg_group")
 public class MsgGroup implements Serializable {
-	
-	private static final long serialVersionUID = 2401202717616841351L;
+    
+	private static final long serialVersionUID = -9120999479162021966L;
 
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "MG_ID")
     private Integer mgId;
-	
+    
     @Column(name = "MG_NAME")
     private String mgName;
     

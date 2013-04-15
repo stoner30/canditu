@@ -4,7 +4,6 @@ import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -17,29 +16,29 @@ import javax.persistence.TemporalType;
 @Entity
 @Table(name = "msg_send_time")
 public class MsgSendTime implements Serializable {
-	
+    
 	private static final long serialVersionUID = -9053786652846565705L;
 
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "MST_ID")
     private Integer mstId;
-
+    
     @Column(name = "MST_START_TIME")
     @Temporal(TemporalType.TIMESTAMP)
     private Date mstStartTime;
-  
+    
     @Column(name = "MST_END_TIME")
     @Temporal(TemporalType.TIMESTAMP)
     private Date mstEndTime;
     
     @JoinColumn(name = "MT_ID", referencedColumnName = "MT_ID")
-    @ManyToOne(optional = false, fetch = FetchType.LAZY)
-    private MsgTemplate msgTemplate;
+    @ManyToOne(optional = false)
+    private MsgTemplate mtId;
     
     @JoinColumn(name = "MG_ID", referencedColumnName = "MG_ID")
-    @ManyToOne(optional = false, fetch = FetchType.LAZY)
-    private MsgGroup msgGroup;
+    @ManyToOne(optional = false)
+    private MsgGroup mgId;
 
 	public Integer getMstId() {
 		return mstId;
@@ -65,20 +64,20 @@ public class MsgSendTime implements Serializable {
 		this.mstEndTime = mstEndTime;
 	}
 
-	public MsgTemplate getMsgTemplate() {
-		return msgTemplate;
+	public MsgTemplate getMtId() {
+		return mtId;
 	}
 
-	public void setMsgTemplate(MsgTemplate msgTemplate) {
-		this.msgTemplate = msgTemplate;
+	public void setMtId(MsgTemplate mtId) {
+		this.mtId = mtId;
 	}
 
-	public MsgGroup getMsgGroup() {
-		return msgGroup;
+	public MsgGroup getMgId() {
+		return mgId;
 	}
 
-	public void setMsgGroup(MsgGroup msgGroup) {
-		this.msgGroup = msgGroup;
+	public void setMgId(MsgGroup mgId) {
+		this.mgId = mgId;
 	}
 
 }

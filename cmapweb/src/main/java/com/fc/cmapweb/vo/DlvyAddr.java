@@ -3,7 +3,6 @@ package com.fc.cmapweb.vo;
 import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -11,83 +10,80 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import com.fc.cmapweb.vo.Bldg;
-import com.fc.cmapweb.vo.Customer;
-
 @Entity
 @Table(name = "dlvy_addr")
 public class DlvyAddr implements Serializable {
-
+    
 	private static final long serialVersionUID = 7167345487600472479L;
 
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "ADDR_ID")
     private Integer addrId;
-
+    
     @Column(name = "CNEE")
     private String cnee;
-
+    
     @Column(name = "ADDR_DET")
     private String addrDet;
     
     @Column(name = "MOBILE")
     private String mobile;
-
+    
     @JoinColumn(name = "CUSTOMER_ID", referencedColumnName = "CUSTOMER_ID")
-    @ManyToOne(optional = false, fetch = FetchType.LAZY)
-    private Customer customer;
+    @ManyToOne(optional = false)
+    private Customer customerId;
     
     @JoinColumn(name = "BLDG_ID", referencedColumnName = "BLDG_ID")
-    @ManyToOne(optional = false, fetch = FetchType.LAZY)
-    private Bldg bldg;
+    @ManyToOne(optional = false)
+    private Bldg bldgId;
 
-    public Integer getAddrId() {
-        return addrId;
-    }
+	public Integer getAddrId() {
+		return addrId;
+	}
 
-    public void setAddrId(Integer addrId) {
-        this.addrId = addrId;
-    }
+	public void setAddrId(Integer addrId) {
+		this.addrId = addrId;
+	}
 
-    public String getCnee() {
-        return cnee;
-    }
+	public String getCnee() {
+		return cnee;
+	}
 
-    public void setCnee(String cnee) {
-        this.cnee = cnee;
-    }
+	public void setCnee(String cnee) {
+		this.cnee = cnee;
+	}
 
-    public String getAddrDet() {
-        return addrDet;
-    }
+	public String getAddrDet() {
+		return addrDet;
+	}
 
-    public void setAddrDet(String addrDet) {
-        this.addrDet = addrDet;
-    }
+	public void setAddrDet(String addrDet) {
+		this.addrDet = addrDet;
+	}
 
-    public String getMobile() {
-        return mobile;
-    }
+	public String getMobile() {
+		return mobile;
+	}
 
-    public void setMobile(String mobile) {
-        this.mobile = mobile;
-    }
+	public void setMobile(String mobile) {
+		this.mobile = mobile;
+	}
 
-    public Customer getCustomer() {
-        return customer;
-    }
+	public Customer getCustomerId() {
+		return customerId;
+	}
 
-    public void setCustomer(Customer customer) {
-        this.customer = customer;
-    }
+	public void setCustomerId(Customer customerId) {
+		this.customerId = customerId;
+	}
 
-    public Bldg getBldg() {
-        return bldg;
-    }
+	public Bldg getBldgId() {
+		return bldgId;
+	}
 
-    public void setBldg(Bldg bldg) {
-        this.bldg = bldg;
-    }
-    
+	public void setBldgId(Bldg bldgId) {
+		this.bldgId = bldgId;
+	}
+
 }

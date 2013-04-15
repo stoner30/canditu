@@ -1,11 +1,9 @@
 package com.fc.cmapweb.vo;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
 import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -16,25 +14,31 @@ import javax.persistence.TemporalType;
 @Entity
 @Table(name = "order_info")
 public class OrderInfo implements Serializable {
+    
+	private static final long serialVersionUID = -6436969650598946634L;
 
-	private static final long serialVersionUID = -2659702142396491052L;
-	
 	@Id
     @Column(name = "ORDER_NBR")
     private String orderNbr;
-
+    
     @Column(name = "USR_ID")
-    private int usrId;
+    private Integer usrId;
     
     @Column(name = "ORDER_TIME")
     @Temporal(TemporalType.TIMESTAMP)
     private Date orderTime;
     
     @Column(name = "REST_ID")
-    private int restId;
-
-    @Column(name = "ORDER_AMOUNT")
-    private BigDecimal orderAmount;
+    private Integer restId;
+    
+    @Column(name = "ORIGIN_AMOUNT")
+    private Double originAmount;
+    
+    @Column(name = "FINAL_AMOUNT")
+    private Double finalAmount;
+    
+    @Column(name = "BLDG_ID")
+    private Integer bldgId;
     
     @Column(name = "DLVY_ADDR")
     private String dlvyAddr;
@@ -52,13 +56,12 @@ public class OrderInfo implements Serializable {
     @Temporal(TemporalType.TIME)
     private Date expectTime;
     
-    @JoinColumn(name = "OS_ID", referencedColumnName = "OS_ID")
-    @ManyToOne(optional = false, fetch = FetchType.LAZY)
-    private StubOrderStatus stubOrderStatus;
+    @Column(name = "ACTIVITY_ID")
+    private Integer activityId;
     
-    @JoinColumn(name = "BLDG_ID", referencedColumnName = "BLDG_ID")
-    @ManyToOne(optional = false, fetch = FetchType.LAZY)
-    private Bldg bldg;
+    @JoinColumn(name = "OS_ID", referencedColumnName = "OS_ID")
+    @ManyToOne(optional = false)
+    private StubOrderStatus osId;
 
 	public String getOrderNbr() {
 		return orderNbr;
@@ -68,11 +71,11 @@ public class OrderInfo implements Serializable {
 		this.orderNbr = orderNbr;
 	}
 
-	public int getUsrId() {
+	public Integer getUsrId() {
 		return usrId;
 	}
 
-	public void setUsrId(int usrId) {
+	public void setUsrId(Integer usrId) {
 		this.usrId = usrId;
 	}
 
@@ -84,20 +87,36 @@ public class OrderInfo implements Serializable {
 		this.orderTime = orderTime;
 	}
 
-	public int getRestId() {
+	public Integer getRestId() {
 		return restId;
 	}
 
-	public void setRestId(int restId) {
+	public void setRestId(Integer restId) {
 		this.restId = restId;
 	}
 
-	public BigDecimal getOrderAmount() {
-		return orderAmount;
+	public Double getOriginAmount() {
+		return originAmount;
 	}
 
-	public void setOrderAmount(BigDecimal orderAmount) {
-		this.orderAmount = orderAmount;
+	public void setOriginAmount(Double originAmount) {
+		this.originAmount = originAmount;
+	}
+
+	public Double getFinalAmount() {
+		return finalAmount;
+	}
+
+	public void setFinalAmount(Double finalAmount) {
+		this.finalAmount = finalAmount;
+	}
+
+	public Integer getBldgId() {
+		return bldgId;
+	}
+
+	public void setBldgId(Integer bldgId) {
+		this.bldgId = bldgId;
 	}
 
 	public String getDlvyAddr() {
@@ -140,20 +159,20 @@ public class OrderInfo implements Serializable {
 		this.expectTime = expectTime;
 	}
 
-	public StubOrderStatus getStubOrderStatus() {
-		return stubOrderStatus;
+	public Integer getActivityId() {
+		return activityId;
 	}
 
-	public void setStubOrderStatus(StubOrderStatus stubOrderStatus) {
-		this.stubOrderStatus = stubOrderStatus;
+	public void setActivityId(Integer activityId) {
+		this.activityId = activityId;
 	}
 
-	public Bldg getBldg() {
-		return bldg;
+	public StubOrderStatus getOsId() {
+		return osId;
 	}
 
-	public void setBldg(Bldg bldg) {
-		this.bldg = bldg;
+	public void setOsId(StubOrderStatus osId) {
+		this.osId = osId;
 	}
-    
+
 }

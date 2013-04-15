@@ -11,30 +11,26 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "rest_dlvy_time")
-public class RestDlvyTime implements Serializable {
+@Table(name = "my_favor")
+public class MyFavor implements Serializable {
     
-	private static final long serialVersionUID = -3024116602608253267L;
-
+	private static final long serialVersionUID = -1759132380308720997L;
+	
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "RDT_ID")
-    private Integer rdtId;
-    
+    @Column(name = "FAVOR_ID")
+    private Integer favorId;
+	
     @JoinColumn(name = "REST_ID", referencedColumnName = "REST_ID")
     @ManyToOne(optional = false)
     private Restaurant restId;
-    
-    @JoinColumn(name = "DT_ID", referencedColumnName = "DT_ID")
-    @ManyToOne(optional = false)
-    private DlvyTime dtId;
 
-	public Integer getRdtId() {
-		return rdtId;
+	public Integer getFavorId() {
+		return favorId;
 	}
 
-	public void setRdtId(Integer rdtId) {
-		this.rdtId = rdtId;
+	public void setFavorId(Integer favorId) {
+		this.favorId = favorId;
 	}
 
 	public Restaurant getRestId() {
@@ -43,14 +39,6 @@ public class RestDlvyTime implements Serializable {
 
 	public void setRestId(Restaurant restId) {
 		this.restId = restId;
-	}
-
-	public DlvyTime getDtId() {
-		return dtId;
-	}
-
-	public void setDtId(DlvyTime dtId) {
-		this.dtId = dtId;
 	}
 
 }

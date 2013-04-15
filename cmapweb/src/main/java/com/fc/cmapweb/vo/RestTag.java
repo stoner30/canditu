@@ -3,34 +3,31 @@ package com.fc.cmapweb.vo;
 import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-import com.fc.cmapweb.vo.RestTagType;
-import com.fc.cmapweb.vo.Restaurant;
 
 @Entity
 @Table(name = "rest_tag")
 public class RestTag implements Serializable {
+    
+	private static final long serialVersionUID = -6462836632062938978L;
 
-    private static final long serialVersionUID = 4875257356012031719L;
-
-    @Id
+	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "RT_ID")
     private Integer rtId;
-    
+	
     @JoinColumn(name = "RTT_ID", referencedColumnName = "RTT_ID")
-    @ManyToOne(optional = false, fetch = FetchType.LAZY)
-    private RestTagType restTagType;
+    @ManyToOne(optional = false)
+    private RestTagType rttId;
     
     @JoinColumn(name = "REST_ID", referencedColumnName = "REST_ID")
-    @ManyToOne(optional = false, fetch = FetchType.LAZY)
-    private Restaurant restaurant;
+    @ManyToOne(optional = false)
+    private Restaurant restId;
 
 	public Integer getRtId() {
 		return rtId;
@@ -40,20 +37,20 @@ public class RestTag implements Serializable {
 		this.rtId = rtId;
 	}
 
-	public RestTagType getRestTagType() {
-		return restTagType;
+	public RestTagType getRttId() {
+		return rttId;
 	}
 
-	public void setRestTagType(RestTagType restTagType) {
-		this.restTagType = restTagType;
+	public void setRttId(RestTagType rttId) {
+		this.rttId = rttId;
 	}
 
-	public Restaurant getRestaurant() {
-		return restaurant;
+	public Restaurant getRestId() {
+		return restId;
 	}
 
-	public void setRestaurant(Restaurant restaurant) {
-		this.restaurant = restaurant;
+	public void setRestId(Restaurant restId) {
+		this.restId = restId;
 	}
-    
+
 }

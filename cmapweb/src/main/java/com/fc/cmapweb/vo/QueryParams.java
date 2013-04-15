@@ -3,7 +3,6 @@ package com.fc.cmapweb.vo;
 import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -15,9 +14,9 @@ import javax.persistence.Table;
 @Table(name = "query_params")
 public class QueryParams implements Serializable {
     
-    private static final long serialVersionUID = -4727735450578662767L;
-	
-    @Id
+	private static final long serialVersionUID = -2674791200215502561L;
+
+	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "QP_ID")
     private Integer qpId;
@@ -26,43 +25,43 @@ public class QueryParams implements Serializable {
     private String params;
     
     @JoinColumn(name = "USR_ID", referencedColumnName = "USR_ID")
-    @ManyToOne(optional = false, fetch = FetchType.LAZY)
-    private Usr usr;
+    @ManyToOne(optional = false)
+    private Usr usrId;
     
     @JoinColumn(name = "MODULE_ID", referencedColumnName = "MODULE_ID")
-    @ManyToOne(optional = false, fetch = FetchType.LAZY)
-    private StubModule stubModule;
+    @ManyToOne(optional = false)
+    private StubModule moduleId;
 
-    public Integer getQpId() {
-        return qpId;
-    }
+	public Integer getQpId() {
+		return qpId;
+	}
 
-    public void setQpId(Integer qpId) {
-        this.qpId = qpId;
-    }
+	public void setQpId(Integer qpId) {
+		this.qpId = qpId;
+	}
 
-    public String getParams() {
-        return params;
-    }
+	public String getParams() {
+		return params;
+	}
 
-    public void setParams(String params) {
-        this.params = params;
-    }
+	public void setParams(String params) {
+		this.params = params;
+	}
 
-    public Usr getUsr() {
-        return usr;
-    }
+	public Usr getUsrId() {
+		return usrId;
+	}
 
-    public void setUsr(Usr usr) {
-        this.usr = usr;
-    }
+	public void setUsrId(Usr usrId) {
+		this.usrId = usrId;
+	}
 
-    public StubModule getStubModule() {
-        return stubModule;
-    }
+	public StubModule getModuleId() {
+		return moduleId;
+	}
 
-    public void setStubModule(StubModule stubModule) {
-        this.stubModule = stubModule;
-    }
-    
+	public void setModuleId(StubModule moduleId) {
+		this.moduleId = moduleId;
+	}
+
 }

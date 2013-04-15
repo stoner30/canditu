@@ -11,38 +11,30 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "rest_bldg")
-public class RestBldg implements Serializable {
+@Table(name = "notice_bldg")
+public class NoticeBldg implements Serializable {
     
-	private static final long serialVersionUID = 6049747022417247496L;
+	private static final long serialVersionUID = -5344350169913254183L;
 
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "RC_ID")
-    private Integer rcId;
-    
-    @JoinColumn(name = "REST_ID", referencedColumnName = "REST_ID")
-    @ManyToOne(optional = false)
-    private Restaurant restId;
+    @Column(name = "NB_ID")
+    private Integer nbId;
     
     @JoinColumn(name = "BLDG_ID", referencedColumnName = "BLDG_ID")
     @ManyToOne(optional = false)
     private Bldg bldgId;
+    
+    @JoinColumn(name = "NOTICE_ID", referencedColumnName = "NOTICE_ID")
+    @ManyToOne(optional = false)
+    private Notice noticeId;
 
-	public Integer getRcId() {
-		return rcId;
+	public Integer getNbId() {
+		return nbId;
 	}
 
-	public void setRcId(Integer rcId) {
-		this.rcId = rcId;
-	}
-
-	public Restaurant getRestId() {
-		return restId;
-	}
-
-	public void setRestId(Restaurant restId) {
-		this.restId = restId;
+	public void setNbId(Integer nbId) {
+		this.nbId = nbId;
 	}
 
 	public Bldg getBldgId() {
@@ -51,6 +43,14 @@ public class RestBldg implements Serializable {
 
 	public void setBldgId(Bldg bldgId) {
 		this.bldgId = bldgId;
+	}
+
+	public Notice getNoticeId() {
+		return noticeId;
+	}
+
+	public void setNoticeId(Notice noticeId) {
+		this.noticeId = noticeId;
 	}
 
 }

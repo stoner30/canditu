@@ -14,34 +14,34 @@ import javax.persistence.TemporalType;
 @Entity
 @Table(name = "usr")
 public class Usr implements Serializable {
+    
+	private static final long serialVersionUID = 4925223788513535363L;
 
-	private static final long serialVersionUID = 5296468648790077207L;
-	
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "USR_ID")
     private Integer usrId;
-
+    
     @Column(name = "USRNAME")
     private String usrname;
-
+    
     @Column(name = "PASSWD")
     private String passwd;
-
+    
     @Column(name = "REG_TIME")
     @Temporal(TemporalType.TIMESTAMP)
     private Date regTime;
-
+    
     @Column(name = "LAST_LOGIN_TIME")
     @Temporal(TemporalType.TIMESTAMP)
     private Date lastLoginTime;
     
     @Column(name = "LAST_LOGIN_IP")
     private String lastLoginIp;
-
+    
     @Column(name = "BAD_PWD_COUNT")
     private Integer badPwdCount;
-
+    
     @Column(name = "ENABLED")
     private boolean enabled;
 
@@ -108,5 +108,5 @@ public class Usr implements Serializable {
 	public void setEnabled(boolean enabled) {
 		this.enabled = enabled;
 	}
-
+    
 }

@@ -3,7 +3,6 @@ package com.fc.cmapweb.vo;
 import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -12,13 +11,13 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "district")
 public class District implements Serializable {
-	
-	private static final long serialVersionUID = 216489240715914944L;
+    
+	private static final long serialVersionUID = -3692534047860674017L;
 
 	@Id
     @Column(name = "DIST_CODE")
     private String distCode;
-	
+    
     @Column(name = "DIST_NAME")
     private String distName;
     
@@ -26,8 +25,8 @@ public class District implements Serializable {
     private boolean enabled;
     
     @JoinColumn(name = "P_DIST_CODE", referencedColumnName = "DIST_CODE")
-    @ManyToOne(optional = false, fetch = FetchType.LAZY)
-    private District pDistrict;
+    @ManyToOne(optional = false)
+    private District pDistCode;
 
 	public String getDistCode() {
 		return distCode;
@@ -53,12 +52,12 @@ public class District implements Serializable {
 		this.enabled = enabled;
 	}
 
-	public District getpDistrict() {
-		return pDistrict;
+	public District getpDistCode() {
+		return pDistCode;
 	}
 
-	public void setpDistrict(District pDistrict) {
-		this.pDistrict = pDistrict;
+	public void setpDistCode(District pDistCode) {
+		this.pDistCode = pDistCode;
 	}
-
+    
 }

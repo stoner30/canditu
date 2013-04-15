@@ -9,21 +9,21 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "stub_rest_status")
 public class StubRestStatus implements Serializable {
-
+    
 	private static final long serialVersionUID = -9116119957681001624L;
 
 	@Id
     @Column(name = "RS_ID")
-    private Short rsId;
-	
+    private Integer rsId;
+    
     @Column(name = "RS_NAME")
     private String rsName;
 
-	public Short getRsId() {
+	public Integer getRsId() {
 		return rsId;
 	}
 
-	public void setRsId(Short rsId) {
+	public void setRsId(Integer rsId) {
 		this.rsId = rsId;
 	}
 

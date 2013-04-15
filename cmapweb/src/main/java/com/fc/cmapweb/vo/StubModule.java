@@ -9,9 +9,9 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "stub_module")
 public class StubModule implements Serializable {
-
+    
 	private static final long serialVersionUID = 549155290327596966L;
-	
+
 	@Id
     @Column(name = "MODULE_ID")
     private Integer moduleId;
@@ -20,19 +20,19 @@ public class StubModule implements Serializable {
     private String moduleName;
 
 	public Integer getModuleId() {
-    	return moduleId;
-    }
+		return moduleId;
+	}
 
 	public void setModuleId(Integer moduleId) {
-    	this.moduleId = moduleId;
-    }
+		this.moduleId = moduleId;
+	}
 
 	public String getModuleName() {
-    	return moduleName;
-    }
+		return moduleName;
+	}
 
 	public void setModuleName(String moduleName) {
-    	this.moduleName = moduleName;
-    }
+		this.moduleName = moduleName;
+	}
     
 }

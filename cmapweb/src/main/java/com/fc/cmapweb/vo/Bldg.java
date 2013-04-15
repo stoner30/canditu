@@ -1,9 +1,9 @@
 package com.fc.cmapweb.vo;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -12,20 +12,17 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
-import com.fc.cmapweb.utils.PinYinUtil;
-import com.fc.cmapweb.vo.District;
-
 @Entity
 @Table(name = "bldg")
 public class Bldg implements Serializable {
-	
-	private static final long serialVersionUID = 1631866032632256712L;
+
+	private static final long serialVersionUID = 5486040586468707016L;
 
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "BLDG_ID")
     private Integer bldgId;
-    
+	
     @Column(name = "BLDG_NAME")
     private String bldgName;
     
@@ -33,17 +30,17 @@ public class Bldg implements Serializable {
     private String bldgAddr;
     
     @Column(name = "BLDG_LON")
-    private Float bldgLon;
+    private BigDecimal bldgLon;
     
     @Column(name = "BLDG_LAT")
-    private Float bldgLat;
+    private BigDecimal bldgLat;
     
     @Column(name = "ENABLED")
     private boolean enabled;
     
     @JoinColumn(name = "DIST_CODE", referencedColumnName = "DIST_CODE")
-    @ManyToOne(optional = false, fetch = FetchType.LAZY)
-    private District district;
+    @ManyToOne(optional = false)
+    private District distCode;
 
     @Transient
     private String pinYin;
@@ -72,19 +69,19 @@ public class Bldg implements Serializable {
 		this.bldgAddr = bldgAddr;
 	}
 
-	public Float getBldgLon() {
+	public BigDecimal getBldgLon() {
 		return bldgLon;
 	}
 
-	public void setBldgLon(Float bldgLon) {
+	public void setBldgLon(BigDecimal bldgLon) {
 		this.bldgLon = bldgLon;
 	}
 
-	public Float getBldgLat() {
+	public BigDecimal getBldgLat() {
 		return bldgLat;
 	}
 
-	public void setBldgLat(Float bldgLat) {
+	public void setBldgLat(BigDecimal bldgLat) {
 		this.bldgLat = bldgLat;
 	}
 
@@ -96,12 +93,12 @@ public class Bldg implements Serializable {
 		this.enabled = enabled;
 	}
 
-	public District getDistrict() {
-		return district;
+	public District getDistCode() {
+		return distCode;
 	}
 
-	public void setDistrict(District district) {
-		this.district = district;
+	public void setDistCode(District distCode) {
+		this.distCode = distCode;
 	}
 
 	public String getPinYin() {

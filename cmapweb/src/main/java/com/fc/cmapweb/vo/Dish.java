@@ -4,7 +4,6 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -16,187 +15,109 @@ import javax.persistence.Table;
 @Table(name = "dish")
 public class Dish implements Serializable {
 
-	private static final long serialVersionUID = -5587791105722850521L;
+	private static final long serialVersionUID = 8151310717863288757L;
 
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "dish_id")
+    @Column(name = "DISH_ID")
     private Integer dishId;
-	
-    @Column(name = "dish_name")
+    
+    @Column(name = "DISH_NAME")
     private String dishName;
     
-    @Column(name = "dish_price")
+    @Column(name = "DISH_PRICE")
     private BigDecimal dishPrice;
     
-    @Column(name = "prmt_price")
-    private BigDecimal prmtPrice;
+    @Column(name = "IS_PROMOTION")
+    private boolean isPromotion;
     
-    @Column(name = "is_combo")
-    private boolean isCombo;
+    @Column(name = "DISH_PROMOTION_PRICE")
+    private BigDecimal dishPromotionPrice;
     
-    @Column(name = "is_shown")
-    private boolean isShown;
-    
-    @Column(name = "has_options")
-    private boolean hasOptions;
-    
-    @Column(name = "dish_desc")
+    @Column(name = "DISH_DESC")
     private String dishDesc;
     
-    @Column(name = "eval_point")
-    private int evalPoint;
+    @Column(name = "ENABLED")
+    private boolean enabled;
     
-    @Column(name = "eval_cont")
-    private int evalCont;
+    @JoinColumn(name = "REST_ID", referencedColumnName = "REST_ID")
+    @ManyToOne(optional = false)
+    private Restaurant restId;
     
-    @Column(name = "ms_cont")
-    private int msCont;
-    
-    @Column(name = "ds_cont")
-    private int dsCont;
-    
-    @Column(name = "dr_val")
-    private Integer drVal;
-    
-    @JoinColumn(name = "rest_id", referencedColumnName = "REST_ID")
-    @ManyToOne(optional = false, fetch = FetchType.LAZY)
-    private Restaurant restaurant;
-    
-    @JoinColumn(name = "dr_id", referencedColumnName = "dr_id")
-    @ManyToOne(fetch = FetchType.LAZY)
-    private StubDishRule stubDishRule;
-    
-    @JoinColumn(name = "dct_id", referencedColumnName = "dct_id")
-    @ManyToOne(optional = false, fetch = FetchType.LAZY)
-    private DishCatType dishCatType;
+    @JoinColumn(name = "DISH_TYPE_ID", referencedColumnName = "DISH_TYPE_ID")
+    @ManyToOne(optional = false)
+    private DishType dishTypeId;
 
-    public Integer getDishId() {
-        return dishId;
-    }
-
-    public void setDishId(Integer dishId) {
-        this.dishId = dishId;
-    }
-
-    public String getDishName() {
-        return dishName;
-    }
-
-    public void setDishName(String dishName) {
-        this.dishName = dishName;
-    }
-
-    public BigDecimal getDishPrice() {
-        return dishPrice;
-    }
-
-    public void setDishPrice(BigDecimal dishPrice) {
-        this.dishPrice = dishPrice;
-    }
-
-    public BigDecimal getPrmtPrice() {
-        return prmtPrice;
-    }
-
-    public void setPrmtPrice(BigDecimal prmtPrice) {
-        this.prmtPrice = prmtPrice;
-    }
-
-    public boolean getIsCombo() {
-        return isCombo;
-    }
-
-    public void setIsCombo(boolean isCombo) {
-        this.isCombo = isCombo;
-    }
-
-    public boolean getIsShown() {
-        return isShown;
-    }
-
-    public void setIsShown(boolean isShown) {
-        this.isShown = isShown;
-    }
-
-    public boolean getHasOptions() {
-        return hasOptions;
-    }
-
-    public void setHasOptions(boolean hasOptions) {
-        this.hasOptions = hasOptions;
-    }
-
-    public String getDishDesc() {
-        return dishDesc;
-    }
-
-    public void setDishDesc(String dishDesc) {
-        this.dishDesc = dishDesc;
-    }
-
-    public int getEvalPoint() {
-        return evalPoint;
-    }
-
-    public void setEvalPoint(int evalPoint) {
-        this.evalPoint = evalPoint;
-    }
-
-    public int getEvalCont() {
-        return evalCont;
-    }
-
-    public void setEvalCont(int evalCont) {
-        this.evalCont = evalCont;
-    }
-
-    public int getMsCont() {
-        return msCont;
-    }
-
-    public void setMsCont(int msCont) {
-        this.msCont = msCont;
-    }
-
-    public int getDsCont() {
-        return dsCont;
-    }
-
-    public void setDsCont(int dsCont) {
-        this.dsCont = dsCont;
-    }
-
-    public Integer getDrVal() {
-        return drVal;
-    }
-
-    public void setDrVal(Integer drVal) {
-        this.drVal = drVal;
-    }
-
-	public Restaurant getRestaurant() {
-		return restaurant;
+	public Integer getDishId() {
+		return dishId;
 	}
 
-	public void setRestaurant(Restaurant restaurant) {
-		this.restaurant = restaurant;
+	public void setDishId(Integer dishId) {
+		this.dishId = dishId;
 	}
 
-	public StubDishRule getStubDishRule() {
-		return stubDishRule;
+	public String getDishName() {
+		return dishName;
 	}
 
-	public void setStubDishRule(StubDishRule stubDishRule) {
-		this.stubDishRule = stubDishRule;
+	public void setDishName(String dishName) {
+		this.dishName = dishName;
 	}
 
-	public DishCatType getDishCatType() {
-		return dishCatType;
+	public BigDecimal getDishPrice() {
+		return dishPrice;
 	}
 
-	public void setDishCatType(DishCatType dishCatType) {
-		this.dishCatType = dishCatType;
+	public void setDishPrice(BigDecimal dishPrice) {
+		this.dishPrice = dishPrice;
 	}
 
+	public boolean isPromotion() {
+		return isPromotion;
+	}
+
+	public void setPromotion(boolean isPromotion) {
+		this.isPromotion = isPromotion;
+	}
+
+	public BigDecimal getDishPromotionPrice() {
+		return dishPromotionPrice;
+	}
+
+	public void setDishPromotionPrice(BigDecimal dishPromotionPrice) {
+		this.dishPromotionPrice = dishPromotionPrice;
+	}
+
+	public String getDishDesc() {
+		return dishDesc;
+	}
+
+	public void setDishDesc(String dishDesc) {
+		this.dishDesc = dishDesc;
+	}
+
+	public boolean isEnabled() {
+		return enabled;
+	}
+
+	public void setEnabled(boolean enabled) {
+		this.enabled = enabled;
+	}
+
+	public Restaurant getRestId() {
+		return restId;
+	}
+
+	public void setRestId(Restaurant restId) {
+		this.restId = restId;
+	}
+
+	public DishType getDishTypeId() {
+		return dishTypeId;
+	}
+
+	public void setDishTypeId(DishType dishTypeId) {
+		this.dishTypeId = dishTypeId;
+	}
+    
 }

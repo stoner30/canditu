@@ -3,7 +3,6 @@ package com.fc.cmapweb.vo;
 import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -15,43 +14,43 @@ import javax.persistence.Table;
 @Table(name = "stub_usr_type_privilege")
 public class StubUsrTypePrivilege implements Serializable {
     
-    private static final long serialVersionUID = 1170954932427086958L;
+	private static final long serialVersionUID = -6413007205878802215L;
 	
-    @Id
+	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "UTP_ID")
     private Integer utpId;
-
+	
     @JoinColumn(name = "USR_TYPE_ID", referencedColumnName = "USR_TYPE_ID")
-    @ManyToOne(optional = false, fetch = FetchType.LAZY)
-    private StubUsrType stubUsrType;
+    @ManyToOne(optional = false)
+    private StubUsrType usrTypeId;
     
     @JoinColumn(name = "PRIV_ID", referencedColumnName = "PRIV_ID")
-    @ManyToOne(optional = false, fetch = FetchType.LAZY)
-    private StubPrivilege stubPrivilege;
+    @ManyToOne(optional = false)
+    private StubPrivilege privId;
 
 	public Integer getUtpId() {
-    	return utpId;
-    }
+		return utpId;
+	}
 
 	public void setUtpId(Integer utpId) {
-    	this.utpId = utpId;
-    }
+		this.utpId = utpId;
+	}
 
-	public StubUsrType getStubUsrType() {
-    	return stubUsrType;
-    }
+	public StubUsrType getUsrTypeId() {
+		return usrTypeId;
+	}
 
-	public void setStubUsrType(StubUsrType stubUsrType) {
-    	this.stubUsrType = stubUsrType;
-    }
+	public void setUsrTypeId(StubUsrType usrTypeId) {
+		this.usrTypeId = usrTypeId;
+	}
 
-	public StubPrivilege getStubPrivilege() {
-    	return stubPrivilege;
-    }
+	public StubPrivilege getPrivId() {
+		return privId;
+	}
 
-	public void setStubPrivilege(StubPrivilege stubPrivilege) {
-    	this.stubPrivilege = stubPrivilege;
-    }
-    
+	public void setPrivId(StubPrivilege privId) {
+		this.privId = privId;
+	}
+
 }

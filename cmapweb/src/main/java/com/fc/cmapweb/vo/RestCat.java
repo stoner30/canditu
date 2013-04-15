@@ -3,7 +3,6 @@ package com.fc.cmapweb.vo;
 import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -14,44 +13,44 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "rest_cat")
 public class RestCat implements Serializable {
+    
+	private static final long serialVersionUID = -1193266538120512331L;
 
-	private static final long serialVersionUID = 6009710575122618202L;
-	
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "RC_ID")
     private Integer rcId;
-	
-    @JoinColumn(name = "RCT_ID", referencedColumnName = "RCT_ID")
-    @ManyToOne(optional = false, fetch = FetchType.LAZY)
-    private RestCatType restCatType;
     
+    @JoinColumn(name = "RCT_ID", referencedColumnName = "RCT_ID")
+    @ManyToOne(optional = false)
+    private RestCatType rctId;
+
     @JoinColumn(name = "REST_ID", referencedColumnName = "REST_ID")
-    @ManyToOne(optional = false, fetch = FetchType.LAZY)
-    private Restaurant restaurant;
+    @ManyToOne(optional = false)
+    private Restaurant restId;
 
 	public Integer getRcId() {
-    	return rcId;
-    }
+		return rcId;
+	}
 
 	public void setRcId(Integer rcId) {
-    	this.rcId = rcId;
-    }
+		this.rcId = rcId;
+	}
 
-	public RestCatType getRestCatType() {
-    	return restCatType;
-    }
+	public RestCatType getRctId() {
+		return rctId;
+	}
 
-	public void setRestCatType(RestCatType restCatType) {
-    	this.restCatType = restCatType;
-    }
+	public void setRctId(RestCatType rctId) {
+		this.rctId = rctId;
+	}
 
-	public Restaurant getRestaurant() {
-    	return restaurant;
-    }
+	public Restaurant getRestId() {
+		return restId;
+	}
 
-	public void setRestaurant(Restaurant restaurant) {
-    	this.restaurant = restaurant;
-    }
-    
+	public void setRestId(Restaurant restId) {
+		this.restId = restId;
+	}
+
 }

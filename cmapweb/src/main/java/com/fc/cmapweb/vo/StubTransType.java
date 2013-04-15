@@ -9,30 +9,30 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "stub_trans_type")
 public class StubTransType implements Serializable {
+    
+	private static final long serialVersionUID = -7126993407779259114L;
 
-	private static final long serialVersionUID = 2009226135420263164L;
-	
 	@Id
     @Column(name = "TRANS_TYPE_ID")
     private Integer transTypeId;
-	
+    
     @Column(name = "TRANS_TYPE_NAME")
     private String transTypeName;
 
 	public Integer getTransTypeId() {
-    	return transTypeId;
-    }
+		return transTypeId;
+	}
 
 	public void setTransTypeId(Integer transTypeId) {
-    	this.transTypeId = transTypeId;
-    }
+		this.transTypeId = transTypeId;
+	}
 
 	public String getTransTypeName() {
-    	return transTypeName;
-    }
+		return transTypeName;
+	}
 
 	public void setTransTypeName(String transTypeName) {
-    	this.transTypeName = transTypeName;
-    }
-    
+		this.transTypeName = transTypeName;
+	}
+
 }

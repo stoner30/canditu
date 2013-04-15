@@ -10,27 +10,25 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-@Entity
-@Table(name = "ad_bldg")
-public class AdBldg implements Serializable {
 
-	private static final long serialVersionUID = 7660253649437401469L;
+@Entity
+@Table(name = "activity_bldg")
+public class ActivityBldg implements Serializable {
+	
+	private static final long serialVersionUID = -3811194970726814585L;
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "AB_ID")
     private Integer abId;
-
-    @Column(name = "AD_ORDER")
-    private int adOrder;
+    
+    @JoinColumn(name = "ACTIVITY_ID", referencedColumnName = "ACTIVITY_ID")
+    @ManyToOne(optional = false)
+    private Activity activityId;
     
     @JoinColumn(name = "BLDG_ID", referencedColumnName = "BLDG_ID")
     @ManyToOne(optional = false)
     private Bldg bldgId;
-    
-    @JoinColumn(name = "AD_ID", referencedColumnName = "AD_ID")
-    @ManyToOne(optional = false)
-    private Ad adId;
 
     public Integer getAbId() {
         return abId;
@@ -40,12 +38,12 @@ public class AdBldg implements Serializable {
         this.abId = abId;
     }
 
-    public int getAdOrder() {
-        return adOrder;
+    public Activity getActivityId() {
+        return activityId;
     }
 
-    public void setAdOrder(int adOrder) {
-        this.adOrder = adOrder;
+    public void setActivityId(Activity activityId) {
+        this.activityId = activityId;
     }
 
     public Bldg getBldgId() {
@@ -54,14 +52,6 @@ public class AdBldg implements Serializable {
 
     public void setBldgId(Bldg bldgId) {
         this.bldgId = bldgId;
-    }
-
-    public Ad getAdId() {
-        return adId;
-    }
-
-    public void setAdId(Ad adId) {
-        this.adId = adId;
     }
 
 }

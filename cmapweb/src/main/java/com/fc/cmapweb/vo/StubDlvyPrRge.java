@@ -9,13 +9,13 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "stub_dlvy_pr_rge")
 public class StubDlvyPrRge implements Serializable {
-
-	private static final long serialVersionUID = -6045065274693242168L;
+    
+	private static final long serialVersionUID = -9167202930439040731L;
 
 	@Id
     @Column(name = "DPR_ID")
     private Integer dprId;
-	
+    
     @Column(name = "DPR_MIN")
     private Integer dprMin;
     
