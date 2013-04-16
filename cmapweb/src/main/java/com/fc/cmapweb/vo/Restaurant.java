@@ -12,6 +12,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.persistence.Transient;
 
 @Entity
 @Table(name = "restaurant")
@@ -82,6 +83,9 @@ public class Restaurant implements Serializable {
     @Column(name = "GRADE")
     private Double grade;
     
+    @Column(name = "ISNEWLY")
+    private boolean isNewly;
+
     @JoinColumn(name = "RS_ID", referencedColumnName = "RS_ID")
     @ManyToOne(optional = false)
     private StubRestStatus stubRestStatus;
@@ -89,6 +93,9 @@ public class Restaurant implements Serializable {
     @JoinColumn(name = "TRANS_TYPE_ID", referencedColumnName = "TRANS_TYPE_ID")
     @ManyToOne
     private StubTransType stubTransType;
+
+    @Transient
+    private Integer salesVolume;
 
 	public Integer getRestId() {
 		return restId;
@@ -256,6 +263,22 @@ public class Restaurant implements Serializable {
 
 	public void setStubTransType(StubTransType stubTransType) {
 		this.stubTransType = stubTransType;
+	}
+
+	public boolean isNewly() {
+		return isNewly;
+	}
+
+	public void setNewly(boolean isNewly) {
+		this.isNewly = isNewly;
+	}
+
+	public Integer getSalesVolume() {
+		return salesVolume;
+	}
+
+	public void setSalesVolume(Integer salesVolume) {
+		this.salesVolume = salesVolume;
 	}
 
 }

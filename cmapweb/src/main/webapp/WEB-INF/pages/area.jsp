@@ -18,7 +18,6 @@
 	<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-migrate-1.1.1.min.js"></script>
 	<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery.qtip.min.js"></script>
     <script type="text/javascript" src="${pageContext.request.contextPath}/js/main.js"></script>
-    <script type="text/javascript" src="${pageContext.request.contextPath}/js/main.js"></script>
     <script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery.listnav-2.1.ie6.js"></script>
     <script type="text/javascript" src="${pageContext.request.contextPath}/js/building.js"></script>
 

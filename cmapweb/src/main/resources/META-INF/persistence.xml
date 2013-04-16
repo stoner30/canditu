@@ -58,7 +58,8 @@
 		<class>com.fc.cmapweb.vo.Usr</class>
 		<class>com.fc.cmapweb.vo.UsrPasswdHist</class>
 		<class>com.fc.cmapweb.vo.UsrRole</class>
-
+		<class>com.fc.cmapweb.vo.Recommend</class>
+		<class>com.fc.cmapweb.vo.RecommendBldg</class>
 	</persistence-unit>
 	
 </persistence>

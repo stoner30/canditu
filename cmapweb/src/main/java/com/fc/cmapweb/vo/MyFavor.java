@@ -25,6 +25,10 @@ public class MyFavor implements Serializable {
     @ManyToOne(optional = false)
     private Restaurant restaurant;
 
+    @JoinColumn(name = "CUSTOMER_ID", referencedColumnName = "CUSTOMER_ID")
+    @ManyToOne(optional = false)
+    private Customer customer;
+    
 	public Integer getFavorId() {
 		return favorId;
 	}
@@ -39,6 +43,14 @@ public class MyFavor implements Serializable {
 
 	public void setRestaurant(Restaurant restaurant) {
 		this.restaurant = restaurant;
+	}
+
+	public Customer getCustomer() {
+		return customer;
+	}
+
+	public void setCustomer(Customer customer) {
+		this.customer = customer;
 	}
 
 }

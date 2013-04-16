@@ -24,8 +24,7 @@ public class IndexCtrl {
 	public String index(HttpServletRequest request, Model model) {
 
 		try {
-			//Cookie c = new Cookie("canditu.distcode", "30000301");
-			//response.addCookie(c);
+			
 			Cookie[] cookies = request.getCookies();
 			
 			String cookieDistCode = "";
@@ -51,6 +50,7 @@ public class IndexCtrl {
 
 		} catch (Exception e) {
 			e.printStackTrace();
+			return "/error404";
 		}
 
 		return "/index";

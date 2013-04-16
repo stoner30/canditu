@@ -36,6 +36,7 @@ public class AreaCtrl {
 
 		} catch (Exception e) {
 			e.printStackTrace();
+			return "/error404";
 		}
 
 		return "/area";

@@ -52,11 +52,11 @@ public class District implements Serializable {
 		this.enabled = enabled;
 	}
 
-	public District getpDistrict() {
+	public District getPDistrict() {
 		return pDistrict;
 	}
 
-	public void setpDistrict(District pDistrict) {
+	public void setPDistrict(District pDistrict) {
 		this.pDistrict = pDistrict;
 	}
 
