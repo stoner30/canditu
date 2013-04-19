@@ -4,7 +4,6 @@ import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -13,29 +12,30 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.persistence.Transient;
 
 @Entity
 @Table(name = "restaurant")
 public class Restaurant implements Serializable {
-
-	private static final long serialVersionUID = 4280329115764204312L;
+    
+	private static final long serialVersionUID = 7515139990712028081L;
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "REST_ID")
     private Integer restId;
-	
+    
     @Column(name = "REST_NAME")
     private String restName;
     
     @Column(name = "REST_ADDR")
     private String restAddr;
-
+    
     @Column(name = "REST_LON")
-    private Float restLon;
+    private Double restLon;
     
     @Column(name = "REST_LAT")
-    private Float restLat;
+    private Double restLat;
     
     @Column(name = "OPEN_TIME")
     @Temporal(TemporalType.TIME)
@@ -46,10 +46,10 @@ public class Restaurant implements Serializable {
     private Date closeTime;
     
     @Column(name = "MIN_DLVY_PR")
-    private Float minDlvyPr;
+    private Double minDlvyPr;
     
     @Column(name = "DLVY_FEE")
-    private Float dlvyFee;
+    private Double dlvyFee;
     
     @Column(name = "VALID_TIME")
     @Temporal(TemporalType.TIMESTAMP)
@@ -65,18 +65,37 @@ public class Restaurant implements Serializable {
     @Column(name = "ENABLED")
     private boolean enabled;
     
-    @Column(name = "MS_CONT")
-    private int msCont;
-    
-    @Column(name = "DS_CONT")
-    private int dsCont;
-    
     @Column(name = "REST_SUB_NAME")
     private String restSubName;
     
+    @Column(name = "REST_TEL")
+    private String restTel;
+    
+    @Column(name = "REST_EMAIL")
+    private String restEmail;
+    
+    @Column(name = "SCORE")
+    private Integer score;
+    
+    @Column(name = "COUNT")
+    private Integer count;
+    
+    @Column(name = "GRADE")
+    private Double grade;
+    
+    @Column(name = "ISNEWLY")
+    private boolean isNewly;
+
     @JoinColumn(name = "RS_ID", referencedColumnName = "RS_ID")
-    @ManyToOne(optional = false, fetch = FetchType.LAZY)
+    @ManyToOne(optional = false)
     private StubRestStatus stubRestStatus;
+    
+    @JoinColumn(name = "TRANS_TYPE_ID", referencedColumnName = "TRANS_TYPE_ID")
+    @ManyToOne
+    private StubTransType stubTransType;
+
+    @Transient
+    private Integer salesVolume;
 
 	public Integer getRestId() {
 		return restId;
@@ -102,19 +121,19 @@ public class Restaurant implements Serializable {
 		this.restAddr = restAddr;
 	}
 
-	public Float getRestLon() {
+	public Double getRestLon() {
 		return restLon;
 	}
 
-	public void setRestLon(Float restLon) {
+	public void setRestLon(Double restLon) {
 		this.restLon = restLon;
 	}
 
-	public Float getRestLat() {
+	public Double getRestLat() {
 		return restLat;
 	}
 
-	public void setRestLat(Float restLat) {
+	public void setRestLat(Double restLat) {
 		this.restLat = restLat;
 	}
 
@@ -134,19 +153,19 @@ public class Restaurant implements Serializable {
 		this.closeTime = closeTime;
 	}
 
-	public Float getMinDlvyPr() {
+	public Double getMinDlvyPr() {
 		return minDlvyPr;
 	}
 
-	public void setMinDlvyPr(Float minDlvyPr) {
+	public void setMinDlvyPr(Double minDlvyPr) {
 		this.minDlvyPr = minDlvyPr;
 	}
 
-	public Float getDlvyFee() {
+	public Double getDlvyFee() {
 		return dlvyFee;
 	}
 
-	public void setDlvyFee(Float dlvyFee) {
+	public void setDlvyFee(Double dlvyFee) {
 		this.dlvyFee = dlvyFee;
 	}
 
@@ -182,22 +201,6 @@ public class Restaurant implements Serializable {
 		this.enabled = enabled;
 	}
 
-	public int getMsCont() {
-		return msCont;
-	}
-
-	public void setMsCont(int msCont) {
-		this.msCont = msCont;
-	}
-
-	public int getDsCont() {
-		return dsCont;
-	}
-
-	public void setDsCont(int dsCont) {
-		this.dsCont = dsCont;
-	}
-
 	public String getRestSubName() {
 		return restSubName;
 	}
@@ -206,12 +209,76 @@ public class Restaurant implements Serializable {
 		this.restSubName = restSubName;
 	}
 
+	public String getRestTel() {
+		return restTel;
+	}
+
+	public void setRestTel(String restTel) {
+		this.restTel = restTel;
+	}
+
+	public String getRestEmail() {
+		return restEmail;
+	}
+
+	public void setRestEmail(String restEmail) {
+		this.restEmail = restEmail;
+	}
+
+	public Integer getScore() {
+		return score;
+	}
+
+	public void setScore(Integer score) {
+		this.score = score;
+	}
+
+	public Integer getCount() {
+		return count;
+	}
+
+	public void setCount(Integer count) {
+		this.count = count;
+	}
+
+	public Double getGrade() {
+		return grade;
+	}
+
+	public void setGrade(Double grade) {
+		this.grade = grade;
+	}
+
 	public StubRestStatus getStubRestStatus() {
 		return stubRestStatus;
 	}
 
 	public void setStubRestStatus(StubRestStatus stubRestStatus) {
 		this.stubRestStatus = stubRestStatus;
+	}
+
+	public StubTransType getStubTransType() {
+		return stubTransType;
+	}
+
+	public void setStubTransType(StubTransType stubTransType) {
+		this.stubTransType = stubTransType;
+	}
+
+	public boolean isNewly() {
+		return isNewly;
+	}
+
+	public void setNewly(boolean isNewly) {
+		this.isNewly = isNewly;
+	}
+
+	public Integer getSalesVolume() {
+		return salesVolume;
+	}
+
+	public void setSalesVolume(Integer salesVolume) {
+		this.salesVolume = salesVolume;
 	}
 
 }

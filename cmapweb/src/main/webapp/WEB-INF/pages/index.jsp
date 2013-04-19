@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="zh">
 <head>
@@ -36,20 +37,19 @@
 
 			<!--Left-->
 			<div class="ym-left-city">
-				<img src="images/tianjin.png">  
+				<img src="${pageContext.request.contextPath}/images/tianjin.png">  
 			</div>
 			<!--Left-->
 
 			<!--Right-->
 			<div class="ym-right-district">
 				<ul id="index-district">
-				    <li id="last"><a href="building.html"><span id="last-text1">上次选择</span><span id="last-text2">新天地大厦</span></a></li>
-				    <li><a href="building.html">南开区</a></li>
-				    <li><a href="#">和平区</a></li>
-				    <li><a href="#">河西区</a></li>
-				    <li><a href="#">河东区</a></li>
-				    <li><a href="#">河北区</a></li>
-				    <li><a href="#">红桥区</a></li>
+				    <c:if test="${hasCookie}">
+				    	<li id="last"><a href="#"><span id="last-text1">上次选择</span><span id="last-text2">${cookieArea.distName}</span></a></li>
+				    </c:if>
+				    <c:forEach items="${areaList}" var="area">
+				   		<li><a href="${pageContext.request.contextPath}/area/${area.distCode}">${area.distName}</a></li>
+				    </c:forEach>
 				</ul>
 			</div>
 			<!--Right-->
@@ -57,9 +57,7 @@
 		<!--Main-->
 
 		<div class="push"><!-- not put anything here --></div>
-	
 	</div>
-	
+
 	<jsp:include page="${pageContext.request.contextPath}/common/footer" />
 </body>
-</html> 

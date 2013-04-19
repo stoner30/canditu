@@ -10,29 +10,29 @@ import javax.persistence.Table;
 @Table(name = "stub_order_status")
 public class StubOrderStatus implements Serializable {
     
-    private static final long serialVersionUID = -6278561240602718856L;
-	
-    @Id
+	private static final long serialVersionUID = 4516490162123336943L;
+
+	@Id
     @Column(name = "OS_ID")
     private Integer osId;
-
+    
     @Column(name = "OS_NAME")
     private String osName;
-    
+
 	public Integer getOsId() {
-    	return osId;
-    }
+		return osId;
+	}
 
 	public void setOsId(Integer osId) {
-    	this.osId = osId;
-    }
+		this.osId = osId;
+	}
 
 	public String getOsName() {
-    	return osName;
-    }
+		return osName;
+	}
 
 	public void setOsName(String osName) {
-    	this.osName = osName;
-    }
-    
+		this.osName = osName;
+	}
+
 }

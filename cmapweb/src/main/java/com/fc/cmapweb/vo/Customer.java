@@ -4,7 +4,6 @@ import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -13,16 +12,15 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import com.fc.cmapweb.vo.StubOAuthType;
 
 @Entity
 @Table(name = "customer")
 public class Customer implements Serializable {
 	
 	private static final long serialVersionUID = 1659116608349735448L;
-
+	
 	@Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "CUSTOMER_ID")
     private Integer customerId;
 	
@@ -44,7 +42,7 @@ public class Customer implements Serializable {
     @Column(name = "REG_TIME")
     @Temporal(TemporalType.TIMESTAMP)
     private Date regTime;
-
+    
     @Column(name = "LAST_LOGIN_TIME")
     @Temporal(TemporalType.TIMESTAMP)
     private Date lastLoginTime;
@@ -54,13 +52,13 @@ public class Customer implements Serializable {
     
     @Column(name = "ENABLED")
     private boolean enabled;
- 
+    
     @Column(name = "FIRST_ORDER")
     private boolean firstOrder;
-
+    
     @JoinColumn(name = "OAUTH_ID", referencedColumnName = "OAUTH_ID")
-    @ManyToOne(fetch = FetchType.LAZY)
-    private StubOAuthType stubOAuthType;
+    @ManyToOne
+    private StubOauthType stubOauthType;
 
 	public Integer getCustomerId() {
 		return customerId;
@@ -150,12 +148,12 @@ public class Customer implements Serializable {
 		this.firstOrder = firstOrder;
 	}
 
-	public StubOAuthType getStubOAuthType() {
-		return stubOAuthType;
+	public StubOauthType getStubOauthType() {
+		return stubOauthType;
 	}
 
-	public void setStubOAuthType(StubOAuthType stubOAuthType) {
-		this.stubOAuthType = stubOAuthType;
+	public void setStubOauthType(StubOauthType stubOauthType) {
+		this.stubOauthType = stubOauthType;
 	}
 
 }

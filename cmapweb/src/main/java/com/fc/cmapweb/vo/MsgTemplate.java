@@ -3,33 +3,34 @@ package com.fc.cmapweb.vo;
 import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "msg_template")
 public class MsgTemplate implements Serializable {
-
-	private static final long serialVersionUID = 575864787468397531L;
+    
+	private static final long serialVersionUID = -3250504526492876235L;
 
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "MT_ID")
     private Integer mtId;
-	
+    
+    @Lob
     @Column(name = "MT_CONTENT")
     private String mtContent;
-
+    
     @Column(name = "ENABLED")
     private boolean enabled;
     
     @JoinColumn(name = "SMT_ID", referencedColumnName = "SMT_ID")
-    @ManyToOne(optional = false, fetch = FetchType.LAZY)
+    @ManyToOne(optional = false)
     private StubMsgType stubMsgType;
 
 	public Integer getMtId() {

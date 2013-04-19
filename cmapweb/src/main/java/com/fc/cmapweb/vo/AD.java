@@ -10,10 +10,10 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "ad")
-public class AD implements Serializable {
+public class Ad implements Serializable {
 
-	private static final long serialVersionUID = -115156844860434989L;
-
+	private static final long serialVersionUID = -7225838562543116529L;
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "AD_ID")
@@ -21,7 +21,7 @@ public class AD implements Serializable {
 
     @Column(name = "AD_DESC")
     private String adDesc;
-    
+
     public Integer getAdId() {
         return adId;
     }

@@ -9,13 +9,13 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "stub_msg_encoding")
 public class StubMsgEncoding implements Serializable {
-	
+    
 	private static final long serialVersionUID = 3854908992249333855L;
 
 	@Id
     @Column(name = "SME_ID")
     private Integer smeId;
-	
+    
     @Column(name = "SME_NAME")
     private String smeName;
 

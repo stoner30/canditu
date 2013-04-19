@@ -76,9 +76,3 @@
 		</c:choose> --%>
  	</div>
 </div>
-
-<!--Nav-head-->
-
-<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery.qtip.min.js"></script>
-<script type="text/javascript">
-</script>

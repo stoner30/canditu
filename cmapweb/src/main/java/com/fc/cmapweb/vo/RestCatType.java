@@ -11,14 +11,14 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "rest_cat_type")
 public class RestCatType implements Serializable {
-
+    
 	private static final long serialVersionUID = -189821190607860925L;
-	
+
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "RCT_ID")
     private Integer rctId;
-	
+    
     @Column(name = "RCT_NAME")
     private String rctName;
     
@@ -26,27 +26,27 @@ public class RestCatType implements Serializable {
     private Integer rctOrder;
 
 	public Integer getRctId() {
-    	return rctId;
-    }
+		return rctId;
+	}
 
 	public void setRctId(Integer rctId) {
-    	this.rctId = rctId;
-    }
+		this.rctId = rctId;
+	}
 
 	public String getRctName() {
-    	return rctName;
-    }
+		return rctName;
+	}
 
 	public void setRctName(String rctName) {
-    	this.rctName = rctName;
-    }
+		this.rctName = rctName;
+	}
 
 	public Integer getRctOrder() {
-    	return rctOrder;
-    }
+		return rctOrder;
+	}
 
 	public void setRctOrder(Integer rctOrder) {
-    	this.rctOrder = rctOrder;
-    }
+		this.rctOrder = rctOrder;
+	}
     
 }

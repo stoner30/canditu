@@ -8,31 +8,31 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "stub_oauth_type")
-public class StubOAuthType implements Serializable {
+public class StubOauthType implements Serializable {
+    
+	private static final long serialVersionUID = -3288309051038110863L;
 
-	private static final long serialVersionUID = 6439242054785388537L;
-	
 	@Id
     @Column(name = "OAUTH_ID")
-    private Integer oAuthId;
+    private Integer oauthId;
     
     @Column(name = "OAUTH_TYPE_NAME")
-    private String oAuthTypeName;
-    
-	public Integer getoAuthId() {
-    	return oAuthId;
-    }
+    private String oauthTypeName;
 
-	public void setoAuthId(Integer oAuthId) {
-    	this.oAuthId = oAuthId;
-    }
+	public Integer getOauthId() {
+		return oauthId;
+	}
 
-	public String getoAuthTypeName() {
-    	return oAuthTypeName;
-    }
+	public void setOauthId(Integer oauthId) {
+		this.oauthId = oauthId;
+	}
 
-	public void setoAuthTypeName(String oAuthTypeName) {
-    	this.oAuthTypeName = oAuthTypeName;
-    }
-    
+	public String getOauthTypeName() {
+		return oauthTypeName;
+	}
+
+	public void setOauthTypeName(String oauthTypeName) {
+		this.oauthTypeName = oauthTypeName;
+	}
+
 }

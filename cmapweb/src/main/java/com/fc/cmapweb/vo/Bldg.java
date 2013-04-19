@@ -3,26 +3,25 @@ package com.fc.cmapweb.vo;
 import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-import com.fc.cmapweb.vo.District;
+import javax.persistence.Transient;
 
 @Entity
 @Table(name = "bldg")
 public class Bldg implements Serializable {
-	
-	private static final long serialVersionUID = 1631866032632256712L;
+
+	private static final long serialVersionUID = 5486040586468707016L;
 
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "BLDG_ID")
     private Integer bldgId;
-    
+	
     @Column(name = "BLDG_NAME")
     private String bldgName;
     
@@ -30,17 +29,20 @@ public class Bldg implements Serializable {
     private String bldgAddr;
     
     @Column(name = "BLDG_LON")
-    private Float bldgLon;
+    private Double bldgLon;
     
     @Column(name = "BLDG_LAT")
-    private Float bldgLat;
+    private Double bldgLat;
     
     @Column(name = "ENABLED")
     private boolean enabled;
     
     @JoinColumn(name = "DIST_CODE", referencedColumnName = "DIST_CODE")
-    @ManyToOne(optional = false, fetch = FetchType.LAZY)
+    @ManyToOne(optional = false)
     private District district;
+
+    @Transient
+    private String pinYin;
 
 	public Integer getBldgId() {
 		return bldgId;
@@ -66,19 +68,19 @@ public class Bldg implements Serializable {
 		this.bldgAddr = bldgAddr;
 	}
 
-	public Float getBldgLon() {
+	public Double getBldgLon() {
 		return bldgLon;
 	}
 
-	public void setBldgLon(Float bldgLon) {
+	public void setBldgLon(Double bldgLon) {
 		this.bldgLon = bldgLon;
 	}
 
-	public Float getBldgLat() {
+	public Double getBldgLat() {
 		return bldgLat;
 	}
 
-	public void setBldgLat(Float bldgLat) {
+	public void setBldgLat(Double bldgLat) {
 		this.bldgLat = bldgLat;
 	}
 
@@ -97,5 +99,13 @@ public class Bldg implements Serializable {
 	public void setDistrict(District district) {
 		this.district = district;
 	}
-    
+
+	public String getPinYin() {
+		return pinYin;
+	}
+
+	public void setPinYin(String pinYin) {
+		this.pinYin = pinYin;
+	}
+
 }
