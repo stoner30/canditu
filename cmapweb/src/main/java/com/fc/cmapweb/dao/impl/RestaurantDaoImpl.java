@@ -126,4 +126,32 @@ public class RestaurantDaoImpl extends CmapBaseDao implements IRestaurantDao {
 		}
 	}
 
+	@SuppressWarnings("unchecked")
+	public List<RestViewVo> queryALLSalesOfGoodListByBldgId_Return_RestViewVo(
+			int bldgId) {
+		
+		List<Restaurant> restList = querySalesOfGoodListByBldgId(bldgId);
+		List<RestViewVo> list = new ArrayList<RestViewVo>();
+		Query query = null;
+		RestViewVo restViewVo = null;
+		for(Restaurant rest : restList) {
+			restViewVo = new RestViewVo();
+			restViewVo.setRestaurant(rest);
+			String sql = "SELECT rt.RTT_ID" +
+					" FROM rest_tag rt " +
+					" LEFT JOIN rest_tag_type rtt ON rt.RTT_ID = rtt.RTT_ID" +
+					" WHERE rt.REST_ID = " + rest.getRestId();
+			query = em.createNativeQuery(sql);
+			List<Integer> restTagTypeIdList = query.getResultList();
+			for(Integer restTagTypeId : restTagTypeIdList) {
+				assignmentRestViewVo(restViewVo, restTagTypeId);
+			}
+
+			priceRange(restViewVo, rest.getMinDlvyPr());
+			list.add(restViewVo);
+
+		}
+		return list;
+	}
+
 }

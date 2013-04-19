@@ -46,13 +46,23 @@ public class RestCatCtrl {
 			List<RestCatType> restCatTypeList = restCatTypeMgr.queryAllRestCatType();
 			model.addAttribute("restCatTypeList", restCatTypeList);
 
-			RestCatType selectRestCatType = restCatTypeMgr.queryRestCatTypeById(Integer.valueOf(restCatTypeId));
-			model.addAttribute("selectRestCatType", selectRestCatType);
-			
-			List<RestViewVo> restViewList = restaurantMgr.queryRestaurantByRestCatTypeId(
-					Integer.valueOf(restCatTypeId), Integer.valueOf(bldgId));
-			model.addAttribute("restViewList", restViewList);
-
+			if(restCatTypeId.equals("-1")) {
+				List<RestViewVo> restViewList = restaurantMgr.queryALLSalesOfGoodListByBldgId_Return_RestViewVo(Integer.valueOf(bldgId));
+				model.addAttribute("restViewList", restViewList);
+				
+				RestCatType restCatType = new RestCatType();
+				restCatType.setRctId(-1);
+				restCatType.setRctName("销量不错的");
+				model.addAttribute("selectRestCatType", restCatType);
+			} else {
+				RestCatType selectRestCatType = restCatTypeMgr.queryRestCatTypeById(Integer.valueOf(restCatTypeId));
+				model.addAttribute("selectRestCatType", selectRestCatType);
+				
+				List<RestViewVo> restViewList = restaurantMgr.queryRestaurantByRestCatTypeId(
+						Integer.valueOf(restCatTypeId), Integer.valueOf(bldgId));
+				model.addAttribute("restViewList", restViewList);
+			}
+				
 		} catch (Exception e) {
 			e.printStackTrace();
 			return "/4xx";

@@ -15,4 +15,7 @@ public interface IRestaurantDao {
 	//根据分类查询餐馆list
 	public List<RestViewVo> queryRestaurantByRestCatTypeId(int restCatTypeId, int bldgId);
 
+	//点击更多按钮后显示按销量排序的所有餐馆
+	public List<RestViewVo> queryALLSalesOfGoodListByBldgId_Return_RestViewVo(int bldgId);
+
 }

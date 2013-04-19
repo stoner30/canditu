@@ -125,7 +125,6 @@
 				</div>
 				<!--opennew part-->
 
-
 				<!--goodsales part-->
 				<div class="goodsales">
 					<ul>
@@ -139,6 +138,9 @@
 							</li>
 						</c:forEach>
 						<!--last-->
+						<li class="haspic-last">
+							<a href="${pageContext.request.contextPath}/restcat/${bldg.bldgId}/-1" class="bg"><img src="${pageContext.request.contextPath}/images/arrow.png">To fix ie6</a>
+						</li>
 					</ul>
 				</div>
 				<!--goodsales part-->

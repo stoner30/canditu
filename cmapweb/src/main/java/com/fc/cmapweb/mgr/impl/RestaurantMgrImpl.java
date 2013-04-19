@@ -36,5 +36,13 @@ public class RestaurantMgrImpl implements IRestaurantMgr {
 
 	}
 
+	public List<RestViewVo> queryALLSalesOfGoodListByBldgId_Return_RestViewVo(
+			int bldgId) {
+
+		List<RestViewVo> list = restaurantDao.queryALLSalesOfGoodListByBldgId_Return_RestViewVo(bldgId);
+		return list;
+
+	}
+
 	
 }
