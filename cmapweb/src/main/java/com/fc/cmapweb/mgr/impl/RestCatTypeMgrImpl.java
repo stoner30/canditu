@@ -20,4 +20,11 @@ public class RestCatTypeMgrImpl implements IRestCatTypeMgr {
 
 	}
 
+	public RestCatType queryRestCatTypeById(int restCatTypeId) {
+
+		RestCatType restCatType = restCatTypeDao.queryRestCatTypeById(restCatTypeId);
+		return restCatType;
+
+	}
+
 }

@@ -20,4 +20,11 @@ public class RestCatTypeDaoImpl extends CmapBaseDao implements IRestCatTypeDao {
 
 	}
 
+	public RestCatType queryRestCatTypeById(int restCatTypeId) {
+
+		RestCatType  restCatType = em.find(RestCatType.class, restCatTypeId); 
+		return restCatType;
+	
+	}
+
 }

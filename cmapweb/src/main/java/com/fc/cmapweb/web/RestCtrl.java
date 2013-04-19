@@ -10,6 +10,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
+import com.fc.cmapweb.constant.DigitalConstant;
 import com.fc.cmapweb.mgr.IADMgr;
 import com.fc.cmapweb.mgr.IBldgMgr;
 import com.fc.cmapweb.mgr.IMyFavorMgr;
@@ -49,7 +51,8 @@ public class RestCtrl {
 	@Autowired
 	private IRestaurantMgr restaurantMgr;
 
-	@Autowired IMyFavorMgr myFavorMgr;
+	@Autowired 
+	private IMyFavorMgr myFavorMgr;
 
 	@RequestMapping(value = "/{bldgId}",method = RequestMethod.GET)
 	public String getRestListByBldgMgr(@PathVariable String bldgId, HttpServletRequest request, 
@@ -57,8 +60,10 @@ public class RestCtrl {
 		
 		try {
 			
-			//将本次选择的bldgId放入cookie
-			Cookie cookie = new Cookie("canditu.distcode", bldgId);
+			//将本次选择的bldgId放入cookie 保存15天
+			Cookie cookie = new Cookie("canditubldgid", bldgId);
+			cookie.setMaxAge(DigitalConstant.SIXTY * DigitalConstant.SIXTY * DigitalConstant.TWENTY_FOUR * DigitalConstant.FIFTEEN);
+			cookie.setPath("/");
 			response.addCookie(cookie);
 			
 			Bldg bldg = bldgMgr.queryBldgByBldgId(Integer.valueOf(bldgId));
@@ -97,7 +102,7 @@ public class RestCtrl {
 
 		} catch (Exception e) {
 			e.printStackTrace();
-			return "/error404";
+			return "/4xx";
 		}
 		return "/rest";
 		

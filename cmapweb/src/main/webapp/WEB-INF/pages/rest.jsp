@@ -51,9 +51,9 @@
 				</ol>
 				<p class="catalog-title">分类</p>
 				<ul class="catalog">
-					<li><a href="#/-1" id="catafirst">推荐-收藏-畅销-最新</a></li>
+					<li><a href="${pageContext.request.contextPath}/rest/${bldg.bldgId}" id="catafirst">推荐-收藏-畅销-最新</a></li>
 					<c:forEach items="${restCatTypeList}" var="restCatType">
-						<li><a href="#/${restCatType.rctId }">${restCatType.rctName}</a></li>
+						<li><a href="${pageContext.request.contextPath}/restcat/${bldg.bldgId}/${restCatType.rctId}">${restCatType.rctName}</a></li>
 					</c:forEach>
 				</ul>	
 			</div>
@@ -84,7 +84,7 @@
 					<p>网站推荐</p>
 					<div class="recommend-detail">
 						<c:forEach items="${recommendBldgList}" var="recommendBldg">
-							<a href="#"><img src="${pageContext.request.contextPath}/${picFileName }/${recommendBldg.recommend.recommendId }.png"></a>
+							<a href="#"><img src="${pageContext.request.contextPath}/${picFileName}/${recommendBldg.recommend.recommendId}.png"></a>
 						</c:forEach>
 					</div>	
 				</div>

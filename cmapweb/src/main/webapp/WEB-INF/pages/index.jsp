@@ -46,7 +46,7 @@
 			<div class="ym-right-district">
 				<ul id="index-district">
 				    <c:if test="${hasCookie}">
-				    	<li id="last"><a href="#"><span id="last-text1">上次选择</span><span id="last-text2">${cookieArea.distName}</span></a></li>
+				    	<li id="last"><a href="#"><span id="last-text1">上次选择</span><span id="last-text2">${cookieBldg.bldgName}</span></a></li>
 				    </c:if>
 				    <c:forEach items="${areaList}" var="area">
 				   		<li><a href="${pageContext.request.contextPath}/area/${area.distCode}">${area.distName}</a></li>

@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import com.fc.cmapweb.dao.IRestaurantDao;
 import com.fc.cmapweb.mgr.IRestaurantMgr;
 import com.fc.cmapweb.vo.Restaurant;
+import com.fc.cmapweb.vo.view.RestViewVo;
 
 @Service("restaurantMgr")
 public class RestaurantMgrImpl implements IRestaurantMgr {
@@ -23,6 +24,14 @@ public class RestaurantMgrImpl implements IRestaurantMgr {
 	public List<Restaurant> querySalesOfGoodListByBldgId(int bldgId) {
 
 		List<Restaurant> list = restaurantDao.querySalesOfGoodListByBldgId(bldgId);
+		return list;
+
+	}
+
+	public List<RestViewVo> queryRestaurantByRestCatTypeId(int restCatTypeId,
+			int bldgId) {
+
+		List<RestViewVo> list = restaurantDao.queryRestaurantByRestCatTypeId(restCatTypeId, bldgId);
 		return list;
 
 	}

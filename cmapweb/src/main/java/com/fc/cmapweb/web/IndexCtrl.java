@@ -8,7 +8,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.fc.cmapweb.mgr.IBldgMgr;
 import com.fc.cmapweb.mgr.IDistrictMgr;
+import com.fc.cmapweb.vo.Bldg;
 import com.fc.cmapweb.vo.District;
 
 @Controller
@@ -17,6 +20,9 @@ public class IndexCtrl {
 
 	@Autowired
 	private IDistrictMgr districtMgr;
+
+	@Autowired
+	private IBldgMgr bldgMgr;
 
 	private static final String TIANJINDISTCODE = "30000000";
 
@@ -27,11 +33,11 @@ public class IndexCtrl {
 			
 			Cookie[] cookies = request.getCookies();
 			
-			String cookieDistCode = "";
+			String cookieBldgId = "";
 			if(cookies != null) {
 				for(Cookie cookie : cookies) {
-					if(cookie.getName().equals("canditu.distcode")) {
-						cookieDistCode = cookie.getValue();
+					if(cookie.getName().equals("canditubldgid")) {
+						cookieBldgId = cookie.getValue();
 					}
 				}
 			}
@@ -39,9 +45,9 @@ public class IndexCtrl {
 			List<District> areaList = districtMgr.queryAreaByDistCode(TIANJINDISTCODE);
 			boolean hasCookie = false;
 			
-			if(!cookieDistCode.equals("")) {
-				District district = districtMgr.queryDistrictByDistCode(cookieDistCode);
-				model.addAttribute("cookieArea", district);
+			if(!cookieBldgId.equals("")) {
+				Bldg bldg = bldgMgr.queryBldgByBldgId(Integer.valueOf(cookieBldgId));
+				model.addAttribute("cookieBldg", bldg);
 				hasCookie = true;
 			}
 

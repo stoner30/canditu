@@ -50,7 +50,7 @@
 				<!--显示字母序的层。注：此层id必需是ul的id+"-nav"-->
 				<div class="building-return">
 				    <h3><a href="${pageContext.request.contextPath}/"><img src="${pageContext.request.contextPath}/images/left_s.png"></a></h3>
-				    <h2>${area.distName }</h2>
+				    <h2>${area.distName}</h2>
 				</div>
 
 				<div id="buildingList-nav">
@@ -61,7 +61,7 @@
 				    <ul id="buildingList" style="clear:both;">
 						<!--To IE 6, should input first letter manually;-->
 				         <c:forEach items="${bldgList}" var="bldg">
-				         	  <li><a href="${pageContext.request.contextPath}/rest/${bldg.bldgId }" name="${bldg.pinYin}">${bldg.bldgName }</a></li>
+				         	  <li><a href="${pageContext.request.contextPath}/rest/${bldg.bldgId}" name="${bldg.pinYin}">${bldg.bldgName}</a></li>
 				         </c:forEach>	          
 				    </ul>
 				</div>
