@@ -167,4 +167,40 @@ public class IndexCtrl {
 		}
 	}
 	
+	@RequestMapping(value = "/login", method = RequestMethod.GET)
+	public String toLogin() {
+		return "/login";
+	}
+	
+	@RequestMapping(value = "/login", method = RequestMethod.POST)
+	public String login(HttpServletRequest request, Model model) {
+		String account = request.getParameter("account");
+		String password = request.getParameter("password");
+		
+		Customer customer = customerMgr.queryCustomerByEmail(account);
+		model.addAttribute("account", account);
+		if (customer == null) {
+			model.addAttribute("retCode", 1);
+			return "/login";
+		}
+		
+		if (!StrUtil.getMD5Str(password).equals(customer.getPasswd())) {
+			model.addAttribute("retCode", 2);
+			return "/login";
+		}
+		
+		if (!customer.isEnabled()) {
+			model.addAttribute("retCode", 3);
+			return "/login";
+		}
+		
+		customer.setLastLoginIp(request.getRemoteAddr());
+		customer.setLastLoginTime(new Date());
+		customerMgr.updateCustomer(customer);
+		
+		request.getSession().setAttribute("customer", customer);
+		
+		return "/";
+	}
+	
 }

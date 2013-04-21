@@ -36,4 +36,9 @@ public class CustomerDaoImpl extends CmapBaseDao implements ICustomerDao {
 	    return result.get(0);
     }
 
+	@Override
+    public void updateCustomer(Customer customer) {
+	    em.merge(customer);
+    }
+
 }

@@ -28,4 +28,9 @@ public class CustomerMgrImpl implements ICustomerMgr {
 	    return customerDao.getCustomerByEmail(email);
     }
 
+	@Override
+    public void updateCustomer(Customer customer) {
+	    customerDao.updateCustomer(customer);
+    }
+
 }

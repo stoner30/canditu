@@ -29,7 +29,7 @@
   	</div>
 
 	<div class="ym-navcenter">
-		<a href="${pageContext.request.contextPath}">
+		<a href="${pageContext.request.contextPath}/">
 			<img src="${pageContext.request.contextPath}/images/canditu_logo.jpg">
 		</a>
 	</div>
@@ -44,7 +44,7 @@
 			</c:when>
 			<c:otherwise>
 				<ul>
-					<li><a href="login.html">登录</a></li>
+					<li><a href="${pageContext.request.contextPath}/login">登录</a></li>
 					<li><a href="${pageContext.request.contextPath}/register">注册</a></li>
 			 	</ul>
 			</c:otherwise>

@@ -13,7 +13,7 @@
 </head>
 
 <body>
-	<!--[if lt IE 9]><script src="js/ie9.js"></script><![endif]-->
+	<!--[if lt IE 9]><script src="${pageContext.request.contextPath}/js/ie9.js"></script><![endif]-->
 	<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-1.9.1.min.js"></script>
 	<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-migrate-1.1.1.min.js"></script>
 	<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery.qtip.min.js"></script>

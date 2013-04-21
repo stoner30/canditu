@@ -6,20 +6,12 @@
 	<title>餐地图！叫外卖，就上餐地图</title> 
 
 	<!-- stylesheets -->  
-	<link rel="stylesheet" href="css/base.css" type="text/css"/>
-	<link rel="stylesheet" href="css/jquery.qtip.min.css" type="text/css"/>
-	<link rel="stylesheet" href="css/user.css" type="text/css"/>
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/css/base.css" type="text/css"/>
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/css/jquery.qtip.min.css" type="text/css"/>
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/css/user.css" type="text/css"/>
 </head>
 	
 <body>
-	<!--[if lt IE 9]><script src="js/ie9.js"></script><![endif]-->
-	<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
-	<script type="text/javascript" src="js/jquery-migrate-1.1.1.min.js"></script>
-	<script type="text/javascript" src="js/jquery.qtip.min.js"></script>
-	<script type="text/javascript" src="js/jquery.validate.min.js"></script>
-	<script type="text/javascript" src="js/jquery.metadata.js"></script>
-	<script type="text/javascript" src="js/register.js"></script>
-
 	<div class="main-container">
 		<jsp:include page="${pageContext.request.contextPath}/common/header" />
 
@@ -113,5 +105,86 @@
 	</div>
 	
 	<jsp:include page="${pageContext.request.contextPath}/common/footer" />
+	
+	<!--[if lt IE 9]><script src="js/ie9.js"></script><![endif]-->
+	<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-migrate-1.1.1.min.js"></script>
+	<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery.qtip.min.js"></script>
+	<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery.validate.min.js"></script>
+	<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery.metadata.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$("#signupForm").validate({
+				rules: {
+					email: {
+						required: true,
+						email: true,
+						remote: {
+							url: "${pageContext.request.contextPath}/check/email",
+							type: "get",
+							dataType: "text"
+						}
+					},
+					nickname: {
+						required: true,
+						rangelength: [4, 20]
+					},
+					password: {
+						required: true,
+						rangelength: [4, 20]
+					},
+					confirm_password: {
+						required: true,
+						rangelength: [4, 20],
+						equalTo: "#password"
+					},
+					captcha: {
+						required: true,
+						remote: {
+							url: "${pageContext.request.contextPath}/check/captcha",
+							type: "get",
+							dataType: "text"
+						}
+					}
+				},
+				messages: {
+					email: {
+						required: "请输入邮箱地址",
+						email: "请输入正确的邮箱地址",
+						remote: "该邮箱已被注册，请使用其他邮箱"
+					},
+					nickname: {
+						required: "请输入昵称",
+						rangelength: "昵称最少4位，最多20位"
+					},
+					password: {
+						required: "请输入密码",
+						rangelength: "密码最少4位，最多20位"
+					},
+					confirm_password: {
+						required: "请输入确认密码",
+						rangelength: "确认密码最少4位，最多20位",
+						equalTo: "两次输入的密码不一致"
+					},
+					captcha: {
+						required: "请输入验证码",
+						remote: "验证码错误"
+					}
+				},
+				onkeyup: false
+			});
+	
+			$('#term-details').click(function() {
+				$('.register-terms').show();
+			});
+			
+			// Initialize the captcha elements.
+			$(".link-captcha").click(function() {
+				$("#imgCaptcha").hide().attr("src", "${pageContext.request.contextPath}/captcha?" + Math.floor(Math.random() * 100)).fadeIn();
+			});
+			
+			$(".link-captcha").click();
+		});
+	</script>
 </body>
 </html> 

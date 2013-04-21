@@ -7,5 +7,6 @@ public interface ICustomerDao {
 	void saveCustomer(Customer customer);
 	Customer getCustomer(Integer customerId);
 	Customer getCustomerByEmail(String email);
+	void updateCustomer(Customer customer);
 
 }
