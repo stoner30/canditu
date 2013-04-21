@@ -8,4 +8,6 @@ public interface IRestCatTypeDao {
 
 	public List<RestCatType> queryAllRestCatType();
 
+	public RestCatType queryRestCatTypeById(int restCatTypeId);
+
 }

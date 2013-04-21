@@ -7,4 +7,6 @@ public interface IRestCatTypeMgr {
 
 	public List<RestCatType> queryAllRestCatType();
 
+	public RestCatType queryRestCatTypeById(int restCatTypeId);
+
 }

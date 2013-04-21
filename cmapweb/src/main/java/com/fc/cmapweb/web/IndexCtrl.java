@@ -3,24 +3,20 @@ package com.fc.cmapweb.web;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.util.Date;
-
 import javax.imageio.ImageIO;
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-
 import java.util.List;
-
 import javax.servlet.http.Cookie;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import com.fc.cmapweb.mgr.IBldgMgr;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
-
 import com.fc.cmapweb.constant.ValidationMessage;
 import com.fc.cmapweb.mgr.ICustomerMgr;
 import com.fc.cmapweb.utils.StrUtil;
@@ -28,6 +24,7 @@ import com.fc.cmapweb.vo.Customer;
 import com.google.code.kaptcha.Constants;
 import com.google.code.kaptcha.Producer;
 import com.fc.cmapweb.mgr.IDistrictMgr;
+import com.fc.cmapweb.vo.Bldg;
 import com.fc.cmapweb.vo.District;
 
 @Controller
@@ -43,6 +40,9 @@ public class IndexCtrl {
 	@Autowired
 	private IDistrictMgr districtMgr;
 
+	@Autowired
+	private IBldgMgr bldgMgr;
+
 	private static final String TIANJINDISTCODE = "30000000";
 
 	@RequestMapping
@@ -52,11 +52,11 @@ public class IndexCtrl {
 			
 			Cookie[] cookies = request.getCookies();
 			
-			String cookieDistCode = "";
+			String cookieBldgId = "";
 			if(cookies != null) {
 				for(Cookie cookie : cookies) {
-					if(cookie.getName().equals("canditu.distcode")) {
-						cookieDistCode = cookie.getValue();
+					if(cookie.getName().equals("canditubldgid")) {
+						cookieBldgId = cookie.getValue();
 					}
 				}
 			}
@@ -64,9 +64,9 @@ public class IndexCtrl {
 			List<District> areaList = districtMgr.queryAreaByDistCode(TIANJINDISTCODE);
 			boolean hasCookie = false;
 			
-			if(!cookieDistCode.equals("")) {
-				District district = districtMgr.queryDistrictByDistCode(cookieDistCode);
-				model.addAttribute("cookieArea", district);
+			if(!cookieBldgId.equals("")) {
+				Bldg bldg = bldgMgr.queryBldgByBldgId(Integer.valueOf(cookieBldgId));
+				model.addAttribute("cookieBldg", bldg);
 				hasCookie = true;
 			}
 
