@@ -17,6 +17,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.fc.cmapweb.mgr.IBldgMgr;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.fc.cmapweb.constant.DigitalConstant;
 import com.fc.cmapweb.constant.ValidationMessage;
 import com.fc.cmapweb.mgr.ICustomerMgr;
 import com.fc.cmapweb.utils.StrUtil;
@@ -168,12 +170,22 @@ public class IndexCtrl {
 	}
 	
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
-	public String toLogin() {
+	public String toLogin(HttpServletRequest request, Model model) {
+		Cookie[] cookies = request.getCookies();
+		if (cookies != null) {
+			for (Cookie cookie : cookies) {
+				if (cookie.getName().equals("candituaccount")) {
+					model.addAttribute("rememberme", true);
+					model.addAttribute("account", cookie.getValue());
+				}
+			}
+		}
+		
 		return "/login";
 	}
 	
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
-	public String login(HttpServletRequest request, Model model) {
+	public String login(HttpServletRequest request, HttpServletResponse response, Model model) {
 		String account = request.getParameter("account");
 		String password = request.getParameter("password");
 		
@@ -200,7 +212,20 @@ public class IndexCtrl {
 		
 		request.getSession().setAttribute("customer", customer);
 		
-		return "/";
+		String rememberme = request.getParameter("rememberme");
+		if (Boolean.valueOf(rememberme)) {
+			Cookie cookie = new Cookie("candituaccount", account);
+			cookie.setPath("/");
+			cookie.setMaxAge(DigitalConstant.SIXTY * DigitalConstant.SIXTY * DigitalConstant.TWENTY_FOUR * DigitalConstant.FIFTEEN);
+			response.addCookie(cookie);
+		} else {
+			Cookie cookie = new Cookie("candituaccount", null);
+			cookie.setPath("/");
+			cookie.setMaxAge(0);
+			response.addCookie(cookie);
+		}
+		
+		return "redirect:/";
 	}
 	
 }

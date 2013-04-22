@@ -78,7 +78,7 @@
      	   	<div class="register-sidebar">
      	   		<div id="register-sidebar1">已有餐地图账号？</div>
 
-     	   		<div id="register-sidebar2"><a href="login.html">登录</a></div>
+     	   		<div id="register-sidebar2"><a href="${pageContext.request.contextPath}/login">登录</a></div>
 
      	   	</div>
 

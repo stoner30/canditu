@@ -21,7 +21,7 @@
     <script type="text/javascript" src="${pageContext.request.contextPath}/js/main.js"></script>
 
 	<div class="main-container">
-		<jsp:include page="common/header.jsp" />
+		<jsp:include page="${pageContext.request.contextPath}/common/header" />
 	
 		<!--Main-->
 		<div class="ym-container">
@@ -60,6 +60,6 @@
 		<div class="push"><!-- not put anything here --></div>
 	</div>
 
-	<jsp:include page="common/footer.jsp" />
+	<jsp:include page="${pageContext.request.contextPath}/common/footer" />
 </body>
 </html> 

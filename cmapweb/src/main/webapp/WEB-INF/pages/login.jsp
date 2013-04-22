@@ -86,10 +86,30 @@
 					</div>
 					
 					<div>
-						<div id="check-container1"><div class="black-space"></div><div id="login-text1">记住账号</div></div>
+						<c:choose>
+							<c:when test="${rememberme}">
+								<div id="check-container1" class="clicked">
+									<div class="black-space"></div><div id="login-text1">记住账号</div>
+								</div>
+							</c:when>
+							<c:otherwise>
+								<div id="check-container1">
+									<div class="black-space"></div><div id="login-text1">记住账号</div>
+								</div>
+							</c:otherwise>
+						</c:choose>
+						<div style="float: left; height: 24px; margin-right: 30px; margin-top: 15px; width: 120px;"></div>
 						<!-- <div id="check-container2"><div class="black-space"></div><div id="login-text2">两周内自动登录</div></div> -->
-						<div style="float: left; height: 24px; margin-right: 30px; margin-top: 15px; width: 120px;"></div>			
 					</div>
+					
+					<c:choose>
+						<c:when test="${rememberme}">
+							<input type="hidden" name="rememberme" id="rememberme" value="true" />
+						</c:when>
+						<c:otherwise>
+							<input type="hidden" name="rememberme" id="rememberme" value="false" />
+						</c:otherwise>
+					</c:choose>
 					
 					<input class="login-button ie6-hover" type="submit" value="登录"/>
 				</form>
@@ -100,7 +120,7 @@
      	   			<div id="login-sidebar1-a">还不是餐地图用户？</div>
      	   			<div id="login-sidebar1-b">现在免费注册成为餐地图用户，立即享受便捷的订餐服务。</div>
      	   		</div>
-     	   		<div id="login-sidebar2"><a href="register.html">快速注册</a></div>
+     	   		<div id="login-sidebar2"><a href="${pageContext.request.contextPath}/register">快速注册</a></div>
      	   	</div>
 
      	   	<div class="login-QQs"><div id="login-QQs-text">用合作网站账号登录</div></div>
@@ -152,7 +172,16 @@
 					}
 				},
 				onkeyup: false,
-				errorLabelContainer: "#error-container"
+				errorLabelContainer: "#error-container",
+				submitHandler: function(form) {
+					if ($("#check-container1").hasClass("clicked")) {
+						$("#rememberme").val("true");
+					} else {
+						$("#rememberme").val("false");
+					}
+					
+					form.submit();
+				}
 			});
 		});
 	</script>
